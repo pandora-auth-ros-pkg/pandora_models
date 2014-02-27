@@ -20,7 +20,9 @@
   <run_depend>urdf</run_depend>
   <run_depend>xacro</run_depend>
   <run_depend>robot_state_publisher</run_depend>
+<!--
   <run_depend>gazebo_ros_control</run_depend>
+-->
     
 
   <export>
