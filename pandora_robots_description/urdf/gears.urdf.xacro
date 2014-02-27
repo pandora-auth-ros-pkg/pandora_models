@@ -413,7 +413,7 @@
 	</xacro:sonar_caster>
 
 <!--Insert thermal-->	
-	<xacro:include filename="$(find pandora_sensors_description)/urdf/pandora_thermal_sensor.urdf.xacro" />
+	<xacro:include filename="$(find pandora_sensors_description)/urdf/thermal_sensor.urdf.xacro" />
 	
 	<xacro:thermal_caster parent="base_link">
 		<origin xyz="0.2 -0.05 0.23" rpy="0 0 0"/>
