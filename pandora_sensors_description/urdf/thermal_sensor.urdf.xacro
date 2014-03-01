@@ -40,7 +40,7 @@
         <update_rate>30</update_rate>
         <visualize>false</visualize>
         <plugin name="thermal2ros" filename="libpandora_thermal_plugin.so">
-			<frameName>thermal</frameName>
+			<frameName>thermal_link</frameName>
 			<topicName>sensors/thermal</topicName>
 		</plugin>
       </sensor>
