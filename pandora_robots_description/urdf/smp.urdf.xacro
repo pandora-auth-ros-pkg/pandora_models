@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro"
+	   name="smp">
+
+  <link
+    name="base_link">
+    <inertial>
+      <!-- Changed y from 0.128781161726593 to 0 -->
+      <origin
+        xyz="-0.0198495875330841 0 -0.00307788379709052"
+        rpy="0 0 0" />
+      <mass
+        value="6.34094590552095" />
+      <inertia
+        ixx="0.0652491846590223"
+        ixy="-0.00523278227158006"
+        ixz="0.000707269810272798"
+        iyy="0.0744293091468463"
+        iyz="-0.000321902712332138"
+        izz="0.0492568991181825" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_skeleton_link">
+    <inertial>
+      <origin
+        xyz="0.000321826891202733 0.0306251328024513 -0.0286468811169595"
+        rpy="0 0 0" />
+      <mass
+        value="0.935564689065556" />
+      <inertia
+        ixx="0.00121424029996205"
+        ixy="-3.61897856814031E-05"
+        ixz="0.000282870223575218"
+        iyy="0.0266729414871034"
+        iyz="-0.000245282816062407"
+        izz="0.026451061221961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_skeleton_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_skeleton_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_skeleton_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.0914939058756142 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_skeleton_link" />
+    <axis
+      xyz="0 -0.99998812946887 0.00487246563357555" />
+  </joint>
+  <link
+    name="left_front_tire_link">
+    <inertial>
+      <origin
+        xyz="-2.22352895719591E-05 0.0375737587089038 2.4286608074589E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.21280538933763" />
+      <inertia
+        ixx="0.00325857540209633"
+        ixy="5.86199184124526E-08"
+        ixz="4.21420928653276E-07"
+        iyy="0.00548118586194348"
+        iyz="-6.40279086420341E-08"
+        izz="0.00325743116853516" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_front_tire_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_front_tire_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_tire_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 0.09 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="left_skeleton_link" />
+    <child
+      link="left_front_tire_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_rear_tire_link">
+    <inertial>
+      <origin
+        xyz="-2.22352895714456E-05 0.0375737587089041 2.42866080761572E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.21280538933763" />
+      <inertia
+        ixx="0.00325857540209633"
+        ixy="5.86199182598175E-08"
+        ixz="4.21420928654672E-07"
+        iyy="0.00548118586194347"
+        iyz="-6.40279087866295E-08"
+        izz="0.00325743116853516" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_rear_tire_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/left_rear_tire_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rear_tire_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2 0.09 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="left_skeleton_link" />
+    <child
+      link="left_rear_tire_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_skeleton_link">
+    <inertial>
+      <origin
+        xyz="-0.000316566553895734 -0.0306251222751763 -0.0286490681689997"
+        rpy="0 0 0" />
+      <mass
+        value="0.9355646730016" />
+      <inertia
+        ixx="0.00121433960203929"
+        ixy="-3.60034318470004E-05"
+        ixz="-0.000282986858202"
+        iyy="0.0266730374605764"
+        iyz="0.000245233601135325"
+        izz="0.0264510588508535" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_skeleton_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_skeleton_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_skeleton_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0914939058756103 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_skeleton_link" />
+    <axis
+      xyz="0 -0.99998812946887 -0.00487246563357561" />
+  </joint>
+  <link
+    name="right_front_tire_link">
+    <inertial>
+      <origin
+        xyz="-2.2235289581396E-05 -0.0386262412910983 2.42866080749221E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.21280538933763" />
+      <inertia
+        ixx="0.00325857540209633"
+        ixy="5.86199192759679E-08"
+        ixz="4.21420928655189E-07"
+        iyy="0.00548118586194347"
+        iyz="-6.4027908784711E-08"
+        izz="0.00325743116853516" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_front_tire_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_front_tire_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_tire_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 -0.09 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="right_skeleton_link" />
+    <child
+      link="right_front_tire_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_rear_tire_link">
+    <inertial>
+      <origin
+        xyz="-2.22352895702799E-05 -0.038626241291098 2.42866080749082E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.21280538933763" />
+      <inertia
+        ixx="0.00325857540209633"
+        ixy="5.86199182607803E-08"
+        ixz="4.21420928654686E-07"
+        iyy="0.00548118586194348"
+        iyz="-6.40279087862132E-08"
+        izz="0.00325743116853517" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_rear_tire_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/right_rear_tire_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rear_tire_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2 -0.09 -0.05"
+      rpy="0 0 0" />
+    <parent
+      link="right_skeleton_link" />
+    <child
+      link="right_rear_tire_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+<!--
+
+Inertia of linear is wrong!
+
+  <link
+    name="linear_base_link">
+    <inertial>
+      <origin
+        xyz="-0.013566 0.39667 0.027597"
+        rpy="0 0 0" />
+      <mass
+        value="2.1105" />
+      <inertia
+        ixx="0.088948"
+        ixy="-0.0040321"
+        ixz="-0.00064161"
+        iyy="0.0078424"
+        iyz="0.0052128"
+        izz="0.083304" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 3.14" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/linear_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 3.14" />
+      <geometry>
+        <mesh
+          filename="package://pandora_robots_description/meshes/smp/linear_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="linear_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.11041 -0.000507 0.13208"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linear_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+-->
+
+<!-- Add ros_control plugin-->
+	<gazebo>
+	  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+		<robotNamespace></robotNamespace>
+		<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+	  </plugin>
+	</gazebo>
+	
+	<!-- Add skid steer drive plugin-->
+	<gazebo>
+	  <plugin name="RosSkidSteerDrivePlugin" filename="libgazebo_ros_skid_steer_drive.so">
+			<updateRate>50.0</updateRate>
+			<robotNamespace></robotNamespace>
+			<leftFrontJoint>left_front_tire_joint</leftFrontJoint>
+			<rightFrontJoint>right_front_tire_joint</rightFrontJoint>
+			<leftRearJoint>left_rear_tire_joint</leftRearJoint>
+			<rightRearJoint>right_rear_tire_joint</rightRearJoint>
+			<wheelSeparation>0.44</wheelSeparation>
+			<wheelDiameter>0.18</wheelDiameter>
+			<robotBaseFrame>base_link</robotBaseFrame>
+			<topicName>cmd_vel</topicName>
+			<broadcastTF>0</broadcastTF>
+			<torque>5.0</torque>
+			<commandTopic>cmd_vel</commandTopic>
+			<odometryTopic>odom</odometryTopic>
+			<odometryFrame>odom</odometryFrame>
+		</plugin>
+	</gazebo>
+  
+</robot>
