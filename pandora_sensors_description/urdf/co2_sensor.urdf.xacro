@@ -23,7 +23,7 @@
         </collision>
     </link>
     
-    <gazebo reference="co2_link">
+  <gazebo reference="co2_link">
     <sensor name="co2" type="camera">
       <camera>
         <horizontal_fov>1.5</horizontal_fov>
