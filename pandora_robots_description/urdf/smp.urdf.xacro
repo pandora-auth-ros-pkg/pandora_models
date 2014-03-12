@@ -13,7 +13,7 @@
     <inertial>
       <!-- Changed y from 0.128781161726593 to 0 -->
       <origin
-        xyz="-0.0198495875330841 0 -0.00307788379709052"
+        xyz="0 0 0.11"
         rpy="0 0 0" />
       <mass
         value="6.34094590552095" />
@@ -76,8 +76,8 @@
       <rightFrontJoint>right_front_tire_joint</rightFrontJoint>
       <leftRearJoint>left_rear_tire_joint</leftRearJoint>
       <rightRearJoint>right_rear_tire_joint</rightRearJoint>
-      <wheelSeparation>0.41</wheelSeparation>
-      <wheelDiameter>0.18</wheelDiameter>
+      <wheelSeparation>0.4392</wheelSeparation>
+      <wheelDiameter>0.0889</wheelDiameter>
       <robotBaseFrame>base_link</robotBaseFrame>
       <topicName>cmd_vel</topicName>
       <broadcastTF>0</broadcastTF>
