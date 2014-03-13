@@ -37,8 +37,8 @@
       </visual>
       <collision>
         <origin
-          xyz="0 0 ${(1-reflect)*1.57}"
-          rpy="0 0 0" />
+          xyz="0 0 0"
+          rpy="0 0 ${(1-reflect)*1.57}" />
         <geometry>
           <mesh
             filename="package://pandora_robots_description/meshes/smp/skeleton_link.STL" />
@@ -48,7 +48,7 @@
     
     <joint
       name="${suffix}_skeleton_joint"
-      type="fixed">
+      type="revolute">
       <xacro:insert_block name="origin" />
       <parent
         link="${parent}" />
@@ -56,6 +56,11 @@
         link="${suffix}_skeleton_link" />
       <axis
         xyz="0 1 0" />
+      <limit
+        effort="100" 
+        velocity="100"
+        lower="-0.785" 
+        upper="0.785"/>
     </joint>
     
     <xacro:wheel_caster suffix_a="${suffix}" suffix_b="front" reflect_a="${reflect}" reflect_b="1" />
