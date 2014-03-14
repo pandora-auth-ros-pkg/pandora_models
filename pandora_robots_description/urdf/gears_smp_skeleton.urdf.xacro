@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   
-  <xacro:include filename="$(find pandora_robots_description)/urdf/smp_wheel.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears_smp_wheel.urdf.xacro" />
   
   <xacro:macro name="skeleton_caster" params="suffix reflect parent *origin">
     <link

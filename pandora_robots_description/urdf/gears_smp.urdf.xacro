@@ -6,7 +6,7 @@
        xmlns:xacro="http://ros.org/wiki/xacro"
        name="smp">
       
-  <xacro:include filename="$(find pandora_robots_description)/urdf/smp_skeleton.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears_smp_skeleton.urdf.xacro" />
 
   <link
     name="base_link">
@@ -56,6 +56,13 @@
   <xacro:skeleton_caster suffix="right" reflect="-1" parent="base_link">
     <origin xyz="0 -0.0915 0" rpy="0 0 0" />
   </xacro:skeleton_caster>
+  
+  <!--Insert kinect-->	
+  <xacro:include filename="$(find pandora_sensors_description)/urdf/kinect_camera.urdf.xacro" />
+  
+  <xacro:kinect_caster parent="base_link">
+    <origin xyz="0.2 0 0.33" rpy="0 0 0"/>
+  </xacro:kinect_caster>
         
 
   <!-- Add ros_control plugin-->
