@@ -27,7 +27,7 @@
           rpy="0 0 ${(1-reflect)*1.57}" />
         <geometry>
           <mesh
-            filename="package://pandora_robots_description/meshes/smp/skeleton_link.STL" />
+            filename="package://pandora_robots_description/meshes/gears_smp/skeleton_link.stl" />
         </geometry>
         <material
           name="">
@@ -41,7 +41,7 @@
           rpy="0 0 ${(1-reflect)*1.57}" />
         <geometry>
           <mesh
-            filename="package://pandora_robots_description/meshes/smp/skeleton_link.STL" />
+            filename="package://pandora_robots_description/meshes/gears_smp/skeleton_link.stl" />
         </geometry>
       </collision>
     </link>

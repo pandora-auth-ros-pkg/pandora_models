@@ -30,7 +30,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://pandora_robots_description/meshes/smp/base_link.STL" />
+          filename="package://pandora_robots_description/meshes/gears_smp/base_link.stl" />
       </geometry>
       <material
         name="">
@@ -44,7 +44,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://pandora_robots_description/meshes/smp/base_link.STL" />
+          filename="package://pandora_robots_description/meshes/gears_smp/base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -153,7 +153,7 @@ Inertia of linear is wrong!
         rpy="1.57 0 3.14" />
       <geometry>
         <mesh
-          filename="package://pandora_robots_description/meshes/smp/linear_base_link.STL" />
+          filename="package://pandora_robots_description/meshes/gears_smp/linear_base_link.stl" />
       </geometry>
       <material
         name="">
@@ -167,7 +167,7 @@ Inertia of linear is wrong!
         rpy="1.57 0 3.14" />
       <geometry>
         <mesh
-          filename="package://pandora_robots_description/meshes/smp/linear_base_link.STL" />
+          filename="package://pandora_robots_description/meshes/gears_smp/linear_base_link.stl" />
       </geometry>
     </collision>
   </link>
