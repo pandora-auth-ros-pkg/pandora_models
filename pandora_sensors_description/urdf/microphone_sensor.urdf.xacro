@@ -45,6 +45,7 @@
         <topicName>sensors/sound</topicName>
       </plugin>
     </sensor>
+
   </gazebo>
   
   <joint name="microphone_joint" type="fixed">
