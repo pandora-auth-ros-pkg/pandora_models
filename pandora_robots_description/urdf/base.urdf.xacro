@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<robot name="gears" xmlns:xacro="http://ros.org/wiki/xacro" >
+      
+  <xacro:include filename="$(find pandora_robots_description)/urdf/side.urdf.xacro" />
+
+  <link name="base_link" >
+    <inertial>
+      <origin xyz="-1.1543E-07 -1.3195E-07 0.23164" rpy="0 0 0" />
+      <mass value="9.3044" />
+      <inertia ixx="0.410690" ixy="0.011589" ixz="0.081825"
+               iyy="0.424490" iyz="0.022113" izz="0.126610" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
+      </geometry>
+      <material name="" >
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+		    <!-- TODO: Simplify mesh -->
+        <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <xacro:side_caster prefix_y="left" reflect_y="1" parent="base_link" >
+    <origin xyz="0 0.110 0" rpy="0 0 0" />
+  </xacro:side_caster>
+  
+  <xacro:side_caster prefix_y="right" reflect_y="-1" parent="base_link" >
+    <origin xyz="0 -0.110 0" rpy="0 0 0" />
+  </xacro:side_caster>
+  
+  <!-- Disable sensors and plugins -->
+  
+  <!--
+  
+  Insert kinect
+  <xacro:include filename="$(find pandora_sensors_description)/urdf/kinect_camera.urdf.xacro" />
+  
+  <xacro:kinect_caster parent="base_link">
+    <origin xyz="0.2 0 0.33" rpy="0 0 0"/>
+  </xacro:kinect_caster>
+  
+  Insert hokuyo laser
+  <xacro:include filename="$(find pandora_sensors_description)/urdf/hokuyo_utm_30lx.urdf.xacro" />
+  
+  <xacro:hokuyo_caster parent="base_link">
+    <origin xyz="0.25 0 0.15" rpy="0 0 0"/>
+  </xacro:hokuyo_caster>
+  
+  Add imu plugin
+  <gazebo>
+    <plugin name="RosImuPlugin" filename="libpandora_imu_stabilizer_plugin.so">
+      <topicName>/sensors/imu</topicName>
+      <bodyName>base_link</bodyName>
+      <updateRate>50.0</updateRate>
+      <robotNamespace></robotNamespace>
+      <serviceName>default_imu</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <rollCorrectionJoint>laser_roll_joint</rollCorrectionJoint>
+      <pitchCorrectionJoint>laser_pitch_joint</pitchCorrectionJoint>
+    </plugin>
+  </gazebo>
+  
+  Add differential plugin
+  <gazebo>
+    <plugin name="RosDifferantialSkeletonPlugin" filename="libpandora_differential_skeleton_plugin.so">
+      <robotNamespace></robotNamespace>
+      <leftSkeletonJoint>left_side_joint</leftSkeletonJoint>
+      <rightSkeletonJoint>right_side_joint</rightSkeletonJoint>
+    </plugin>
+  </gazebo>
+  
+  Add ros_control plugin
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace></robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  
+  -->
+
+  <!-- Add skid steer drive plugin-->
+  <gazebo>
+    <plugin name="RosSkidSteerDrivePlugin" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace></robotNamespace>
+      <leftFrontJoint>left_front_wheel_joint</leftFrontJoint>
+      <rightFrontJoint>right_front_wheel_joint</rightFrontJoint>
+      <leftRearJoint>left_rear_wheel_joint</leftRearJoint>
+      <rightRearJoint>right_rear_wheel_joint</rightRearJoint>
+      <wheelSeparation>0.39757</wheelSeparation>
+      <wheelDiameter>0.17779</wheelDiameter>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <topicName>cmd_vel</topicName>
+      <broadcastTF>0</broadcastTF>
+	    <!-- TODO: Fix torque -->
+      <torque>5.0</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+    </plugin>
+  </gazebo>
+
+</robot>
