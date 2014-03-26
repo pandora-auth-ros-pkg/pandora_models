@@ -42,16 +42,13 @@
     </joint>
 	
     <gazebo reference="${prefix_y}_${prefix_x}_wheel_link" >
-      <!-- TODO: Fix coefficients -->
-	    <!-- <material>Gazebo/Black</material> -->
-      <!-- <maxVel>1.0</maxVel> -->
-      <mu1>0.75</mu1>
-      <mu2>0.75</mu2>
-      <fdir1>1 0 0</fdir1>
+      <mu1>0.3</mu1>
+      <mu2>0.3</mu2>
+      <!-- <fdir1>1 0 0</fdir1> -->
       <kp>10000000.0</kp>
       <kd>1.0</kd>
       <!-- Increase min depth -->
-      <minDepth>0.001</minDepth>
+      <minDepth>0.005</minDepth>
       <maxContacts>1</maxContacts>
     </gazebo>
         

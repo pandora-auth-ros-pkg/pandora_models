@@ -71,15 +71,6 @@
     </plugin>
   </gazebo>
   
-  Add differential plugin
-  <gazebo>
-    <plugin name="RosDifferantialSkeletonPlugin" filename="libpandora_differential_skeleton_plugin.so">
-      <robotNamespace></robotNamespace>
-      <leftSkeletonJoint>left_side_joint</leftSkeletonJoint>
-      <rightSkeletonJoint>right_side_joint</rightSkeletonJoint>
-    </plugin>
-  </gazebo>
-  
   Add ros_control plugin
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -89,6 +80,15 @@
   </gazebo>
   
   -->
+
+  <!-- Add differential plugin -->
+  <gazebo>
+    <plugin name="RosDifferantialSkeletonPlugin" filename="libpandora_differential_skeleton_plugin.so">
+      <robotNamespace></robotNamespace>
+      <leftSkeletonJoint>left_side_joint</leftSkeletonJoint>
+      <rightSkeletonJoint>right_side_joint</rightSkeletonJoint>
+    </plugin>
+  </gazebo>
 
   <!-- Add skid steer drive plugin-->
   <gazebo>
@@ -104,7 +104,6 @@
       <robotBaseFrame>base_link</robotBaseFrame>
       <topicName>cmd_vel</topicName>
       <broadcastTF>0</broadcastTF>
-	    <!-- TODO: Fix torque -->
       <torque>5.0</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>

@@ -32,15 +32,13 @@
       </collision>
     </link>
     
-    <joint name="${prefix_y}_side_joint" type="fixed" >
+    <joint name="${prefix_y}_side_joint" type="revolute" >
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
       <child link="${prefix_y}_side_link" />
-	  <!--
       <axis xyz="0 1 0" />
       <limit effort="100" velocity="100"
              lower="-0.785" upper="0.785" />
-	  -->
     </joint>
     
     <xacro:wheel_caster prefix_y="${prefix_y}" prefix_x="front"
