@@ -23,7 +23,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-		     <!-- TODO: Simplify mesh -->
+         <!-- TODO: Simplify mesh -->
         <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
       </geometry>
     </collision>
@@ -83,7 +83,7 @@
   <gazebo>
     <plugin name="RosDifferantialPlugin" filename="libpandora_differential_plugin.so">
       <robotNamespace></robotNamespace>
-	    <baseLink>base_link</baseLink>
+      <baseLink>base_link</baseLink>
       <leftFrontWheelLink>left_front_wheel_link</leftFrontWheelLink>
       <leftRearWheelLink>left_rear_wheel_link</leftRearWheelLink>
       <rightFrontWheelLink>right_front_wheel_link</rightFrontWheelLink>
