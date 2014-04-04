@@ -23,7 +23,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-		    <!-- TODO: Simplify mesh -->
+		     <!-- TODO: Simplify mesh -->
         <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
       </geometry>
     </collision>
@@ -37,9 +37,7 @@
     <origin xyz="0 -0.110 0" rpy="0 0 0" />
   </xacro:side_caster>
   
-  <!-- Disable sensors and plugins -->
-  
-  <!--
+  <!-- Disable sensors and plugins
   
   Insert kinect
   <xacro:include filename="$(find pandora_sensors_description)/urdf/kinect_camera.urdf.xacro" />
@@ -83,10 +81,23 @@
 
   <!-- Add differential plugin -->
   <gazebo>
-    <plugin name="RosDifferantialSkeletonPlugin" filename="libpandora_differential_skeleton_plugin.so">
+    <plugin name="RosDifferantialPlugin" filename="libpandora_differential_plugin.so">
       <robotNamespace></robotNamespace>
-      <leftSkeletonJoint>left_side_joint</leftSkeletonJoint>
-      <rightSkeletonJoint>right_side_joint</rightSkeletonJoint>
+	    <baseLink>base_link</baseLink>
+      <leftFrontWheelLink>left_front_wheel_link</leftFrontWheelLink>
+      <leftRearWheelLink>left_rear_wheel_link</leftRearWheelLink>
+      <rightFrontWheelLink>right_front_wheel_link</rightFrontWheelLink>
+      <rightRearWheelLink>right_rear_wheel_link</rightRearWheelLink>
+      <leftSideJoint>left_side_joint</leftSideJoint>
+      <rightSideJoint>right_side_joint</rightSideJoint>
+      <maxAngle>0.785</maxAngle>
+      <sideJointDamping>0.0</sideJointDamping>
+      <maxDownforce>0.0</maxDownforce>
+      <forceAdjustment>1.0</forceAdjustment>
+      <!-- TODO: Tune PID -->
+      <P>100.0</P>
+      <I>1</I>
+      <D>10.0</D>
     </plugin>
   </gazebo>
 
