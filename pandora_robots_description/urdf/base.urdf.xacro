@@ -15,6 +15,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
+        <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_base_link.stl" /> -->
       </geometry>
       <material name="" >
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -23,8 +24,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-         <!-- TODO: Simplify mesh -->
         <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
+        <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_base_link.stl" /> -->
       </geometry>
     </collision>
   </link>
@@ -91,13 +92,15 @@
       <leftSideJoint>left_side_joint</leftSideJoint>
       <rightSideJoint>right_side_joint</rightSideJoint>
       <maxAngle>0.785</maxAngle>
+      <correctionForceModifier>200.0</correctionForceModifier>
+      <!-- TODO: Tune PID -->
+      <P>120.0</P>
+      <I>0.005</I>
+      <D>8.0</D>
       <sideJointDamping>0.0</sideJointDamping>
       <maxDownforce>0.0</maxDownforce>
-      <forceAdjustment>1.0</forceAdjustment>
-      <!-- TODO: Tune PID -->
-      <P>100.0</P>
-      <I>1</I>
-      <D>10.0</D>
+      <maxDifferentialForceZ>0.0</maxDifferentialForceZ>
+      <maxDifferentialForceY>0.0</maxDifferentialForceY>
     </plugin>
   </gazebo>
 

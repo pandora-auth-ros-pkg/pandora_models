@@ -18,6 +18,7 @@
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
           <mesh filename="package://pandora_robots_description/meshes/gears/side_link.stl" />
+          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_side_link.stl" /> -->
         </geometry>
         <material name="" >
           <color rgba="0.753 0.753 0.753 1" />
@@ -26,8 +27,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
-          <!-- TODO: Simplify mesh -->
           <mesh filename="package://pandora_robots_description/meshes/gears/side_link.stl" />
+          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_side_link.stl" /> -->
         </geometry>
       </collision>
     </link>
@@ -38,7 +39,7 @@
       <child link="${prefix_y}_side_link" />
       <axis xyz="0 1 0" />
       <!-- TODO: Set damping -->
-      <dynamics damping="0" />
+      <dynamics damping="0.1" />
       <limit effort="100" velocity="100"
              lower="-0.785" upper="0.785" />
     </joint>
