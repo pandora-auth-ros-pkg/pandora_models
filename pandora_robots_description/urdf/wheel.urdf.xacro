@@ -16,7 +16,6 @@
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
           <mesh filename="package://pandora_robots_description/meshes/gears/wheel_link.stl" />
-          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_wheel_link.stl" /> -->
         </geometry>
         <material name="" >
           <color rgba="0.753 0.753 0.753 1" />

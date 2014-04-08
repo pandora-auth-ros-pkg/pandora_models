@@ -23,9 +23,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://pandora_robots_description/meshes/gears/base_link.stl" />
-        <!-- TODO -->
-        <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_base_link.stl" /> -->
+        <mesh filename="package://pandora_robots_description/meshes/gears/simplified_base_link.stl" />
       </geometry>
     </collision>
   </link>

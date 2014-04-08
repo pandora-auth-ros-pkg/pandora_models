@@ -26,9 +26,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/side_link.stl" />
-          <!-- TODO -->
-          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_side_link.stl" /> -->
+          <mesh filename="package://pandora_robots_description/meshes/gears/simplified_side_link.stl" />
         </geometry>
       </collision>
     </link>
