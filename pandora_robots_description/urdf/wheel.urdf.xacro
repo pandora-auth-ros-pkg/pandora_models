@@ -15,9 +15,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
-          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/wheel_link.stl" /> -->
+          <mesh filename="package://pandora_robots_description/meshes/gears/wheel_link.stl" />
           <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_wheel_link.stl" /> -->
-          <mesh filename="package://pandora_robots_description/meshes/gears/super_simplified_wheel_link.stl" />
         </geometry>
         <material name="" >
           <color rgba="0.753 0.753 0.753 1" />
@@ -26,34 +25,9 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${(1-reflect_y)*1.57}" />
         <geometry>
-          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/wheel_link.stl" /> -->
-          <!-- <mesh filename="package://pandora_robots_description/meshes/gears/simplified_wheel_link.stl" /> -->
-          <mesh filename="package://pandora_robots_description/meshes/gears/super_simplified_wheel_link.stl" />
+          <mesh filename="package://pandora_robots_description/meshes/gears/simplified_wheel_link.stl" />
         </geometry>
       </collision>
-      <!--
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="1.2128" />
-        <inertia ixx="0.002982821" ixy="0" ixz="0"
-                 iyy="0.002982821" iyz="0" izz="0.004791967" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="1.57 0 0" />
-        <geometry>
-          <cylinder length="0.0762" radius="0.088895"/>
-        </geometry>
-        <material name="" >
-          <color rgba="0.753 0.753 0.753 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="1.57 0 0" />
-        <geometry>
-          <cylinder length="0.0762" radius="0.088895"/>
-        </geometry>
-      </collision>
-      -->
     </link>
   
     <joint name="${prefix_y}_${prefix_x}_wheel_joint" type="continuous" >
@@ -63,7 +37,6 @@
       <child link="${prefix_y}_${prefix_x}_wheel_link" />
       <axis xyz="0 1 0" />
     <limit effort="100" velocity="100" />
-    <!-- <anchor xyz="0 0 0" /> -->
     </joint>
   
     <!-- TODO: Fix physics -->
