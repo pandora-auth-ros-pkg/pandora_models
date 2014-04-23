@@ -136,14 +136,16 @@
       <xacro:wheel_transmission prefix_y="right" prefix_x="rear" />
     </xacro:if>
     <!-- ================================================================== -->
-    <xacro:if value="${enable_kinect_sensor_transmission}" >
-      <xacro:sensor_transmission sensor="kinect" rotation="pitch" />
-      <xacro:sensor_transmission sensor="kinect" rotation="yaw" />
-    </xacro:if>
-    <!-- ================================================================== -->
-    <xacro:if value="${enable_laser_sensor_transmission}" >
-      <xacro:sensor_transmission sensor="laser" rotation="roll" />
-      <xacro:sensor_transmission sensor="laser" rotation="pitch" />
+    <xacro:if value="${enable_sensor_transmission}" >
+      <xacro:if value="${enable_kinect_sensor_transmission}" >
+        <xacro:sensor_transmission sensor="kinect" rotation="pitch" />
+        <xacro:sensor_transmission sensor="kinect" rotation="yaw" />
+      </xacro:if>
+      <!-- ================================================================ -->
+      <xacro:if value="${enable_laser_sensor_transmission}" >
+        <xacro:sensor_transmission sensor="laser" rotation="roll" />
+        <xacro:sensor_transmission sensor="laser" rotation="pitch" />
+      </xacro:if>
     </xacro:if>
     <!-- ================================================================== -->
   </xacro:if>
