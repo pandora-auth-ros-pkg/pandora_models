@@ -441,28 +441,32 @@
       
     </gazebo>
     
-    <!-- Wheel Transmission =============================================== --> 
-    <transmission name="p3at_front_${suffix}_wheel_transmission" >
+    <!-- Wheel Transmission =============================================== -->
+    <xacro:if value="$(arg control)" > 
     
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="p3at_front_${suffix}_wheel_joint" />
-      <actuator name="p3at_front_${suffix}_motor" >
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
+      <transmission name="p3at_front_${suffix}_wheel_transmission" >
       
-    </transmission>
-    
-    <transmission name="p3at_back_${suffix}_wheel_transmission" >
-    
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="p3at_back_${suffix}_wheel_joint" />
-      <actuator name="p3at_back_${suffix}_motor" >
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="p3at_front_${suffix}_wheel_joint" />
+        <actuator name="p3at_front_${suffix}_motor" >
+          <hardwareInterface>EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+        
+      </transmission>
       
-    </transmission>
+      <transmission name="p3at_back_${suffix}_wheel_transmission" >
+      
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="p3at_back_${suffix}_wheel_joint" />
+        <actuator name="p3at_back_${suffix}_motor" >
+          <hardwareInterface>EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+        
+      </transmission>
+      
+    </xacro:if>
     
   </xacro:macro>
 
@@ -560,52 +564,74 @@
   <xacro:include filename="$(find pandora_sensors_description)/urdf/kinect_camera.urdf.xacro" />
   
   <xacro:kinect_caster parent="base_link" >
+  
     <origin xyz="0.2 0 0.33" rpy="0 0 0" />
+    
   </xacro:kinect_caster>
   
-  <xacro:sensor_transmission sensor="kinect" rotation="pitch" />
-  <xacro:sensor_transmission sensor="kinect" rotation="yaw" />
+  <xacro:if value="$(arg control)" >
+  
+    <xacro:sensor_transmission sensor="kinect" rotation="pitch" />
+    <xacro:sensor_transmission sensor="kinect" rotation="yaw" />
+      
+  </xacro:if>
   
   <!-- Hokuyo Laser ======================================================= --> 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/hokuyo_utm_30lx.urdf.xacro" />
   
   <xacro:hokuyo_caster parent="base_link" >
+  
     <origin xyz="0.25 0 0.15" rpy="0 0 0" />
+    
   </xacro:hokuyo_caster>
   
-  <xacro:sensor_transmission sensor="laser" rotation="roll" />
-  <xacro:sensor_transmission sensor="laser" rotation="pitch" />
+  <xacro:if value="$(arg control)" >
+    
+    <xacro:sensor_transmission sensor="laser" rotation="roll" />
+    <xacro:sensor_transmission sensor="laser" rotation="pitch" />
+      
+  </xacro:if>
   
   <!-- Sonars ============================================================= --> 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/sonar_sensor.urdf.xacro" />
   
   <xacro:sonar_caster name="left_rear" parent="base_link" >
+  
     <origin xyz="-0.2 0.15 0.13" rpy="0 0 3.14" />
+    
   </xacro:sonar_caster>
   
   <xacro:sonar_caster name="right_rear" parent="base_link" >
+  
     <origin xyz="-0.2 -0.15 0.13" rpy="0 0 3.14" />
+    
   </xacro:sonar_caster>
   
   <!-- Thermal ============================================================ --> 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/thermal_sensor.urdf.xacro" />
   
   <xacro:thermal_caster parent="base_link" >
+  
     <origin xyz="0.2 -0.05 0.23" rpy="0 0 0" />
+    
   </xacro:thermal_caster>
   
   <!-- CO2 ================================================================ --> 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/co2_sensor.urdf.xacro" />
   
   <xacro:co2_caster parent="base_link" >
+  
     <origin xyz="0.2 0 0.36" rpy="0 0 0" />
+    
   </xacro:co2_caster>
   
   <!-- Microphone ========================================================= --> 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/microphone_sensor.urdf.xacro" />
   
   <xacro:microphone_caster parent="base_link" >
+  
     <origin xyz="0.2 0 0.38" rpy="0 0 0" />
+    
   </xacro:microphone_caster>
 
 <!-- ###################################################################### -->

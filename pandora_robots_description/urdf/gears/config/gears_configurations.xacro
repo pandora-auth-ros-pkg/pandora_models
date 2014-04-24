@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-<!-- Elements Status ###################################################### -->
+<!-- Element Status ####################################################### -->
 
   <!-- Robot ============================================================== -->
   <xacro:property name="static_robot" value="false" />
@@ -24,11 +24,10 @@
     <xacro:property name="enable_co2_sensor" value="false" />
     <xacro:property name="enable_microphone_sensor" value="false" />
   <!-- Transmission ======================================================= -->
-  <xacro:property name="enable_transmission" value="true" />
-    <xacro:property name="enable_sensor_transmission" value="false" />
-      <xacro:property name="enable_laser_sensor_transmission" value="true" />
-      <xacro:property name="enable_kinect_sensor_transmission" value="true" />
-    <xacro:property name="enable_wheel_transmission" value="true" />
+  <xacro:property name="enable_sensor_transmission" value="true" />
+    <xacro:property name="enable_laser_sensor_transmission" value="true" />
+    <xacro:property name="enable_kinect_sensor_transmission" value="true" />
+  <xacro:property name="enable_wheel_transmission" value="true" />
   <!-- Plugins ============================================================ -->
   <xacro:property name="enable_plugins" value="true" />
     <xacro:property name="enable_pandora_differential_plugin" value="true" />
