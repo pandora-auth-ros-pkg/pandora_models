@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-<!-- Differential Plugin ################################################## -->
+<!-- Differential ######################################################### -->
 
   <xacro:macro name="pandora_differential_plugin" >
     <!-- ================================================================== -->
@@ -38,7 +38,7 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
-<!-- 3D Pose Plugin ####################################################### -->
+<!-- 3D Pose ############################################################## -->
 
   <xacro:macro name="pandora_p3d_plugin" >
     <!-- ================================================================== -->
@@ -61,7 +61,7 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
-<!-- Imu Plugin ########################################################### -->
+<!-- Imu ################################################################## -->
 
   <xacro:macro name="ros_imu_plugin" >
     <!-- ================================================================== -->
@@ -69,12 +69,22 @@
 
       <plugin name="imu_en_ros"
               filename="libgazebo_ros_imu.so" >
+        
+        <updateRate>50.0</updateRate>
+        
+        <topicName>/sensors/imu</topicName>
+        <serviceName>default_imu</serviceName>
 
         <robotNamespace>${robot_namespace}</robotNamespace>
 
         <bodyName>${base_link_name}_link</bodyName>
-
-        <topicName>/sensors/imu</topicName>
+        <!-- <rollCorrectionJoint>laser_roll_joint</rollCorrectionJoint> -->
+        <!-- <pitchCorrectionJoint>laser_pitch_joint</pitchCorrectionJoint> -->
+        
+        <gaussianNoise>0.0</gaussianNoise>
+        
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
 
       </plugin>
 
@@ -82,7 +92,7 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
-<!-- Ros Control Plugin ################################################### -->
+<!-- Ros Control ########################################################## -->
 
   <xacro:macro name="ros_control_plugin" >
     <!-- ================================================================== -->
@@ -101,7 +111,7 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
-<!-- Skid Steer Drive Plugin ############################################## -->
+<!-- Skid Steer Drive ##################################################### -->
 
   <xacro:macro name="ros_skid_steer_drive_plugin" >
     <!-- ================================================================== -->

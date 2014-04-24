@@ -69,11 +69,14 @@
   <xacro:property name="side_joint_max_angle" value="0.785" />
   <xacro:property name="side_joint_damping" value="0.0" />
   <!-- ==================================================================== -->
-  <xacro:property name="max_linear_velocity" value="2.0" />
-  <xacro:property name="max_angular_velocity" value="2.0" />
+  <xacro:property name="max_robot_linear_velocity" value="2.0" />
+  <xacro:property name="max_robot_angular_velocity" value="2.0" />
+  <xacro:property name="max_kinect_angular_velocity" value="2.5" />
+  <xacro:property name="max_laser_angular_velocity" value="2.5" />
   <!-- ==================================================================== -->
-  <xacro:property name="max_linear_acceleration" value="1.0" />
-  <xacro:property name="max_angular_acceleration" value="1.0" />
+  <xacro:property name="max_robot_linear_acceleration" value="1.0" />
+  <xacro:property name="max_kinect_angular_acceleration" value="0.0" />
+  <xacro:property name="max_laser_angular_acceleration" value="0.0" />
   <!-- ==================================================================== -->
   <!-- TODO -->
   <xacro:property name="wheel_joint_max_torque" value="5" />
