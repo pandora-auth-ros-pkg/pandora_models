@@ -43,7 +43,7 @@
 
     <gazebo reference="${prefix_y}_${side_link_name}_link" >
 
-      <material>Gazebo/White</material>
+      <material>Gazebo/FlatBlack</material>
       <!-- <gravity>false</gravity> -->
       <!-- <dampingFactor>0.0</dampingFactor> -->
       <!-- <maxVel>0.0</maxVel> -->
@@ -160,8 +160,8 @@
     <!-- <dynamics damping="0.0"
                    friction="0.0" /> --> 
 
-    <limit effort="100.0"
-           velocity="100.0" />
+    <limit effort="50.0"
+           velocity="50.0" />
       <!-- lower="-0.0" -->
       <!-- upper="0.0" -->
 

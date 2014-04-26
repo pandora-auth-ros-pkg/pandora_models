@@ -16,7 +16,7 @@
     <xacro:property name="enable_side_joints" value="true" />
     <xacro:property name="enable_wheel_joints" value="true" />
   <!-- Sensors ============================================================ -->
-  <xacro:property name="enable_sensors" value="false" />
+  <xacro:property name="enable_sensors" value="true" />
     <xacro:property name="enable_kinect_sensor" value="true" />
     <xacro:property name="enable_hokuyo_laser_sensor" value="true" />
     <xacro:property name="enable_sonar_sensor" value="false" />
