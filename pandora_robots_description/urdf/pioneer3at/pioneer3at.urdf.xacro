@@ -442,7 +442,7 @@
     </gazebo>
     
     <!-- Wheel Transmission =============================================== -->
-    <xacro:if value="$(arg control)" > 
+    <xacro:if value="$(arg control)" >
     
       <transmission name="p3at_front_${suffix}_wheel_transmission" >
       
@@ -478,14 +478,18 @@
   
 <!-- Plugins ############################################################## -->
   
-  <!-- Ros Control ======================================================== --> 
-  <gazebo>
+  <!-- Ros Control ======================================================== -->
+  <xacro:if value="$(arg control)" >
   
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
-      <robotNamespace></robotNamespace>
-    </plugin>
+    <gazebo>
     
-  </gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
+        <robotNamespace></robotNamespace>
+      </plugin>
+      
+    </gazebo>
+      
+  </xacro:if>
   
   <!-- Skid Steer Drive =================================================== --> 
   <gazebo>

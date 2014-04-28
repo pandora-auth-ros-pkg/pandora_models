@@ -176,8 +176,10 @@
       <xacro:ros_imu_plugin />
     </xacro:if>
     <!-- ================================================================== -->
-    <xacro:if value="${enable_ros_control_plugin}" >
-      <xacro:ros_control_plugin />
+    <xacro:if value="$(arg control)" >
+      <xacro:if value="${enable_ros_control_plugin}" >
+        <xacro:ros_control_plugin />
+      </xacro:if>
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_ros_skid_steer_drive_plugin}" >
