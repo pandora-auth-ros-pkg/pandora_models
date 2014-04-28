@@ -173,12 +173,20 @@
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_ros_imu_plugin}" >
-      <xacro:ros_imu_plugin />
+      <xacro:unless value="${enable_pandora_imu_stabilizer_plugin}" >
+        <xacro:ros_imu_plugin />
+      </xacro:unless>
+    </xacro:if>
+    <!-- ================================================================== -->
+    <xacro:if value="${enable_pandora_imu_stabilizer_plugin}" >
+      <xacro:unless value="${enable_ros_imu_plugin}" >
+        <xacro:pandora_imu_stabilizer_plugin />
+      </xacro:unless>
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="$(arg control)" >
       <xacro:if value="${enable_ros_control_plugin}" >
-        <xacro:ros_control_plugin />
+        <xacro:gazebo_ros_control_plugin />
       </xacro:if>
     </xacro:if>
     <!-- ================================================================== -->

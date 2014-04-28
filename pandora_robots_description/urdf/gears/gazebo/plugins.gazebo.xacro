@@ -61,13 +61,13 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
-<!-- Imu ################################################################## -->
+<!-- Ros Imu ############################################################## -->
 
   <xacro:macro name="ros_imu_plugin" >
     <!-- ================================================================== -->
     <gazebo>
 
-      <plugin name="imu_en_ros"
+      <plugin name="RosImuPlugin"
               filename="libgazebo_ros_imu.so" >
         
         <updateRate>50.0</updateRate>
@@ -78,8 +78,38 @@
         <robotNamespace>${robot_namespace}</robotNamespace>
 
         <bodyName>${base_link_name}_link</bodyName>
-        <!-- <rollCorrectionJoint>laser_roll_joint</rollCorrectionJoint> -->
-        <!-- <pitchCorrectionJoint>laser_pitch_joint</pitchCorrectionJoint> -->
+        
+        <gaussianNoise>0.0</gaussianNoise>
+        
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+
+      </plugin>
+
+    </gazebo>
+    <!-- ================================================================== -->
+  </xacro:macro>
+
+<!-- Pandora Imu ########################################################## -->
+
+  <xacro:macro name="pandora_imu_stabilizer_plugin" >
+    <!-- ================================================================== -->
+    <gazebo>
+
+      <plugin name="PandoraImuStabilizerPlugin"
+              filename="libpandora_imu_stabilizer_plugin.so" >
+        
+        <updateRate>50.0</updateRate>
+        
+        <topicName>/sensors/imu</topicName>
+        <serviceName>default_imu</serviceName>
+
+        <robotNamespace>${robot_namespace}</robotNamespace>
+
+        <bodyName>${base_link_name}_link</bodyName>
+        
+        <rollCorrectionJoint>laser_roll_joint</rollCorrectionJoint>
+        <pitchCorrectionJoint>laser_pitch_joint</pitchCorrectionJoint>
         
         <gaussianNoise>0.0</gaussianNoise>
         
@@ -94,14 +124,15 @@
 
 <!-- Ros Control ########################################################## -->
 
-  <xacro:macro name="ros_control_plugin" >
+  <xacro:macro name="gazebo_ros_control_plugin" >
     <!-- ================================================================== -->
     <gazebo>
 
-      <plugin name="gazebo_ros_control"
+      <plugin name="GazeboRosControl"
               filename="libgazebo_ros_control.so" >
 
-      <robotNamespace>${robot_namespace}</robotNamespace>
+      <!-- <robotNamespace>${robot_namespace}</robotNamespace> -->
+      <robotNamespace>gears</robotNamespace>
 
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
 

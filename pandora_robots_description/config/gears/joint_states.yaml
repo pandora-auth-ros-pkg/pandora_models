@@ -1,3 +1,3 @@
 source_list: 
-  - stabilizer_joint_states
+  - gears/joint_states
   - differential_side_joint_states
