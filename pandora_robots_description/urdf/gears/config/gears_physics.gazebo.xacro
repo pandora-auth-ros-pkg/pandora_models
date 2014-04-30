@@ -20,7 +20,7 @@
 
     <gazebo reference="${base_link_name}_link" >
 
-      <material>Gazebo/Grey</material>
+      <!-- <material>Gazebo/Grey</material> -->
       <!-- <gravity>false</gravity> -->
       <!-- <dampingFactor>0.0</dampingFactor> -->
       <!-- <maxVel>0.0</maxVel> -->
@@ -43,7 +43,7 @@
 
     <gazebo reference="${prefix_y}_${side_link_name}_link" >
 
-      <material>Gazebo/FlatBlack</material>
+      <!-- <material>Gazebo/FlatBlack</material> -->
       <!-- <gravity>false</gravity> -->
       <!-- <dampingFactor>0.0</dampingFactor> -->
       <!-- <maxVel>0.0</maxVel> -->
@@ -66,7 +66,7 @@
 
     <gazebo reference="${prefix_y}_${prefix_x}_${wheel_link_name}_link" >
 
-      <material>Gazebo/FlatBlack</material>
+      <!-- <material>Gazebo/FlatBlack</material> -->
       <!-- <gravity>true</gravity> -->
       <!-- <dampingFactor>0</dampingFactor> -->
       <!-- <maxVel>10</maxVel> -->
