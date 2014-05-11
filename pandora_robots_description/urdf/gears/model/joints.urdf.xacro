@@ -2,6 +2,24 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
+<!-- Linear Elevator ###################################################### -->
+
+  <xacro:macro name="linear_elevator_joint" >
+    <!-- ================================================================== -->
+    <joint name="${linear_elevator_joint_name}_joint"
+           type="${linear_elevator_joint_type}" >
+
+      <parent link="${base_link_name}_link" />
+      <child link="${linear_elevator_link_name}_link" />
+
+      <xacro:linear_elevator_joint_origin />
+
+      <xacro:linear_elevator_joint_urdf_physics />
+
+    </joint>
+    <!-- ================================================================== -->
+  </xacro:macro>
+
 <!-- Side ################################################################# -->
 
   <xacro:macro name="side_joint"

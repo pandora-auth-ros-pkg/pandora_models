@@ -9,10 +9,12 @@
   <!-- Links ============================================================== -->
   <xacro:property name="enable_links" value="true" />
     <xacro:property name="enable_base_link" value="true" />
+    <xacro:property name="enable_linear_elevator_link" value="true" />
     <xacro:property name="enable_side_links" value="true" />
     <xacro:property name="enable_wheel_links" value="true" />
   <!-- Joints ============================================================= -->
   <xacro:property name="enable_joints" value="true" />
+    <xacro:property name="enable_linear_elevator_joint" value="true" />
     <xacro:property name="enable_side_joints" value="true" />
     <xacro:property name="enable_wheel_joints" value="true" />
   <!-- Sensors ============================================================ -->
@@ -32,13 +34,16 @@
   <!-- SDF Physics ======================================================== -->
   <xacro:property name="enable_sdf_physics" value="true" />
     <xacro:property name="enable_base_link_sdf_physics" value="false" />
+    <xacro:property name="enable_linear_elevator_link_sdf_physics" value="false" />
     <xacro:property name="enable_side_link_sdf_physics" value="false" />
     <xacro:property name="enable_wheel_link_sdf_physics" value="true" />
+    <xacro:property name="enable_linear_elevator_joint_sdf_physics" value="false" />
     <xacro:property name="enable_side_joint_sdf_physics" value="false" />
     <xacro:property name="enable_wheel_joint_sdf_physics" value="false" />
   <!-- Meshes ============================================================= -->
   <!-- TODO -->
   <xacro:property name="enable_simlified_visual_base_link_mesh" value="false" />
+  <xacro:property name="enable_simlified_visual_linear_elevator_link_mesh" value="false" />
   <xacro:property name="enable_simlified_visual_side_link_mesh" value="false" />
   <xacro:property name="enable_simlified_visual_wheel_link_mesh" value="false" />
   <!-- ==================================================================== -->
@@ -48,6 +53,7 @@
   <!-- ==================================================================== -->
   <xacro:property name="side_joint_type" value="revolute" />
   <xacro:property name="wheel_joint_type" value="continuous" />
+  <xacro:property name="linear_elevator_joint_type" value="prismatic" />
   <!-- ==================================================================== -->
 
 <!-- Gears Coefficients ################################################### -->
@@ -59,7 +65,8 @@
   <xacro:property name="wheel_k_d" value="1.0" />
   <xacro:property name="wheel_min_depth" value="0.001" />
   <!-- ==================================================================== -->
-  <xacro:property name="side_joint_max_angle" value="0.785" />
+  <xacro:property name="linear_elevator_joint_max_limit" value="0.2" />
+  <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="side_joint_damping" value="0.0" />
   <!-- ==================================================================== -->
   <xacro:property name="max_robot_linear_velocity" value="2.0" />

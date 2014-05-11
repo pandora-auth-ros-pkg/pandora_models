@@ -26,6 +26,10 @@
       <xacro:base_link />
     </xacro:if>
     <!-- ================================================================== -->
+    <xacro:if value="${enable_linear_elevator_link}" >
+      <xacro:linear_elevator_link />
+    </xacro:if>
+    <!-- ================================================================== -->
     <xacro:if value="${enable_side_links}" >
       <xacro:side_link prefix_y="left" reflect_y="1" />
       <xacro:side_link prefix_y="right" reflect_y="-1" />
@@ -43,6 +47,10 @@
 <!-- Load Joints ########################################################## -->
 
   <xacro:if value="${enable_joints}" >
+    <!-- ================================================================== -->
+    <xacro:if value="${enable_linear_elevator_joint}" >
+      <xacro:linear_elevator_joint />
+    </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_side_joints}" >
       <xacro:side_joint prefix_y="left" reflect_y="1" />
@@ -65,35 +73,43 @@
     <xacro:robot_sdf_physics />
 
     <xacro:if value="${enable_sdf_physics}" >
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_base_link_sdf_physics}" >
         <xacro:base_link_sdf_physics />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
+      <xacro:if value="${enable_linear_elevator_link_sdf_physics}" >
+        <xacro:linear_elevator_link_sdf_physics />
+      </xacro:if>
+      <!-- ================================================================ -->
       <xacro:if value="${enable_side_link_sdf_physics}" >
         <xacro:side_link_sdf_physics prefix_y="left" />
         <xacro:side_link_sdf_physics prefix_y="right" />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_wheel_link_sdf_physics}" >
         <xacro:wheel_link_sdf_physics prefix_y="left" prefix_x="front" />
         <xacro:wheel_link_sdf_physics prefix_y="left" prefix_x="rear" />
         <xacro:wheel_link_sdf_physics prefix_y="right" prefix_x="front" />
         <xacro:wheel_link_sdf_physics prefix_y="right" prefix_x="rear" />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
+      <xacro:if value="${enable_linear_elevator_joint_sdf_physics}" >
+        <xacro:linear_elevator_joint_sdf_physics />
+      </xacro:if>
+      <!-- ================================================================ -->
       <xacro:if value="${enable_side_joint_sdf_physics}" >
         <xacro:side_joint_sdf_physics prefix_y="left" />
         <xacro:side_joint_sdf_physics prefix_y="right" />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_wheel_joint_sdf_physics}" >
         <xacro:wheel_joint_sdf_physics prefix_y="left" prefix_x="front" />
         <xacro:wheel_joint_sdf_physics prefix_y="left" prefix_x="rear" />
         <xacro:wheel_joint_sdf_physics prefix_y="right" prefix_x="front" />
         <xacro:wheel_joint_sdf_physics prefix_y="right" prefix_x="rear" />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
     </xacro:if>
     
   </xacro:unless>
@@ -139,28 +155,32 @@
   <xacro:unless value="$(arg real)" >
   
     <xacro:if value="$(arg control)" >
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_wheel_links}" >
         <xacro:wheel_transmission prefix_y="left" prefix_x="front" />
         <xacro:wheel_transmission prefix_y="left" prefix_x="rear" />
         <xacro:wheel_transmission prefix_y="right" prefix_x="front" />
         <xacro:wheel_transmission prefix_y="right" prefix_x="rear" />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
+      <xacro:if value="${enable_linear_elevator_link}" >
+        <xacro:linear_elevator_transmission />
+      </xacro:if>
+      <!-- ================================================================ -->
       <xacro:if value="${enable_sensors}" >
-        <!-- ================================================================ -->
+        <!-- ============================================================== -->
         <xacro:if value="${enable_kinect_sensor}" >
           <xacro:sensor_transmission sensor="kinect" rotation="pitch" />
           <xacro:sensor_transmission sensor="kinect" rotation="yaw" />
         </xacro:if>
-        <!-- ================================================================ -->
+        <!-- ============================================================== -->
         <xacro:if value="${enable_hokuyo_laser_sensor}" >
           <xacro:sensor_transmission sensor="laser" rotation="roll" />
           <xacro:sensor_transmission sensor="laser" rotation="pitch" />
         </xacro:if>
-        <!-- ================================================================ -->
+        <!-- ============================================================== -->
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
     </xacro:if>
     
   </xacro:unless>
@@ -170,15 +190,15 @@
   <xacro:unless value="$(arg real)" >
   
     <xacro:if value="${enable_plugins}" >
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_pandora_differential_plugin}" >
         <xacro:pandora_differential_plugin />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_pandora_p3d_plugin}" >
         <xacro:pandora_p3d_plugin />
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="$(arg control)" >
         <xacro:if value="$(arg interface)" >
           <xacro:gazebo_ros_control_plugin hw_sim="pandora_gazebo_interface/GazeboInterface" />
@@ -187,13 +207,13 @@
           <xacro:gazebo_ros_control_plugin hw_sim="gazebo_ros_control/DefaultRobotHWSim" />
         </xacro:unless>
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="$(arg control)" >
         <xacro:if value="${enable_ros_imu_plugin}" >
           <xacro:ros_imu_plugin />
         </xacro:if>
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:if value="${enable_sensors}" >
         <xacro:if value="${enable_hokuyo_laser_sensor}" >
           <xacro:unless value="$(arg control)" >
@@ -203,11 +223,11 @@
           </xacro:unless>
         </xacro:if>
       </xacro:if>
-      <!-- ================================================================== -->
+      <!-- ================================================================ -->
       <xacro:unless value="$(arg control)" >
         <xacro:ros_skid_steer_drive_plugin />
       </xacro:unless>
-    <!-- ==================================================================== -->
+    <!-- ================================================================== -->
     </xacro:if>
     
   </xacro:unless>

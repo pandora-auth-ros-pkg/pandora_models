@@ -12,6 +12,12 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_inertial_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_link_inertial_origin"
                params="reflect_y" >
 
@@ -38,6 +44,12 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_visual_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_link_visual_origin"
                params="reflect_y" >
 
@@ -59,6 +71,12 @@
 
   <!-- ==================================================================== -->
   <xacro:macro name="base_link_collision_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_collision_origin" >
 
     <xacro:default_origin />
 

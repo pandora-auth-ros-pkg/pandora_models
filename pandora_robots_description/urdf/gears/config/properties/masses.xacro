@@ -9,6 +9,12 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_mass" >
+
+    <mass value="0.001" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_link_mass" >
 
     <mass value="0.93539" />

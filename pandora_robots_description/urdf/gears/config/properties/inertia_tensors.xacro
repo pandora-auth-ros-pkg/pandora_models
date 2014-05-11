@@ -14,6 +14,17 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_inertia" >
+
+    <inertia ixx="0.001"
+             ixy="0.001"
+             ixz="0.001"
+             iyy="0.001"
+             iyz="0.001"
+             izz="0.001" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_link_inertia"
                params="reflect_y" >
 
