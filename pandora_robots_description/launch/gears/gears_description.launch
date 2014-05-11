@@ -4,10 +4,8 @@
 
   <arg name="control" default="false" />
 
-  <group if="$(arg control)">
-    <include file="$(find pandora_gazebo_controllers)/launch/pandora_gazebo_controllers.launch" >
-      <arg name="robot" value="gears" />
-    </include>
+  <group if="$(arg control)" >
+    <include file="$(find pandora_gazebo_controllers)/launch/pandora_gazebo_controllers.launch" />
   </group>
 
   <param name="robot_description"
