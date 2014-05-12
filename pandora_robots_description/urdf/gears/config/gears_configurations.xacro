@@ -65,7 +65,7 @@
   <xacro:property name="wheel_k_d" value="1.0" />
   <xacro:property name="wheel_min_depth" value="0.001" />
   <!-- ==================================================================== -->
-  <xacro:property name="linear_elevator_joint_max_limit" value="0.2" />
+  <xacro:property name="linear_elevator_joint_max_limit" value="0.24" />
   <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="side_joint_damping" value="0.0" />
   <!-- ==================================================================== -->

@@ -199,7 +199,7 @@
     <dynamics damping="${side_joint_damping}" />
          <!-- friction="0.0" /> --> 
 
-    <limit lower="-${side_joint_max_limit}"
+    <limit lower="0"
            upper="${side_joint_max_limit}"
            effort="100.0"
            velocity="100.0" />
@@ -221,8 +221,8 @@
     <!-- <dynamics damping="0.0"
                    friction="0.0" /> --> 
 
-    <limit effort="50.0"
-           velocity="50.0" />
+    <limit effort="100.0"
+           velocity="100.0" />
       <!-- lower="-0.0" -->
       <!-- upper="0.0" -->
 
