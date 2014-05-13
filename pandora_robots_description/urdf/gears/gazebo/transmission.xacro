@@ -6,7 +6,7 @@
 
   <xacro:macro name="linear_elevator_transmission" >
     <!-- ================================================================== -->
-    <transmission name="${linear_elevatorlink_name}_transmission" >
+    <transmission name="${linear_elevator_link_name}_transmission" >
 
       <type>transmission_interface/SimpleTransmission</type>
 

@@ -7,14 +7,15 @@
   <!-- ==================================================================== -->
   <xacro:macro name="base_link_inertial_origin" >
 
-    <origin xyz="-1.1543E-07 -1.3195E-07 0.23164"
+    <origin xyz="-0.010032 -0.0067035 0.16451"
             rpy="${zero}" />
 
   </xacro:macro>
   <!-- ==================================================================== -->
   <xacro:macro name="linear_elevator_link_inertial_origin" >
 
-    <xacro:default_origin />
+    <origin xyz="0.01229 0.026011 0.26669"
+            rpy="${zero}" />
 
   </xacro:macro>
   <!-- ==================================================================== -->

@@ -125,7 +125,7 @@
 <!-- Ros Control ########################################################## -->
 
   <xacro:macro name="gazebo_ros_control_plugin"
-               params="hw_sim" >
+               params="hw_sim ns" >
     <!-- ================================================================== -->
     <gazebo>
 
@@ -133,7 +133,7 @@
               filename="libgazebo_ros_control.so" >
 
       <!-- <robotNamespace>${robot_namespace}</robotNamespace> -->
-      <robotNamespace>control</robotNamespace>
+      <robotNamespace>${ns}</robotNamespace>
 
       <robotSimType>${hw_sim}</robotSimType>
 

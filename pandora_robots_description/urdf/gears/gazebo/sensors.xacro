@@ -23,9 +23,10 @@
   <xacro:macro name="kinect_sensor"
                params="control" >
     <!-- ================================================================== -->
-    <xacro:kinect_caster parent="${base_link_name}_link" control="${control}" >
+    <xacro:kinect_caster parent="${linear_elevator_link_name}_link" 
+                         control="${control}" >
 
-      <origin xyz="0.156 0.0 0.526"
+      <origin xyz="0.12252 0.01239 0.24402"
               rpy="${zero}" />
 
     </xacro:kinect_caster>
@@ -53,8 +54,8 @@
     <xacro:sonar_caster name="${prefix_y}_rear"
                         parent="${base_link_name}_link" >
 
-      <origin xyz="-0.2 ${ reflect_y * ( 0.15 ) } 0.13"
-              rpy="0.0 0.0 ${PI}" />
+      <origin xyz="-0.15519 ${ reflect_y * ( 0.113 + ( - 1 ) * reflect_y * 0.00051 ) } 0.14305"
+              rpy="0.0 0.0 ${ PI + ( - 1 ) * refleft_y * PI_6 }" />
 
     </xacro:sonar_caster>
     <!-- ================================================================== -->
@@ -64,9 +65,9 @@
 
   <xacro:macro name="thermal_sensor" >
     <!-- ================================================================== -->
-    <xacro:thermal_caster parent="${base_link_name}_link" >
+    <xacro:thermal_caster parent="${linear_elevator_link_name}_link" >
 
-      <origin xyz="0.2 -0.05 0.23"
+      <origin xyz="-0.00411 0.10566 0.42419"
               rpy="${zero}" />
 
     </xacro:thermal_caster>
@@ -77,9 +78,9 @@
 
   <xacro:macro name="co2_sensor" >
     <!-- ================================================================== -->
-    <xacro:co2_caster parent="${base_link_name}_link" >
+    <xacro:co2_caster parent="${linear_elevator_link_name}_link" >
 
-      <origin xyz="0.2 0.0 0.36"
+      <origin xyz="-0.00411 0.09004 0.40273"
               rpy="${zero}" />
 
     </xacro:co2_caster>
@@ -90,9 +91,9 @@
 
   <xacro:macro name="microphone_sensor" >
     <!-- ================================================================== -->
-    <xacro:microphone_caster parent="${base_link_name}_link" >
+    <xacro:microphone_caster parent="${linear_elevator_link_name}_link" >
 
-      <origin xyz="0.2 0.0 0.38"
+      <origin xyz="-0.00411 0.1211 0.40273"
               rpy="${zero}" />
 
     </xacro:microphone_caster>
