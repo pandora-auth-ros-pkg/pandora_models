@@ -15,6 +15,8 @@
   <!-- ==================================================================== -->
   <xacro:property name="linear_elevator_link_name" value="linear_elevator" />
   <!-- ==================================================================== -->
+  <xacro:property name="linear_head_link_name" value="linear_head" />
+  <!-- ==================================================================== -->
   <xacro:property name="side_link_name" value="side" />
   <!-- ==================================================================== -->
   <xacro:property name="wheel_link_name" value="wheel" />
@@ -24,6 +26,10 @@
 
   <!-- ==================================================================== -->
   <xacro:property name="linear_elevator_joint_name" value="linear_elevator" />
+  <!-- ==================================================================== -->
+  <xacro:property name="linear_head_pitch_joint_name" value="linear_head_pitch" />
+  <!-- ==================================================================== -->
+  <xacro:property name="linear_head_yaw_joint_name" value="linear_head_yaw" />
   <!-- ==================================================================== -->
   <xacro:property name="side_joint_name" value="side" />
   <!-- ==================================================================== -->

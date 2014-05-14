@@ -15,7 +15,20 @@
   <xacro:macro name="linear_elevator_link_inertial_origin" >
 
     <origin xyz="0.01229 0.026011 0.26669"
-            rpy="${zero}" />
+            rpy="${zero}" /><!--TODO-->
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_base_link_inertial_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_link_inertial_origin" >
+
+    <origin xyz="0.0 0.0 0.0"
+            rpy="${zero}" /><!--TODO-->
 
   </xacro:macro>
   <!-- ==================================================================== -->
@@ -51,6 +64,18 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_base_link_visual_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_link_visual_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_link_visual_origin"
                params="reflect_y" >
 
@@ -78,6 +103,18 @@
   </xacro:macro>
   <!-- ==================================================================== -->
   <xacro:macro name="linear_elevator_link_collision_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_base_link_collision_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_link_collision_origin" >
 
     <xacro:default_origin />
 

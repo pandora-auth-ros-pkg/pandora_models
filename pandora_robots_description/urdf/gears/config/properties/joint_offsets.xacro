@@ -10,6 +10,20 @@
 
   </xacro:macro>
   <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_pitch_joint_origin" >
+
+    <origin xyz="0.0 0.0 0.0"
+            rpy="${zero}" /><!--TODO-->
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_yaw_joint_origin" >
+
+    <origin xyz="0.0 0.0 0.0"
+            rpy="${zero}" /><!--TODO Translate because of second servo -->
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
   <xacro:macro name="side_joint_origin"
                params="reflect_y" >
 

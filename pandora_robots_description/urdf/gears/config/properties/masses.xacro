@@ -11,7 +11,19 @@
   <!-- ==================================================================== -->
   <xacro:macro name="linear_elevator_link_mass" >
 
-    <mass value="1.0889" />
+    <mass value="1.0889" /><!--TODO-->
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_base_link_mass" >
+
+    <mass value="0.001" /><!--TODO Reduce -->
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_head_link_mass" >
+
+    <mass value="0.1" /><!--TODO-->
 
   </xacro:macro>
   <!-- ==================================================================== -->

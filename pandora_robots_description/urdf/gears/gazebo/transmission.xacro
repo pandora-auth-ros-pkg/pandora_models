@@ -21,6 +21,26 @@
     <!-- ================================================================== -->
   </xacro:macro>
 
+<!-- Linear Head ########################################################## -->
+
+  <xacro:macro name="linear_head_transmission"
+               params="rotation" >
+    <!-- ================================================================== -->
+    <transmission name="${linear_head_link_name}_${rotation}_transmission" >
+
+      <type>transmission_interface/SimpleTransmission</type>
+
+      <joint name="${linear_head_link_name}_${rotation}_joint" />
+
+      <actuator name="${linear_head_link_name}_${rotation}_motor" >
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1.0</mechanicalReduction>
+      </actuator>
+
+    </transmission>
+    <!-- ================================================================== -->
+  </xacro:macro>
+
 <!-- Wheel ################################################################ -->
 
   <xacro:macro name="wheel_transmission"
