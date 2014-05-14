@@ -33,45 +33,6 @@
 
     </link>
 
-    <link name="kinect_camera" >
-
-      <inertial>
-        <origin xyz="0 0 0"
-                rpy="0 0 0" />
-        <mass value="0.001" />
-        <inertia ixx="0.00004075"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.00004075"
-                 iyz="0.0"
-                 izz="0.00004075" />
-      </inertial>
-
-      <collision name="collision" >
-        <geometry>
-          <box size="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
-
-      <visual name="visual" >
-        <geometry>
-          <box size="0.001 0.001 0.001" />
-        </geometry>
-      </visual>
-
-    </link> 
-
-    <joint name="kinect_camera_joint"
-           type="fixed" >
-
-      <parent link="kinect_link" />
-      <child link="kinect_camera" />
-
-      <origin xyz="0 0 0"
-              rpy="-1.57 0 -1.57" />
-
-    </joint>
-
     <gazebo reference="kinect_link" >
 
       <sensor name="kinect"
