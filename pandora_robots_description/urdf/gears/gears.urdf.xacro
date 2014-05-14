@@ -131,13 +131,13 @@
       <xacro:hokuyo_laser_sensor />
     </xacro:if>
     <!-- ================================================================== -->
-    <xacro:if value="${enable_sonar_sensor}" >
+    <xacro:if value="${enable_sonar_sensors}" >
       <xacro:sonar_sensor prefix_y="left" reflect_y="1" />
       <xacro:sonar_sensor prefix_y="right" reflect_y="-1" />
     </xacro:if>
     <!-- ================================================================== -->
-    <xacro:if value="${enable_thermal_sensor}" >
-       <xacro:thermal_sensor />
+    <xacro:if value="${enable_thermal_sensors}" >
+       <xacro:thermal_sensors />
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_co2_sensor}" >

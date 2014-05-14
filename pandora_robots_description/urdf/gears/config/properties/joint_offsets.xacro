@@ -5,7 +5,7 @@
   <!-- ==================================================================== -->
   <xacro:macro name="linear_elevator_joint_origin" >
 
-    <origin xyz="0.09368 -0.0005 0.19695"
+    <origin xyz="0.09368 -0.0005 0.23995"
             rpy="${zero}" />
 
   </xacro:macro>
