@@ -12,15 +12,15 @@
   <!-- ==================================================================== -->
   <xacro:macro name="linear_head_pitch_joint_origin" >
 
-    <origin xyz="0.0 0.0 0.0"
-            rpy="${zero}" /><!--TODO-->
+    <origin xyz="-0.0145 0.1056 0.35787"
+            rpy="${zero}" />
 
   </xacro:macro>
   <!-- ==================================================================== -->
   <xacro:macro name="linear_head_yaw_joint_origin" >
 
-    <origin xyz="0.0 0.0 0.0"
-            rpy="${zero}" /><!--TODO Translate because of second servo -->
+    <origin xyz="0.0 0.0 0.021"
+            rpy="${zero}" />
 
   </xacro:macro>
   <!-- ==================================================================== -->

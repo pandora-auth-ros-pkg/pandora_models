@@ -26,7 +26,7 @@
     <xacro:kinect_caster parent="${linear_elevator_link_name}_link" 
                          control="${control}" >
 
-      <origin xyz="0.12252 0.01239 0.24402"
+      <origin xyz="0.09144 0.01239 0.19742"
               rpy="${zero}" />
 
     </xacro:kinect_caster>
@@ -40,7 +40,7 @@
     <xacro:hokuyo_caster parent="${base_link_name}_link" >
 
       <origin xyz="0.2 0.0 0.15"
-              rpy="${zero}" />
+              rpy="${zero}" /><!-- FIXME -->
 
     </xacro:hokuyo_caster>
     <!-- ================================================================== -->
@@ -68,24 +68,24 @@
     <xacro:thermal_caster parent="${linear_head_link_name}_link"
                           prefix_y="middle" >
 
-      <origin xyz="0.0 0.0 0.0"
-              rpy="${zero}" /><!--TODO-->
+      <origin xyz="0.01039 0.00007 0.04532"
+              rpy="${zero}" />
 
     </xacro:thermal_caster>
     <!-- ================================================================== -->
     <xacro:thermal_caster parent="${linear_head_link_name}_link"
                           prefix_y="right" >
 
-      <origin xyz="0.0 -0.02 0.0"
-              rpy="${zero}" /><!--TODO-->
+      <origin xyz="-0.00128 0.04774 0.03108"
+              rpy="0 0 ${PI_3}" />
 
     </xacro:thermal_caster>
     <!-- ================================================================== -->
     <xacro:thermal_caster parent="${linear_head_link_name}_link"
                           prefix_y="left" >
 
-      <origin xyz="0.0 0.02 0.0"
-              rpy="${zero}" /><!--TODO-->
+      <origin xyz="-0.00128 -0.04774 0.03108"
+              rpy="0 0 ${ - PI_3}" />
 
     </xacro:thermal_caster>
     <!-- ================================================================== -->
@@ -97,8 +97,8 @@
     <!-- ================================================================== -->
     <xacro:co2_caster parent="${linear_head_link_name}_link" >
 
-      <origin xyz="0.0 0.02 -0.02"
-              rpy="${zero}" /><!--TODO-->
+      <origin xyz="0.01039 -0.01556 0.02386"
+              rpy="${zero}" />
 
     </xacro:co2_caster>
     <!-- ================================================================== -->
@@ -110,8 +110,8 @@
     <!-- ================================================================== -->
     <xacro:microphone_caster parent="${linear_head_link_name}_link" >
 
-      <origin xyz="0.0 -0.02 -0.02"
-              rpy="${zero}" /><!--TODO-->
+      <origin xyz="0.01039 0.01556 0.02386"
+              rpy="${zero}" />
 
     </xacro:microphone_caster>
     <!-- ================================================================== -->
