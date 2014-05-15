@@ -131,7 +131,7 @@
       <limit lower="-1.57"
              upper="1.57"
              effort="300"
-             velocity="100.0" />
+             velocity="100.0" /><!--FIXME-->
 
     </joint>
 
@@ -147,7 +147,7 @@
       <limit lower="-1.57"
              upper="1.57"
              effort="300"
-             velocity="100.0" />
+             velocity="100.0" /><!--FIXME-->
 
     </joint>
 
