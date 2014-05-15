@@ -73,9 +73,9 @@
   <xacro:property name="wheel_k_d" value="1.0" />
   <xacro:property name="wheel_min_depth" value="0.001" />
   <!-- ==================================================================== -->
-  <xacro:property name="linear_elevator_joint_max_limit" value="0.23" />
-  <xacro:property name="linear_head_pitch_joint_max_limit" value="1.57" /> <!-- FIXME -->
-  <xacro:property name="linear_head_yaw_joint_max_limit" value="1.57" /> <!-- FIXME -->
+  <xacro:property name="linear_elevator_joint_max_limit" value="0.0" />
+  <xacro:property name="linear_head_pitch_joint_max_limit" value="0.0" /> <!-- FIXME -->
+  <xacro:property name="linear_head_yaw_joint_max_limit" value="0.0" /> <!-- FIXME -->
   <!-- TODO : Add limits for sensors -->
   <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="side_joint_damping" value="0.0" />

@@ -26,7 +26,7 @@
     <xacro:kinect_caster parent="${linear_elevator_link_name}_link" 
                          control="${control}" >
 
-      <origin xyz="0.09144 0.01239 0.19742"
+      <origin xyz="0.06744 0.01239 0.19742"
               rpy="${zero}" />
 
     </xacro:kinect_caster>
