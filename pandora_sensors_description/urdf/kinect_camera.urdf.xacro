@@ -3,7 +3,13 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <xacro:macro name="kinect_caster"
-               params="parent control *origin" >
+               params="parent
+                       control
+                       pitch_min_limit
+                       pitch_max_limit
+                       yaw_min_limit
+                       yaw_max_limit
+                       *origin" >
 
     <link name="kinect_link" >
 
@@ -117,10 +123,10 @@
         <xacro:insert_block name="origin" />
 
         <axis xyz="0 1 0" />
-        <limit lower="-1.57"
-               upper="1.57"
+        <limit lower="${pitch_min_limit}"
+               upper="${pitch_max_limit}"
                effort="300"
-               velocity="100.0" /><!--FIXME-->
+               velocity="100.0" />
 
       </joint>
       
@@ -152,10 +158,10 @@
                 rpy="0.0 0.0 0.0" />
 
         <axis xyz="0 0 1" />
-        <limit lower="-1.57"
-               upper="1.57"
+        <limit lower="${yaw_min_limit}"
+               upper="${yaw_max_limit}"
                effort="300"
-               velocity="100.0" /><!--FIXME-->
+               velocity="100.0" />
 
       </joint>
       

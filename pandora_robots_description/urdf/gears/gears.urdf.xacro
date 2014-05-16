@@ -157,7 +157,7 @@
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_thermal_sensors}" >
-       <xacro:thermal_sensors />
+      <xacro:thermal_sensors />
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_co2_sensor}" >

@@ -3,7 +3,12 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <xacro:macro name="hokuyo_caster"
-               params="parent *origin" >
+               params="parent
+                       roll_min_limit
+                       roll_max_limit
+                       pitch_min_limit
+                       pitch_max_limit
+                       *origin" >
 
     <link name="laser_link" >
 
@@ -119,10 +124,10 @@
       <xacro:insert_block name="origin" />
 
       <axis xyz="1 0 0" />
-      <limit lower="-1.57"
-             upper="1.57"
+      <limit lower="${roll_min_limit}"
+             upper="${roll_max_limit}"
              effort="300"
-             velocity="100.0" /><!--FIXME-->
+             velocity="100.0" />
 
     </joint>
 
@@ -136,10 +141,10 @@
               rpy="0 0 0" />
 
       <axis xyz="0 1 0" />
-      <limit lower="-1.57"
-             upper="1.57"
+      <limit lower="${pitch_min_limit}"
+             upper="${pitch_max_limit}"
              effort="300"
-             velocity="100.0" /><!--FIXME-->
+             velocity="100.0" />
 
     </joint>
 
