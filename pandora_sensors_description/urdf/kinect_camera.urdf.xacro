@@ -125,8 +125,8 @@
         <axis xyz="0 1 0" />
         <limit lower="${pitch_min_limit}"
                upper="${pitch_max_limit}"
-               effort="300"
-               velocity="100.0" />
+               effort="50"
+               velocity="50.0" />
 
       </joint>
       
@@ -160,8 +160,8 @@
         <axis xyz="0 0 1" />
         <limit lower="${yaw_min_limit}"
                upper="${yaw_max_limit}"
-               effort="300"
-               velocity="100.0" />
+               effort="50"
+               velocity="50.0" />
 
       </joint>
       
