@@ -4,6 +4,7 @@
 
   <xacro:macro name="hokuyo_caster"
                params="parent
+                       control
                        roll_min_limit
                        roll_max_limit
                        pitch_min_limit
@@ -114,39 +115,80 @@
       </collision>
 
     </link>
+    
+    <!-- Roll Joint ########################################################-->
 
-    <joint name="laser_roll_joint"
-           type="revolute" >
+    <xacro:if value="${control}" >
 
-      <parent link="${parent}" />
-      <child link="hokuyo_base_link" />
+      <joint name="laser_roll_joint"
+             type="revolute" >
 
-      <xacro:insert_block name="origin" />
+        <parent link="${parent}" />
+        <child link="hokuyo_base_link" />
 
-      <axis xyz="1 0 0" />
-      <limit lower="${roll_min_limit}"
-             upper="${roll_max_limit}"
-             effort="50"
-             velocity="50.0" />
+        <xacro:insert_block name="origin" />
 
-    </joint>
+        <axis xyz="1 0 0" />
+        <limit lower="${roll_min_limit}"
+               upper="${roll_max_limit}"
+               effort="50"
+               velocity="50.0" />
 
-    <joint name="laser_pitch_joint"
-           type="revolute" >
+      </joint>
+      
+    </xacro:if>
 
-      <parent link="hokuyo_base_link" />
-      <child link="laser_link" />
+    <xacro:unless value="${control}" >
 
-      <origin xyz="0.013 0 0.02301" 
-              rpy="0 0 0" />
+      <joint name="laser_roll_joint"
+             type="fixed" >
 
-      <axis xyz="0 1 0" />
-      <limit lower="${pitch_min_limit}"
-             upper="${pitch_max_limit}"
-             effort="50"
-             velocity="50.0" />
+        <parent link="${parent}" />
+        <child link="hokuyo_base_link" />
 
-    </joint>
+        <xacro:insert_block name="origin" />
+
+      </joint>
+      
+    </xacro:unless>
+    
+    <!-- Pitch Joint #######################################################-->
+
+    <xacro:if value="${control}" >
+
+      <joint name="laser_pitch_joint"
+             type="revolute" >
+
+        <parent link="hokuyo_base_link" />
+        <child link="laser_link" />
+
+        <origin xyz="0.013 0 0.02301" 
+                rpy="0 0 0" />
+
+        <axis xyz="0 1 0" />
+        <limit lower="${pitch_min_limit}"
+               upper="${pitch_max_limit}"
+               effort="50"
+               velocity="50.0" />
+
+      </joint>
+      
+    </xacro:if>
+
+    <xacro:unless value="${control}" >
+
+      <joint name="laser_pitch_joint"
+             type="fixed" >
+
+        <parent link="hokuyo_base_link" />
+        <child link="laser_link" />
+
+        <origin xyz="0.013 0 0.02301" 
+                rpy="0 0 0" />
+
+      </joint>
+      
+    </xacro:unless>
 
   </xacro:macro>
 

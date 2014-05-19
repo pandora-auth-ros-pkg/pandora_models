@@ -53,11 +53,21 @@
   <xacro:if value="${enable_joints}" >
     <!-- ================================================================== -->
     <xacro:if value="${enable_linear_elevator_joint}" >
-      <xacro:linear_elevator_joint />
+      <xacro:if value="$(arg real)" >
+        <xacro:linear_elevator_joint control="true" />
+      </xacro:if>
+      <xacro:unless value="$(arg real)" >
+        <xacro:linear_elevator_joint control="$(arg control)" />
+      </xacro:unless>
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_linear_head_joints}" >
-      <xacro:linear_head_joints />
+      <xacro:if value="$(arg real)" >
+        <xacro:linear_head_joints control="true" />
+      </xacro:if>
+      <xacro:unless value="$(arg real)" >
+        <xacro:linear_head_joints control="$(arg control)" />
+      </xacro:unless>
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_side_joints}" >
@@ -139,7 +149,12 @@
   <xacro:if value="${enable_sensors}" >
     <!-- ================================================================== -->
     <xacro:if value="${enable_hokuyo_laser_sensor}" >
-      <xacro:hokuyo_laser_sensor />
+      <xacro:if value="$(arg real)" >
+        <xacro:hokuyo_laser_sensor control="true" />
+      </xacro:if>
+      <xacro:unless value="$(arg real)" >
+        <xacro:hokuyo_laser_sensor control="$(arg control)" />
+      </xacro:unless>
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_kinect_sensor}" >

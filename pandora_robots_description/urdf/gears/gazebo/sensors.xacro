@@ -20,9 +20,11 @@
 
 <!-- Hokuyo Laser ######################################################### -->
 
-  <xacro:macro name="hokuyo_laser_sensor" >
+  <xacro:macro name="hokuyo_laser_sensor"
+               params="control" >
     <!-- ================================================================== -->
     <xacro:hokuyo_caster parent="${base_link_name}_link"
+                         control="${control}"
                          roll_min_limit="${laser_roll_joint_min_limit}" 
                          roll_max_limit="${laser_roll_joint_max_limit}"
                          pitch_min_limit="${laser_pitch_joint_min_limit}" 
@@ -40,7 +42,7 @@
   <xacro:macro name="kinect_sensor"
                params="control" >
     <!-- ================================================================== -->
-    <xacro:kinect_caster parent="${linear_elevator_link_name}_link" 
+    <xacro:kinect_caster parent="${linear_elevator_link_name}_link"
                          control="${control}"
                          pitch_min_limit="${kinect_pitch_joint_min_limit}" 
                          pitch_max_limit="${kinect_pitch_joint_max_limit}" 
