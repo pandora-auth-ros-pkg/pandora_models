@@ -21,8 +21,8 @@
     <xacro:property name="enable_wheel_joints" value="true" />
   <!-- Sensors ============================================================ -->
   <xacro:property name="enable_sensors" value="true" />
-    <xacro:property name="enable_kinect_sensor" value="true" />
     <xacro:property name="enable_hokuyo_laser_sensor" value="true" />
+    <xacro:property name="enable_kinect_sensor" value="true" />
     <xacro:property name="enable_sonar_sensors" value="true" />
     <xacro:property name="enable_thermal_sensors" value="true" />
     <xacro:property name="enable_co2_sensor" value="true" />
@@ -98,6 +98,7 @@
   <xacro:property name="max_laser_angular_velocity" value="2.5" />
   <!-- ==================================================================== -->
   <xacro:property name="max_robot_linear_acceleration" value="1.0" />
+  <xacro:property name="max_robot_angular_acceleration" value="0.2" />
   <xacro:property name="max_kinect_angular_acceleration" value="0.0" />
   <xacro:property name="max_laser_angular_acceleration" value="0.0" />
   <!-- ==================================================================== -->
