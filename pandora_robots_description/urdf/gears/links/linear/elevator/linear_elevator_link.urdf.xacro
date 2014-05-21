@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+<!-- ====================================================================== -->
+<xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear/elevator/linear_elevator_link_config.xacro" />
+<!-- ====================================================================== -->
+
+<!-- ###################################################################### -->
+
+  <xacro:macro name="linear_elevator_link" >
+    <!-- ================================================================== -->
+    <link name="linear_elevator_link" >
+
+      <inertial>
+        <xacro:linear_elevator_link_inertial_origin />
+        <xacro:linear_elevator_link_mass />
+        <xacro:linear_elevator_link_inertia />
+      </inertial>
+
+      <visual>
+        <xacro:linear_elevator_link_visual_origin />
+        <xacro:linear_elevator_link_visual_mesh />
+        <material name="linear_elevator" />
+      </visual>
+
+      <collision>
+        <xacro:linear_elevator_link_collision_origin />
+        <xacro:linear_elevator_link_collision_mesh />
+      </collision>
+
+    </link>
+    <!-- ================================================================== -->
+  </xacro:macro>
+  
+<!-- ###################################################################### -->
+
+</robot>

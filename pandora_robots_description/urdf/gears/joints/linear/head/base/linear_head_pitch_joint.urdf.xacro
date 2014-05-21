@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+<!-- ====================================================================== -->
+<xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear/head/base/linear_head_pitch_joint_config.xacro" />
+<!-- ====================================================================== -->
+
+<!-- ###################################################################### -->
+
+  <xacro:macro name="linear_head_pitch_joint"
+               params="fixed" >
+
+    <!-- ================================================================== -->
+    <xacro:if value="${fixed}" >
+    
+      <joint name="linear_head_pitch_joint"
+             type="fixed" >
+             
+        <parent link="linear_elevator_link" />
+        <child link="linear_head_base_link" />
+
+        <xacro:linear_head_pitch_joint_origin />
+
+      </joint>
+      
+    </xacro:if>
+    <!-- ================================================================== -->
+    <xacro:unless value="${fixed}" >
+    
+      <joint name="linear_head_pitch_joint"
+             type="${linear_head_pitch_joint_type}" >
+
+        <parent link="linear_elevator_link" />
+        <child link="linear_head_base_link" />
+
+        <xacro:linear_head_pitch_joint_origin />
+
+        <xacro:linear_head_pitch_joint_physics />
+
+      </joint>
+      
+    </xacro:unless>
+    <!-- ================================================================== -->
+    
+  </xacro:macro>
+
+<!-- ###################################################################### -->
+
+</robot>

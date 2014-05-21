@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+<!-- ###################################################################### -->
+
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_mass" >
+
+    <mass value="0.92399" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_inertia" >
+
+    <inertia ixx="0.0097139"
+             ixy="-0.00039516"
+             ixz="-0.00086264"
+             iyy="0.0095873"
+             iyz="0.0012764"
+             izz="0.0017829" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_inertial_origin" >
+
+    <origin xyz="0.017561 0.0109 0.24001" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_visual_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_collision_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_visual_mesh" >
+
+    <geometry>
+      <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/elevator/linear_elevator_link.dae" />
+      <!-- <mesh filename="package://pandora_robots_description/meshes/gears/collision/linear/elevator/linear_elevator_link.stl" /> -->
+    </geometry>
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="linear_elevator_link_collision_mesh" >
+
+    <geometry>
+      <mesh filename="package://pandora_robots_description/meshes/gears/collision/linear/elevator/linear_elevator_link.stl" />
+      <!-- <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/elevator/linear_elevator_link.dae" /> -->
+    </geometry>
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+
+<!-- ###################################################################### -->
+
+</robot>

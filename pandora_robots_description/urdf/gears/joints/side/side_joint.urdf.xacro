@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+<!-- ====================================================================== -->
+<xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/side/side_joint_config.xacro" />
+<!-- ====================================================================== -->
+
+<!-- ###################################################################### -->
+
+  <xacro:macro name="side_joint"
+               params="prefix_y reflect_y" >
+               
+    <joint name="${prefix_y}_side_joint"
+           type="${side_joint_type}" >
+
+      <parent link="base_link" />
+      <child link="${prefix_y}_side_link" />
+
+      <xacro:side_joint_origin reflect_y="${reflect_y}" />
+
+      <xacro:side_joint_physics />
+
+    </joint>
+    
+  </xacro:macro>
+
+<!-- ###################################################################### -->
+
+</robot>

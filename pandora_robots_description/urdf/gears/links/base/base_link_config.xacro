@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+<!-- ###################################################################### -->
+
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_mass" >
+
+    <mass value="8.6373" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_inertia" >
+
+    <inertia ixx="0.11754"
+             ixy="0.0039217"
+             ixz="0.0053416"
+             iyy="0.12773"
+             iyz="-0.0039963"
+             izz="0.10593" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_inertial_origin" >
+
+    <origin xyz="-0.010032 -0.0067035 0.16451" />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_visual_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_collision_origin" >
+
+    <xacro:default_origin />
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_visual_mesh" >
+
+    <geometry>
+      <mesh filename="package://pandora_robots_description/meshes/gears/visual/base/base_link.dae" />
+      <!-- <mesh filename="package://pandora_robots_description/meshes/gears/collision/base/base_link.stl" /> -->
+    </geometry>
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+  <xacro:macro name="base_link_collision_mesh" >
+
+    <geometry>
+      <mesh filename="package://pandora_robots_description/meshes/gears/collision/base/base_link.stl" />
+      <!-- <mesh filename="package://pandora_robots_description/meshes/gears/visual/base/base_link.dae" /> -->
+    </geometry>
+
+  </xacro:macro>
+  <!-- ==================================================================== -->
+
+<!-- ###################################################################### -->
+
+</robot>

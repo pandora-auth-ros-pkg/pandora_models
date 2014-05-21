@@ -4,7 +4,7 @@
 
   <xacro:macro name="kinect_caster"
                params="parent
-                       control
+                       fixed
                        pitch_min_limit
                        pitch_max_limit
                        yaw_min_limit
@@ -68,7 +68,7 @@
                 filename="libgazebo_ros_openni_kinect.so" >
 
           <pointCloudTopicName>point_cloud</pointCloudTopicName>
-          <frameName>kinect_camera</frameName>
+          <frameName>kinect_link</frameName>
           <cameraName>kinect</cameraName>
           <imageTopicName>image</imageTopicName>
           <depthImageTopicName>depth/image</depthImageTopicName>
@@ -114,7 +114,21 @@
     
     <!-- Pitch Joint #######################################################-->
 
-    <xacro:if value="${control}" >
+    <xacro:if value="${fixed}" >
+
+      <joint name="kinect_pitch_joint"
+             type="fixed" >
+
+        <parent link="${parent}" />
+        <child link="kinect_base_link" />
+
+        <xacro:insert_block name="origin" />
+
+      </joint>
+      
+    </xacro:if>
+
+    <xacro:unless value="${fixed}" >
 
       <joint name="kinect_pitch_joint"
              type="revolute" >
@@ -132,25 +146,26 @@
 
       </joint>
       
-    </xacro:if>
-
-    <xacro:unless value="${control}" >
-
-      <joint name="kinect_pitch_joint"
-             type="fixed" >
-
-        <parent link="${parent}" />
-        <child link="kinect_base_link" />
-
-        <xacro:insert_block name="origin" />
-
-      </joint>
-      
     </xacro:unless>
     
     <!-- Yaw Joint #########################################################-->
 
-    <xacro:if value="${control}" >
+    <xacro:if value="${fixed}" >
+
+      <joint name="kinect_yaw_joint"
+             type="fixed" >
+
+        <parent link="kinect_base_link" />
+        <child link="kinect_link" />
+
+        <origin xyz="0.037 0.0 0.021"
+                rpy="0.0 0.0 0.0" />
+
+      </joint>
+      
+    </xacro:if>
+
+    <xacro:unless value="${fixed}" >
 
       <joint name="kinect_yaw_joint"
              type="revolute" >
@@ -166,21 +181,6 @@
                upper="${yaw_max_limit}"
                effort="50"
                velocity="50.0" />
-
-      </joint>
-      
-    </xacro:if>
-
-    <xacro:unless value="${control}" >
-
-      <joint name="kinect_yaw_joint"
-             type="fixed" >
-
-        <parent link="kinect_base_link" />
-        <child link="kinect_link" />
-
-        <origin xyz="0.037 0.0 0.021"
-                rpy="0.0 0.0 0.0" />
 
       </joint>
       
