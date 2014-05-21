@@ -46,6 +46,7 @@
 
     <geometry>
       <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/head/servo_motor.dae" />
+      <!-- <box size="0.050 0.032 0.041" /> -->
     </geometry>
 
   </xacro:macro>
@@ -54,6 +55,7 @@
   
     <geometry>
       <box size="0.050 0.032 0.041" />
+      <!-- <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/head/servo_motor.dae" /> -->
     </geometry>
 
   </xacro:macro>

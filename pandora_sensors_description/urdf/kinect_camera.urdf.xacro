@@ -98,7 +98,7 @@
         <origin xyz="0 0 0"
                 rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/servo_motor.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/head/servo_motor.dae" />
         </geometry>
       </visual>
 
