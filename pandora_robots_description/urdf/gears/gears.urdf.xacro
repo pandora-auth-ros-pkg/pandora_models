@@ -6,57 +6,65 @@
 <!-- Import Files ######################################################### -->
 
   <!-- ==================================================================== -->
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/gears_configurations.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/urdf_configurations.xacro" />
+  <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/properties/constants.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/properties/defaults.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/properties/materials.xacro" />
   <!-- ==================================================================== -->
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/base/base_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/side/side_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/wheel/wheel_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear/elevator/linear_elevator_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear/head/base/linear_head_base_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear/head/main/linear_head_main_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/base_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/side_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/wheel_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_elevator_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_head_base_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_head_main_link.urdf.xacro" />
   <!-- ==================================================================== -->
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/side/side_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/wheel/wheel_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear/elevator/linear_elevator_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear/head/base/linear_head_pitch_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear/head/main/linear_head_yaw_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/side_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/wheel_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_elevator_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_head_pitch_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_head_yaw_joint.urdf.xacro" />
   <!-- ==================================================================== -->
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/laser/laser.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/kinect/kinect.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/sonar/sonar.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/thermal/thermal.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/co2/co2.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/microphone/microphone.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/laser_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/kinect_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/sonar_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/thermal_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/co2_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/microphone_sensor.xacro" />
   <!-- ==================================================================== -->
 
 <!-- Load Links & Joints ################################################## -->
 
-  <!-- ==================================================================== -->
   <xacro:if value="${enable_base_link}" >
     <xacro:base_link />
   </xacro:if>
-  <!-- ==================================================================== -->
+  
   <xacro:if value="${enable_side_links}" >
+    <!-- ================================================================== -->
     <xacro:side_link prefix_y="left" reflect_y="1" />
-    <xacro:side_link prefix_y="right" reflect_y="-1" />
     <xacro:side_joint prefix_y="left" reflect_y="1" />
+    <!-- ================================================================== -->
+    <xacro:side_link prefix_y="right" reflect_y="-1" />
     <xacro:side_joint prefix_y="right" reflect_y="-1" />
+    <!-- ================================================================== -->
   </xacro:if>
-  <!-- ==================================================================== -->
+  
   <xacro:if value="${enable_wheel_links}" >
+    <!-- ================================================================== -->
     <xacro:wheel_link prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />
-    <xacro:wheel_link prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
-    <xacro:wheel_link prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
-    <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
     <xacro:wheel_joint prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />
+    <!-- ================================================================== -->
+    <xacro:wheel_link prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
     <xacro:wheel_joint prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
+    <!-- ================================================================== -->
+    <xacro:wheel_link prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
     <xacro:wheel_joint prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
+    <!-- ================================================================== -->
+    <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
     <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
+    <!-- ================================================================== -->
   </xacro:if>
-  <!-- ==================================================================== -->
+  
   <xacro:if value="${enable_linear_links}" >
     <!-- ================================================================== -->
     <xacro:if value="${enable_linear_elevator_link}" >
@@ -79,32 +87,31 @@
     </xacro:if>
     <!-- ================================================================== -->
   </xacro:if>
-  <!-- ==================================================================== -->
 
 <!-- Load Sensors ######################################################### -->
 
   <xacro:if value="${enable_sensors}" >
-    <!-- ================================================================== -->
+  
     <xacro:if value="${enable_laser_sensor}" >
       <xacro:laser_sensor fixed="$(arg fixed)" />
     </xacro:if>
-    <!-- ================================================================== -->
+    
     <xacro:if value="${enable_kinect_sensor}" >
       <xacro:kinect_sensor fixed="$(arg fixed)" />
     </xacro:if>
-    <!-- ================================================================== -->
+    
     <xacro:if value="${enable_sonar_sensors}" >
       <!-- ================================================================ -->
-      <xacro:if value="${enable_left_sonar_sensor}" >
-        <xacro:sonar_sensor prefix_y="left" reflect_y="1" />
+      <xacro:if value="${enable_left_rear_sonar_sensor}" >
+        <xacro:left_rear_sonar_sensor />
       </xacro:if>
       <!-- ================================================================ -->
-      <xacro:if value="${enable_right_sonar_sensor}" >
-        <xacro:sonar_sensor prefix_y="right" reflect_y="-1" />
+      <xacro:if value="${enable_right_rear_sonar_sensor}" >
+        <xacro:right_rear_sonar_sensor />
       </xacro:if>
       <!-- ================================================================ -->
     </xacro:if>
-    <!-- ================================================================== -->
+    
     <xacro:if value="${enable_thermal_sensors}" >
       <!-- ================================================================ -->
       <xacro:if value="${enable_middle_thermal_sensor}" >
@@ -120,15 +127,15 @@
       </xacro:if>
       <!-- ================================================================ -->
     </xacro:if>
-    <!-- ================================================================== -->
+    
     <xacro:if value="${enable_co2_sensor}" >
       <xacro:co2_sensor />
     </xacro:if>
-    <!-- ================================================================== -->
+    
     <xacro:if value="${enable_microphone_sensor}" >
       <xacro:microphone_sensor />
     </xacro:if>
-    <!-- ================================================================== -->
+    
   </xacro:if>
 
 <!-- ###################################################################### -->

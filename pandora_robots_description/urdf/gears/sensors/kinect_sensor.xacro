@@ -10,7 +10,7 @@
 
   <xacro:macro name="kinect_sensor"
                params="fixed" >
-    <!-- ================================================================== -->
+               
     <xacro:kinect_caster parent="linear_elevator_link"
                          fixed="${fixed}"
                          pitch_min_limit="${kinect_pitch_joint_min_limit}" 
@@ -22,7 +22,7 @@
               rpy="${zero}" />
 
     </xacro:kinect_caster>
-    <!-- ================================================================== -->
+    
   </xacro:macro>
 
 <!-- ###################################################################### -->
