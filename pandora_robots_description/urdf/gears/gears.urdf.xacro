@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="gears"
-       xmlns:xacro="http://ros.org/wiki/xacro" >
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
 <!-- Import Files ######################################################### -->
 
@@ -32,6 +31,9 @@
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/co2_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/microphone_sensor.xacro" />
   <!-- ==================================================================== -->
+  
+<xacro:macro name="gears_urdf"
+             params="fixed" >
 
 <!-- Load Links & Joints ################################################## -->
 
@@ -69,19 +71,19 @@
     <!-- ================================================================== -->
     <xacro:if value="${enable_linear_elevator_link}" >
       <xacro:linear_elevator_link />
-      <xacro:linear_elevator_joint fixed="$(arg fixed)" />
+      <xacro:linear_elevator_joint fixed="${fixed}" />
     </xacro:if>
     <!-- ================================================================== -->
     <xacro:if value="${enable_linear_head_links}" >
       <!-- ================================================================ -->
       <xacro:if value="${enable_linear_head_base_link}" >
         <xacro:linear_head_base_link />
-        <xacro:linear_head_pitch_joint fixed="$(arg fixed)" />
+        <xacro:linear_head_pitch_joint fixed="${fixed}" />
       </xacro:if>
       <!-- ================================================================ -->
       <xacro:if value="${enable_linear_head_main_link}" >
         <xacro:linear_head_main_link />
-        <xacro:linear_head_yaw_joint fixed="$(arg fixed)" />
+        <xacro:linear_head_yaw_joint fixed="${fixed}" />
       </xacro:if>
       <!-- ================================================================ -->
     </xacro:if>
@@ -93,11 +95,11 @@
   <xacro:if value="${enable_sensors}" >
   
     <xacro:if value="${enable_laser_sensor}" >
-      <xacro:laser_sensor fixed="$(arg fixed)" />
+      <xacro:laser_sensor fixed="${fixed}" />
     </xacro:if>
     
     <xacro:if value="${enable_kinect_sensor}" >
-      <xacro:kinect_sensor fixed="$(arg fixed)" />
+      <xacro:kinect_sensor fixed="${fixed}" />
     </xacro:if>
     
     <xacro:if value="${enable_sonar_sensors}" >
@@ -137,6 +139,8 @@
     </xacro:if>
     
   </xacro:if>
+    
+</xacro:macro>
 
 <!-- ###################################################################### -->
 
