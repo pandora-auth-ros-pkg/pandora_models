@@ -58,7 +58,7 @@
   <!-- ==================================================================== -->
   <xacro:property name="wheel_joint_damping" value="0.0" />
   <!-- ==================================================================== -->
-  <xacro:property name="linear_elevator_joint_damping" value="0.0" />
+  <xacro:property name="linear_elevator_joint_damping" value="5800.0" />
   <!-- ==================================================================== -->
   <xacro:property name="linear_head_pitch_joint_damping" value="0.0" />
   <!-- ==================================================================== -->
