@@ -26,8 +26,8 @@
     <xacro:thermal_caster parent="linear_head_main_link"
                           prefix_y="left" >
 
-      <origin xyz="-0.00128 -0.04774 0.03108"
-              rpy="0 0 ${-PI_3}" />
+      <origin xyz="-0.00128 0.04774 0.03108"
+              rpy="0 0 ${PI_3}" />
 
     </xacro:thermal_caster>
     
@@ -38,8 +38,8 @@
     <xacro:thermal_caster parent="linear_head_main_link"
                           prefix_y="right" >
 
-      <origin xyz="-0.00128 0.04774 0.03108"
-              rpy="0 0 ${PI_3}" />
+      <origin xyz="-0.00128 -0.04774 0.03108"
+              rpy="0 0 ${-PI_3}" />
 
     </xacro:thermal_caster>
     
