@@ -19,7 +19,7 @@
                          yaw_max_limit="${kinect_yaw_joint_max_limit}" >
 
       <origin xyz="0.07044 0.01239 0.14642"
-              rpy="${zero}" />
+              rpy="-0.0436 0.0 0.0" />
 
     </xacro:kinect_caster>
     
