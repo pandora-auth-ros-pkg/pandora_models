@@ -4,12 +4,12 @@
 
 <!-- ###################################################################### -->
 
-  <xacro:macro name="thermal_caster"
-               params="parent prefix_y *origin" >
+  <xacro:macro name="microphone_caster"
+               params="parent *origin" >
 
     <!-- ################################################################## -->
 
-    <link name="${prefix_y}_thermal_link" >
+    <link name="microphone_link" >
 
       <inertial>
         <!-- ============================================================== -->
@@ -32,7 +32,7 @@
                 rpy="0 0 0" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_sensors_description/meshes/thermal_sensor/thermal_small.dae" />
+          <mesh filename="package://pandora_sensors_description/meshes/microphone/microphone.dae" />
         </geometry>
         <!-- ============================================================== -->
       </visual>
@@ -52,12 +52,11 @@
 
     <!-- ################################################################## -->
 
-    <joint name="${prefix_y}_thermal_joint"
-           type="fixed" >
+    <joint name="microphone_joint" type="fixed" >
 
       <!-- ================================================================ -->
       <parent link="${parent}" />
-      <child link="${prefix_y}_thermal_link" />
+      <child link="microphone_link" />
       <!-- ================================================================ -->
       <xacro:insert_block name="origin" />
       <!-- ================================================================ -->

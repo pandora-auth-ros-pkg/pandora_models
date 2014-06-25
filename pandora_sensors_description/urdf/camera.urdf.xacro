@@ -32,7 +32,7 @@
                 rpy="0 0 0" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_sensors_description/meshes/logitech_camera/logitech_camera.dae" />
+          <mesh filename="package://pandora_sensors_description/meshes/camera/logitech.dae" />
         </geometry>
         <!-- ============================================================== -->
       </visual>

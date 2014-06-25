@@ -4,12 +4,12 @@
 
 <!-- ###################################################################### -->
 
-  <xacro:macro name="microphone_caster"
+  <xacro:macro name="co2_caster"
                params="parent *origin" >
 
     <!-- ################################################################## -->
 
-    <link name="microphone_link" >
+    <link name="co2_link" >
 
       <inertial>
         <!-- ============================================================== -->
@@ -32,7 +32,7 @@
                 rpy="0 0 0" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_sensors_description/meshes/microphone_sensor/microphone_small.dae" />
+          <mesh filename="package://pandora_sensors_description/meshes/co2/co2.dae" />
         </geometry>
         <!-- ============================================================== -->
       </visual>
@@ -52,15 +52,16 @@
 
     <!-- ################################################################## -->
 
-    <joint name="microphone_joint" type="fixed" >
+    <joint name="co2_joint"
+           type="fixed" >
 
       <!-- ================================================================ -->
       <parent link="${parent}" />
-      <child link="microphone_link" />
+      <child link="co2_link" />
       <!-- ================================================================ -->
       <xacro:insert_block name="origin" />
       <!-- ================================================================ -->
-
+      
     </joint>
 
   </xacro:macro>
