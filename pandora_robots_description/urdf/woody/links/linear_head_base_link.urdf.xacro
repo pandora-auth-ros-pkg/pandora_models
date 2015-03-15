@@ -29,7 +29,7 @@
                 rpy="0.0 ${-PI_2} ${-PI_2}" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/head/servo_motor.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/linear/head/servo_motor.dae" />
         </geometry>
         <!-- ============================================================== -->
         <material name="linear_head_base" />

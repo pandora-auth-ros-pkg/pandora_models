@@ -28,7 +28,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/head/linear_head_main_link.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/linear/head/linear_head_main_link.dae" />
         </geometry>
         <!-- ============================================================== -->
         <material name="linear_head_main" />
@@ -40,7 +40,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/collision/linear/head/linear_head_main_link.stl" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/collision/linear/head/linear_head_main_link.stl" />
         </geometry>
         <!-- ============================================================== -->
       </collision>

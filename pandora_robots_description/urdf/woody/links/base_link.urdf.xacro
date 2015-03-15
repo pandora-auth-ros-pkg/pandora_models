@@ -28,7 +28,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/base/base_link.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/base/base_link.dae" />
         </geometry>
         <!-- ============================================================== -->
         <material name="base" />
@@ -40,7 +40,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/collision/base/base_link.stl" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/collision/base/base_link.stl" />
         </geometry>
         <!-- ============================================================== -->
       </collision>

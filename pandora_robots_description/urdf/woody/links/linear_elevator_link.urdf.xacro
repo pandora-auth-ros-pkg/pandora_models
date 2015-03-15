@@ -28,7 +28,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/linear/elevator/linear_elevator_link.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/linear/elevator/linear_elevator_link.dae" />
         </geometry>
         <!-- ============================================================== -->
         <material name="linear_elevator" />
@@ -40,7 +40,7 @@
         <xacro:default_origin />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/collision/linear/elevator/linear_elevator_link.stl" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/collision/linear/elevator/linear_elevator_link.stl" />
         </geometry>
         <!-- ============================================================== -->
       </collision>

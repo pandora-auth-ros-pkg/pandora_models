@@ -30,7 +30,7 @@
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/visual/wheel/wheel_link.dae" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/wheel/wheel_link.dae" />
         </geometry>
         <!-- ============================================================== -->
         <material name="wheel" />
@@ -43,7 +43,7 @@
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/gears/collision/wheel/wheel_link.stl" />
+          <mesh filename="package://pandora_robots_description/meshes/woody/collision/wheel/wheel_link.stl" />
         </geometry>
         <!-- ============================================================== -->
       </collision>
