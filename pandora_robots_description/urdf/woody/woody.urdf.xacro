@@ -14,15 +14,9 @@
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/base_link.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/side_link.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/wheel_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/linear_elevator_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/linear_head_base_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/linear_head_main_link.urdf.xacro" />
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/side_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/wheel_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/linear_elevator_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/linear_head_pitch_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/linear_head_yaw_joint.urdf.xacro" />
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/laser_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/kinect_sensor.xacro" />
@@ -63,17 +57,6 @@
   <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <!-- ================================================================== -->
-  
-  <!-- ================================================================== -->
-  <xacro:linear_elevator_link />
-  <xacro:linear_elevator_joint fixed="${fixed}" />
-  <!-- ================================================================== -->
-  <xacro:linear_head_base_link />
-  <xacro:linear_head_yaw_joint fixed="${fixed}" />
-  <!-- ================================================================== -->
-  <xacro:linear_head_main_link />
-  <xacro:linear_head_pitch_joint fixed="${fixed}" />
-  <!-- ================================================================== -->
 
 <!-- Load Sensors ######################################################### -->
 
@@ -101,10 +84,6 @@
     
     <xacro:if value="${enable_sonar_sensors}" >
       <!-- ================================================================ -->
-      <xacro:if value="${enable_linear_sonar_sensor}" >
-        <xacro:linear_sonar_sensor />
-      </xacro:if>
-      <!-- ================================================================ -->
       <xacro:if value="${enable_left_sonar_sensor}" >
         <xacro:left_sonar_sensor />
       </xacro:if>
@@ -115,20 +94,8 @@
       <!-- ================================================================ -->
     </xacro:if>
     
-    <xacro:if value="${enable_thermal_sensors}" >
-      <!-- ================================================================ -->
-      <xacro:if value="${enable_middle_thermal_sensor}" >
+    <xacro:if value="${enable_thermal_sensor}" >
         <xacro:middle_thermal_sensor />
-      </xacro:if>
-      <!-- ================================================================ -->
-      <xacro:if value="${enable_left_thermal_sensor}" >
-        <xacro:left_thermal_sensor />
-      </xacro:if>
-      <!-- ================================================================ -->
-      <xacro:if value="${enable_right_thermal_sensor}" >
-        <xacro:right_thermal_sensor />
-      </xacro:if>
-      <!-- ================================================================ -->
     </xacro:if>
     
     <xacro:if value="${enable_co2_sensor}" >
