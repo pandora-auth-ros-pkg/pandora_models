@@ -185,12 +185,13 @@
       <inertial>
         <origin xyz="0.0 0.0 0.0" />
         <mass value="0.6" />
-        <inertia ixx=""
+        <!-- TODO -->
+        <inertia ixx="0.0001"
                  ixy="0.0"
                  ixz="0.0"
-                 iyy=""
+                 iyy="0.0001"
                  iyz="0.0"
-                 izz="" />
+                 izz="0.0001" />
       </inertial>
     </link>
     <joint name="cables_joint"
@@ -207,12 +208,13 @@
       <inertial>
         <origin xyz="0.0 0.0 0.0" />
         <mass value="0.446" />
-        <inertia ixx=""
+        <!-- TODO -->
+        <inertia ixx="0.0001"
                  ixy="0.0"
                  ixz="0.0"
-                 iyy=""
+                 iyy="0.0001"
                  iyz="0.0"
-                 izz="" />
+                 izz="0.0001" />
       </inertial>
     </link>
     <joint name="axis_joint"
@@ -229,12 +231,13 @@
       <inertial>
         <origin xyz="0.0 0.0 0.0" />
         <mass value="0.31" />
-        <inertia ixx=""
+        <!-- TODO -->
+        <inertia ixx="0.0001"
                  ixy="0.0"
                  ixz="0.0"
-                 iyy=""
+                 iyy="0.0001"
                  iyz="0.0"
-                 izz="" />
+                 izz="0.0001" />
       </inertial>
     </link>
     <joint name="differential_joint"
