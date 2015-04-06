@@ -20,6 +20,7 @@
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/laser_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/kinect_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/flir_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/camera_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/sonar_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/thermal_sensor.xacro" />
@@ -70,6 +71,10 @@
       <xacro:kinect_sensor fixed="${fixed}" />
     </xacro:if>
     
+    <xacro:if value="${enable_flir_sensor}" >
+      <xacro:flir_sensor />
+    </xacro:if>
+    
     <xacro:if value="${enable_camera_sensors}" >
       <!-- ================================================================ -->
       <xacro:if value="${enable_left_camera_sensor}" >
@@ -95,7 +100,7 @@
     </xacro:if>
     
     <xacro:if value="${enable_thermal_sensor}" >
-        <xacro:middle_thermal_sensor />
+        <xacro:thermal_sensor />
     </xacro:if>
     
     <xacro:if value="${enable_co2_sensor}" >

@@ -3,20 +3,20 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <!-- ==================================================================== -->
-  <xacro:include filename="$(find pandora_sensors_description)/urdf/thermal.urdf.xacro" />
+  <xacro:include filename="$(find pandora_sensors_description)/urdf/flir.urdf.xacro" />
   <!-- ==================================================================== -->
 
 <!-- ###################################################################### -->
 
   <!-- ==================================================================== -->
-  <xacro:macro name="thermal_sensor" >
+  <xacro:macro name="flir_sensor" >
   
-    <xacro:thermal_caster parent="base_link" >
+    <xacro:flir_caster parent="kinect_main_link" >
 
-      <origin xyz="0.01575 -0.0614 0.08243"
-              rpy="${-PI_2} 0 0" />
+      <origin xyz="0.01732 0.07882 0.02341"
+              rpy="0 0 0" />
 
-    </xacro:thermal_caster>
+    </xacro:flir_caster>
     
   </xacro:macro>
 

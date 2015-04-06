@@ -4,12 +4,12 @@
 
 <!-- ###################################################################### -->
 
-  <xacro:macro name="thermal_caster"
+  <xacro:macro name="flir_caster"
                params="parent *origin" >
 
     <!-- ################################################################## -->
 
-    <link name="thermal_main_link" >
+    <link name="flir_main_link" >
 
       <inertial>
         <!-- ============================================================== -->
@@ -32,7 +32,7 @@
                 rpy="0 0 0" />
         <!-- ============================================================== -->
         <geometry>
-          <mesh filename="package://pandora_sensors_description/meshes/thermal/grid_eye.dae" />
+          <mesh filename="package://pandora_sensors_description/meshes/co2/dynament.dae" />
         </geometry>
         <!-- ============================================================== -->
       </visual>
@@ -52,7 +52,7 @@
 
     <!-- ################################################################## -->
 
-    <link name="thermal_frame" >
+    <link name="flir_frame" >
 
       <inertial>
         <!-- ============================================================== -->
@@ -73,7 +73,7 @@
 
     <!-- ################################################################## -->
 
-    <link name="thermal_optical_frame" >
+    <link name="flir_optical_frame" >
 
       <inertial>
         <!-- ============================================================== -->
@@ -94,12 +94,12 @@
 
     <!-- ################################################################## -->
 
-    <joint name="thermal_main_joint"
+    <joint name="flir_main_joint"
            type="fixed" >
 
       <!-- ================================================================ -->
       <parent link="${parent}" />
-      <child link="thermal_main_link" />
+      <child link="flir_main_link" />
       <!-- ================================================================ -->
       <xacro:insert_block name="origin" />
       <!-- ================================================================ -->
@@ -108,12 +108,12 @@
 
     <!-- ################################################################## -->
     
-    <joint name="thermal_joint"
+    <joint name="flir_joint"
            type="fixed" >
            
       <!-- ================================================================ -->
-      <parent link="thermal_main_link" />
-      <child link="thermal_frame" />
+      <parent link="flir_main_link" />
+      <child link="flir_frame" />
       <!-- ================================================================ -->
       <origin xyz="0.0045 0.0 0.00125" 
               rpy="0.0 0.0 0.0" />
@@ -123,12 +123,12 @@
 
     <!-- ################################################################## -->
     
-    <joint name="thermal_optical_joint"
+    <joint name="flir_optical_joint"
            type="fixed" >
            
       <!-- ================================================================ -->
-      <parent link="thermal_frame" />
-      <child link="thermal_optical_frame" />
+      <parent link="flir_frame" />
+      <child link="flir_optical_frame" />
       <!-- ================================================================ -->
       <origin xyz="0.0 0.0 0.0" 
               rpy="-1.5708 0.0 -1.5708" />
