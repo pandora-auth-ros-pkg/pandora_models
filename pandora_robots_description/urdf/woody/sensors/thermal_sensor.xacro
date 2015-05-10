@@ -11,7 +11,8 @@
   <!-- ==================================================================== -->
   <xacro:macro name="thermal_sensor" >
   
-    <xacro:thermal_caster parent="base_link" >
+    <xacro:thermal_caster parent="base_link"
+                          prefix_y="middle" >
 
       <origin xyz="0.01575 -0.0614 0.08243"
               rpy="${-PI_2} 0 0" />
