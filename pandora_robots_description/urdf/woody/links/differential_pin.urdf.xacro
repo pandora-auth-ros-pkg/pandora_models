@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="differential_pin" 
+             params="prefix_y reflect_y">
+
+    <!-- ==============================  Link  ================================ -->
+
+    <link name="${prefix_y}_differential_link_pin" >
+      <inertial>
+            <!-- ============================================================== -->
+            <origin xyz="0.0 0.0 -0.054" />
+            <!-- ============================================================== -->
+            <mass value="0.001" /> <!-- FIXME -->
+            <!-- ============================================================== -->
+            <inertia ixx="0.00001"
+                     ixy="0.00000001"
+                     ixz="0.00000001"
+                     iyy="0.00001"
+                     iyz="0.00000001"
+                     izz="0.00001" />
+            <!-- ============================================================== -->
+        </inertial>
+
+        <visual>
+           <!-- ============================================================== -->
+          <xacro:default_origin/>
+           <!-- ============================================================== -->
+          <geometry>
+          <mesh filename="package://pandora_robots_description/meshes/woody/visual/differential/differential_pin_link.dae"/>
+        </geometry>
+         <!-- ============================================================== -->
+        </visual>
+
+    </link>
+
+    <!-- ==============================  Joint  ================================ -->
+
+    <joint name="${prefix_y}_differential_pin_joint" type="revolute">
+
+      <parent link="differential"/>
+      <child link="${prefix_y}_differential_link_pin"/>
+
+      <!-- ======================  Origin    ==========================-->
+      <origin xyz="-0.00622 ${reflect_y * (0.13387)} 0.00003" 
+             rpy="${reflect_y * (-0.104719755)} 0 0"/>
+
+      <!-- ===========================================================-->
+      <axis xyz="1 0 0"/>
+      <!-- ======================  Limits   ==========================-->
+      <limit effort="100.0"
+             velocity="100.0" 
+             lower="-0.78"
+             upper="0.78"/>
+
+    </joint>
+
+  </xacro:macro>
+</robot>
