@@ -17,6 +17,10 @@
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/side_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/wheel_joint.urdf.xacro" />
+
+  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/differential_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/differential_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/differential_pin.urdf.xacro" />
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/laser_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/kinect_sensor.xacro" />
@@ -58,6 +62,10 @@
   <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <!-- ================================================================== -->
+  <xacro:differential_link/>
+  <xacro:differential_joint/>
+  <xacro:differential_pin prefix_y="left" reflect_y="1"/>
+  <xacro:differential_pin prefix_y="right" reflect_y="-1"/>
 
 <!-- Load Sensors ######################################################### -->
 
