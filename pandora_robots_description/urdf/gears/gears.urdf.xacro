@@ -17,12 +17,15 @@
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_elevator_link.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_head_base_link.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/linear_head_main_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/differential_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/links/differential_pin.urdf.xacro" />
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/side_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/wheel_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_elevator_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_head_pitch_joint.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/linear_head_yaw_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/gears/joints/differential_joint.urdf.xacro" />
   <!-- ==================================================================== -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/laser_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/gears/sensors/kinect_sensor.xacro" />
@@ -74,6 +77,10 @@
   <xacro:linear_head_main_link />
   <xacro:linear_head_pitch_joint fixed="${fixed}" />
   <!-- ================================================================== -->
+  <xacro:differential_link/>
+  <xacro:differential_joint/>
+  <xacro:differential_pin prefix_y="left" reflect_y="1"/>
+  <xacro:differential_pin prefix_y="right" reflect_y="-1"/>
 
 <!-- Load Sensors ######################################################### -->
 
