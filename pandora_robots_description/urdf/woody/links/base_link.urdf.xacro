@@ -87,11 +87,35 @@
            type="fixed" >
       <parent link="base_link" />
       <child link="ssd" />
-      <origin xyz="-0.06872 0.03699 0.07022"
-              rpy="0.0 0.0 0.0" />
+      <origin xyz="0.059 -0.097 0.181"
+              rpy="${PI_2} 0.0 0.0" />
     </joint>
   
   
+    <link name="raspberry" >
+      <xacro:solid_cuboid_inertial mass="0.062" width="0.070" height="0.025" depth="0.095" />
+    </link>
+
+    <joint name="raspberry_joint"
+           type="fixed" >
+      <parent link="base_link" />
+      <child link="raspberry" />
+      <origin xyz="0.071 0.076 0.24"
+              rpy="0.0 0.0 0.0" />
+    </joint>
+
+
+    <link name="arm" >
+      <xacro:solid_cuboid_inertial mass="0.050" width="0.064" height="0.03" depth="0.104" />
+    </link>
+    
+    <joint name="arm_joint"
+           type="fixed" >
+      <parent link="base_link" />
+      <child link="arm" />
+      <origin xyz="-0.052 0.002 0.245"
+              rpy="0.0 0.0 ${PI_2}" />
+    </joint>
   
     <link name="epos" >
       <inertial>
@@ -202,8 +226,6 @@
               rpy="0.0 0.0 0.0" />
     </joint>
     
-    
-  
     <link name="axis" >
       <inertial>
         <origin xyz="0.0 0.0 0.0" />
@@ -245,6 +267,17 @@
       <parent link="base_link" />
       <child link="differential" />
       <origin xyz="-0.15 0.0 0.09031"
+              rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <link name="imu" >
+      <xacro:solid_cuboid_inertial mass="0.05" width="0.045" height="0.024" depth="0.057" />
+    </link>/
+    <joint name="imu_joint"
+           type="fixed" >
+      <parent link="base_link" />
+      <child link="imu" />
+      <origin xyz="0.09013 -0.08006 0.24281"
               rpy="0.0 0.0 0.0" />
     </joint>
     
