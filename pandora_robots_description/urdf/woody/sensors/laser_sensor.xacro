@@ -6,6 +6,7 @@
 
   <xacro:macro name="laser_sensor"
                params="fixed" >
+               
     <xacro:laser_caster parent="base_link"
                          fixed="${fixed}"
                          roll_min_limit="${laser_roll_joint_min_limit}" 
@@ -15,6 +16,7 @@
       <origin xyz="0.2185 -0.00219 0.12885"
               rpy="${zero}" />
     </xacro:laser_caster>
+    
   </xacro:macro>
 
 </robot>
