@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
   
-<!-- Sensors ############################################################## -->
+  <!-- Sensors ############################################################ -->
   <xacro:property name="enable_laser_sensor" value="true" />
   <xacro:property name="enable_kinect_sensor" value="true" />
   <xacro:property name="enable_flir_sensor" value="true" />
@@ -14,7 +14,7 @@
   <xacro:property name="enable_co2_sensor" value="true" />
   <xacro:property name="enable_microphone_sensor" value="false" />
 
-<!-- Joint Physics ######################################################## -->
+  <!-- Joint Physics ###################################################### -->
   <xacro:property name="side_joint_type" value="revolute" />
   <xacro:property name="wheel_joint_type" value="continuous" />
   
@@ -32,7 +32,7 @@
   <xacro:property name="kinect_yaw_joint_min_limit" value="-1.308" />
   <xacro:property name="kinect_yaw_joint_max_limit" value="1.308" />
 
-<!-- TODO: Coefficients ################################################### -->
+  <!-- TODO: Coefficients ################################################# -->
   <xacro:property name="max_robot_linear_velocity" value="2.0" />
   <xacro:property name="max_robot_angular_velocity" value="2.0" />
   <xacro:property name="max_kinect_angular_velocity" value="2.5" />
@@ -43,7 +43,7 @@
   <xacro:property name="max_kinect_angular_acceleration" value="0.0" />
   <xacro:property name="max_laser_angular_acceleration" value="0.0" />
 
-<!-- Dimensions ########################################################### -->
+  <!-- Dimensions ######################################################### -->
   <xacro:property name="wheel_length" value="0.07985" />
   <xacro:property name="wheel_radius" value="0.09794" />
   

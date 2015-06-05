@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-<!-- Import Files ######################################################### -->
+  <!-- Import Files ####################################################### -->
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/urdf_configurations.xacro" />
   
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/constants.xacro" />
@@ -28,7 +28,7 @@
 <xacro:macro name="woody_urdf"
              params="fixed" >
 
-<!-- Load Links & Joints ################################################## -->
+  <!-- Load Links & Joints ################################################ -->
   <xacro:base_link />
   
   <xacro:side_link prefix_y="left" reflect_y="1" />
@@ -49,7 +49,7 @@
   <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
-<!-- Load Sensors ######################################################### -->
+  <!-- Load Sensors ####################################################### -->
   <xacro:if value="${enable_laser_sensor}" >
     <xacro:laser_sensor fixed="${fixed}" />
   </xacro:if>
