@@ -10,9 +10,9 @@
 
   <xacro:macro name="co2_sensor" >
   
-    <xacro:co2_caster parent="linear_head_main_link" >
+    <xacro:co2_caster parent="kinect_main_link" >
 
-      <origin xyz="0.00915 -0.05293 0.05251"
+      <origin xyz="0.0173 -0.0495 0.022"
               rpy="${zero}" />
 
     </xacro:co2_caster>
