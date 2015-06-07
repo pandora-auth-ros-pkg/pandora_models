@@ -3,31 +3,31 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <!-- Import Files ####################################################### -->
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/urdf_configurations.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/urdf_configurations.xacro" />
   
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/constants.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/defaults.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/materials.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/constants.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/defaults.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/materials.xacro" />
   
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/base_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/side_link.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/links/wheel_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/links/base_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/links/side_link.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/links/wheel_link.urdf.xacro" />
   
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/side_joint.urdf.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/joints/wheel_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/joints/side_joint.urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/joints/wheel_joint.urdf.xacro" />
   
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/laser_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/kinect_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/flir_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/camera_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/sonar_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/thermal_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/co2_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/microphone_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/laser_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/kinect_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/flir_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/camera_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/sonar_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/thermal_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/co2_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/microphone_sensor.xacro" />
   
   <xacro:macro name="woody_urdf" >
 
-    <!-- Load Links & Joints ################################################ -->
+    <!-- Load Links & Joints ############################################## -->
     <xacro:base_link />
     
     <xacro:side_link prefix_y="left" reflect_y="1" />
@@ -48,7 +48,7 @@
     <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
     <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
-    <!-- Load Sensors ####################################################### -->
+    <!-- Load Sensors ##################################################### -->
     <xacro:if value="${enable_laser_sensor}" >
       <xacro:laser_sensor fixed="${fixed}" />
     </xacro:if>

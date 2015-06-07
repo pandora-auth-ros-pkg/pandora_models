@@ -21,7 +21,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/woody/visual/side/side_link.dae" />
+          <mesh filename="package://pandora_robots_description/woody/meshes/side_link.dae" />
         </geometry>
         <material name="side" />
       </visual>
@@ -30,7 +30,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/meshes/woody/collision/side/side_link.stl" />
+          <mesh filename="package://pandora_robots_description/woody/meshes/side_link.stl" />
         </geometry>
       </collision>
 
