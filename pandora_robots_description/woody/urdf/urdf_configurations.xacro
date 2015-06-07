@@ -1,20 +1,8 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
-  
-  <!-- Sensors ############################################################ -->
-  <xacro:property name="enable_laser_sensor" value="true" />
-  <xacro:property name="enable_kinect_sensor" value="true" />
-  <xacro:property name="enable_flir_sensor" value="true" />
-  <xacro:property name="enable_left_camera_sensor" value="true" />
-  <xacro:property name="enable_right_camera_sensor" value="true" />
-  <xacro:property name="enable_left_sonar_sensor" value="true" />
-  <xacro:property name="enable_right_sonar_sensor" value="true" />
-  <xacro:property name="enable_thermal_sensor" value="true" />
-  <xacro:property name="enable_co2_sensor" value="true" />
-  <xacro:property name="enable_microphone_sensor" value="false" />
 
-  <!-- Joint Physics ###################################################### -->
+  <!-- Joints ############################################################# -->
   <xacro:property name="side_joint_damping" value="0.0" />
   <xacro:property name="wheel_joint_damping" value="0.0" />
   
