@@ -6,16 +6,11 @@
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/defaults.xacro" />
 
   <xacro:macro name="laser_caster"
-               params="parent
-                       fixed
-                       roll_min_limit
-                       roll_max_limit
-                       pitch_min_limit
-                       pitch_max_limit
-                       *origin" >
+               params="parent *origin
+                       roll_min_limit roll_max_limit
+                       pitch_min_limit pitch_max_limit" >
     
     <!-- Links ############################################################ -->
-
     <link name="laser_roll_servo_link" >
       <xacro:solid_cuboid_inertial mass="0.057" x="0.041" y="0.050" z="0.035" >
         <origin xyz="0.00234 0.01566 -0.0002" />
@@ -69,65 +64,45 @@
         </geometry>
       </collision>
     </link>
-
-    <link name="laser_link" >
-      <xacro:point_mass_inertial />
-    </link>
     
     <!-- Joints ########################################################### -->
-    
-    <joint name="laser_servo_base_joint"
+    <joint name="laser_servo_parent_joint"
            type="fixed" >
       <parent link="${parent}" />
       <child link="laser_roll_servo_link" />
       <xacro:insert_block name="origin" />
     </joint>
 
-    <xacro:if value="${fixed}" >
-      <joint name="laser_roll_joint"
-             type="fixed" >
-        <parent link="laser_roll_servo_link" />
-        <child link="laser_pitch_servo_link" />
-        <origin xyz="0.03999 0.0 0.0" 
-                rpy="0 0 0" />
-      </joint>
+    <joint name="laser_roll_joint"
+           type="revolute" >
+      <parent link="laser_roll_servo_link" />
+      <child link="laser_pitch_servo_link" />
+      <origin xyz="0.03999 0.0 0.0" 
+              rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="${roll_min_limit}"
+             upper="${roll_max_limit}"
+             effort="50"
+             velocity="50.0" />
+    </joint>
 
-      <joint name="laser_pitch_joint"
-             type="fixed" >
-        <parent link="laser_pitch_servo_link" />
-        <child link="laser_main_link" />
-        <origin xyz="0.0 0.0 0.02276" 
-                rpy="0 0 0" />
-      </joint>
-    </xacro:if>
-
-    <xacro:unless value="${fixed}" >
-      <joint name="laser_roll_joint"
-             type="revolute" >
-        <parent link="laser_roll_servo_link" />
-        <child link="laser_pitch_servo_link" />
-        <origin xyz="0.03999 0.0 0.0" 
-                rpy="0 0 0" />
-        <axis xyz="1 0 0" />
-        <limit lower="${roll_min_limit}"
-               upper="${roll_max_limit}"
-               effort="50"
-               velocity="50.0" />
-      </joint>
-
-      <joint name="laser_pitch_joint"
-             type="revolute" >
-        <parent link="laser_pitch_servo_link" />
-        <child link="laser_main_link" />
-        <origin xyz="0.0 0.0 0.02276" 
-                rpy="0 0 0" />
-        <axis xyz="0 1 0" />
-        <limit lower="${pitch_min_limit}"
-               upper="${pitch_max_limit}"
-               effort="50"
-               velocity="50.0" />
-      </joint>
-    </xacro:unless>
+    <joint name="laser_pitch_joint"
+           type="revolute" >
+      <parent link="laser_pitch_servo_link" />
+      <child link="laser_main_link" />
+      <origin xyz="0.0 0.0 0.02276" 
+              rpy="0 0 0" />
+      <axis xyz="0 1 0" />
+      <limit lower="${pitch_min_limit}"
+             upper="${pitch_max_limit}"
+             effort="50"
+             velocity="50.0" />
+    </joint>
+    
+    <!-- Frames ########################################################### -->
+    <link name="laser_link" >
+      <xacro:point_mass_inertial />
+    </link>
     
     <joint name="laser_joint"
            type="fixed" >

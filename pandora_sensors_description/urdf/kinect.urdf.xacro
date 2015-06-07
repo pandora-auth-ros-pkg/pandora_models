@@ -6,16 +6,11 @@
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/defaults.xacro" />
 
   <xacro:macro name="kinect_caster"
-               params="parent
-                       fixed
-                       pitch_min_limit
-                       pitch_max_limit
-                       yaw_min_limit
-                       yaw_max_limit
-                       *origin" >
+               params="parent *origin
+                       pitch_min_limit pitch_max_limit
+                       yaw_min_limit yaw_max_limit" >
     
     <!-- Links ############################################################ -->
-
     <link name="kinect_yaw_servo_link" >
       <xacro:solid_cuboid_inertial mass="0.055" x="0.050" y="0.032" z="0.049" >
         <origin xyz="-0.01316 0.00002 0.00093" />
@@ -85,7 +80,48 @@
         </geometry>
       </collision>
     </link>
+    
+    <!-- Joints ########################################################### -->
+    <joint name="kinect_servo_parent_joint"
+           type="fixed" >
+      <parent link="${parent}" />
+      <child link="kinect_yaw_servo_link" />
+      <xacro:insert_block name="origin" />
+    </joint>
+    
+    <joint name="kinect_yaw_joint"
+           type="revolute" >
+      <parent link="kinect_yaw_servo_link" />
+      <child link="kinect_pitch_servo_link" />
+      <origin xyz="0.0 0.0 0.06749"
+              rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+      <limit lower="${yaw_min_limit}"
+             upper="${yaw_max_limit}"
+             effort="50"
+             velocity="50.0" />
+    </joint>
 
+    <joint name="kinect_pitch_joint"
+           type="revolute" >
+      <parent link="kinect_pitch_servo_link" />
+      <child link="kinect_platform_link" />
+      <axis xyz="0 1 0" />
+      <limit lower="${pitch_min_limit}"
+             upper="${pitch_max_limit}"
+             effort="50"
+             velocity="50.0" />
+    </joint>
+
+    <joint name="kinect_platform_joint"
+           type="fixed" >
+      <parent link="kinect_platform_link" />
+      <child link="kinect_link" />
+      <origin xyz="0.03261 -0.00101 0.04261"
+              rpy="0.0 0.0 0.0" />
+    </joint>
+    
+    <!-- Frames ########################################################### -->
     <link name="kinect_frame" >
       <xacro:point_mass_inertial />
     </link>
@@ -109,67 +145,6 @@
     <link name="kinect_rgb_optical_frame" >
       <xacro:point_mass_inertial />
     </link>
-    
-    <!-- Joints ########################################################### -->
-
-    <joint name="kinect_servo_base_joint"
-           type="fixed" >
-      <parent link="${parent}" />
-      <child link="kinect_yaw_servo_link" />
-      <xacro:insert_block name="origin" />
-    </joint>
-
-    <xacro:if value="${fixed}" >
-      <joint name="kinect_yaw_joint"
-             type="fixed" >
-        <parent link="kinect_yaw_servo_link" />
-        <child link="kinect_pitch_servo_link" />
-        <origin xyz="0.0 0.0 0.06749"
-                rpy="0.0 0.0 0.0" />
-      </joint>
-
-      <joint name="kinect_pitch_joint"
-             type="fixed" >
-        <parent link="kinect_pitch_servo_link" />
-        <child link="kinect_platform_link" />
-      </joint>
-    </xacro:if>
-
-    <xacro:unless value="${fixed}" >
-      <joint name="kinect_yaw_joint"
-             type="revolute" >
-        <parent link="kinect_yaw_servo_link" />
-        <child link="kinect_pitch_servo_link" />
-        <origin xyz="0.0 0.0 0.06749"
-                rpy="0.0 0.0 0.0" />
-        <axis xyz="0 0 1" />
-        <limit lower="${yaw_min_limit}"
-               upper="${yaw_max_limit}"
-               effort="50"
-               velocity="50.0" />
-      </joint>
-
-      <joint name="kinect_pitch_joint"
-             type="revolute" >
-        <parent link="kinect_pitch_servo_link" />
-        <child link="kinect_platform_link" />
-        <axis xyz="0 1 0" />
-        <limit lower="${pitch_min_limit}"
-               upper="${pitch_max_limit}"
-               effort="50"
-               velocity="50.0" />
-      </joint>
-    </xacro:unless>
-
-    <joint name="kinect_platform_joint"
-           type="fixed" >
-      <parent link="kinect_platform_link" />
-      <child link="kinect_link" />
-      <origin xyz="0.03261 -0.00101 0.04261"
-              rpy="0.0 0.0 0.0" />
-    </joint>
-    
-    <!-- Frames ########################################################### -->
     
     <joint name="kinect_joint"
            type="fixed" >

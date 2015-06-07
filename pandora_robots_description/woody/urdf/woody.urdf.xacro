@@ -50,11 +50,11 @@
 
     <!-- Load Sensors ##################################################### -->
     <xacro:if value="${enable_laser_sensor}" >
-      <xacro:laser_sensor fixed="${fixed}" />
+      <xacro:laser_sensor />
     </xacro:if>
     
     <xacro:if value="${enable_kinect_sensor}" >
-      <xacro:kinect_sensor fixed="${fixed}" />
+      <xacro:kinect_sensor />
     </xacro:if>
     
     <xacro:if value="${enable_flir_sensor}" >
@@ -76,7 +76,7 @@
     </xacro:if>
     
     <xacro:if value="${enable_thermal_sensor}" >
-        <xacro:thermal_sensor />
+      <xacro:thermal_sensor />
     </xacro:if>
     
     <xacro:if value="${enable_co2_sensor}" >
