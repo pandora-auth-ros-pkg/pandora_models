@@ -5,7 +5,7 @@
   <xacro:macro name="side_joint"
                params="prefix_y reflect_y" >
     <joint name="${prefix_y}_side_joint"
-           type="${side_joint_type}" >
+           type="revolute" >
            
       <parent link="base_link" />
       <child link="${prefix_y}_side_link" />

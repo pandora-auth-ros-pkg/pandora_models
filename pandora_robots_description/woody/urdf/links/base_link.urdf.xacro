@@ -109,7 +109,7 @@
                  ixz="0.0"
                  iyy="6.8283E-005"
                  iyz="0.0"
-                 izz="0.0002858833" /> <!-- XXX -->
+                 izz="0.0002858833" />
       </inertial>
     </link>
     <joint name="epos_joint"
