@@ -2,10 +2,9 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:macro name="base_link" >
+  <xacro:macro name="base" >
   
     <link name="base_link" >
-
       <inertial>
         <origin xyz="-0.00968 -0.00122 0.19369" />
         <mass value="8.25079" />
@@ -16,20 +15,17 @@
                  iyz="-0.000177925"
                  izz="0.083438037" />
       </inertial>
-
       <visual>
         <geometry>
           <mesh filename="package://pandora_robots_description/woody/meshes/base_link.dae" />
         </geometry>
         <material name="base" />
       </visual>
-
       <collision>
         <geometry>
           <mesh filename="package://pandora_robots_description/woody/meshes/base_link.stl" />
         </geometry>
       </collision>
-
     </link>
   
     <link name="miniitx" >

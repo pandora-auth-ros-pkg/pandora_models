@@ -2,10 +2,10 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:macro name="wheel_link"
+  <xacro:macro name="wheel"
                params="prefix_y prefix_x reflect_y reflect_x" >
+               
     <link name="${prefix_y}_${prefix_x}_wheel_link" >
-    
       <inertial>
         <origin xyz="${ reflect_y * ( -2.2235E-05 ) } ${ reflect_y * ( -0.00052624 ) } 2.4287E-05" />
         <mass value="1.5" />
@@ -16,7 +16,6 @@
                  iyz="${ reflect_y * ( -7.9189E-08 ) }"
                  izz="0.0040286" />
       </inertial>
-      
       <visual>
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
@@ -25,7 +24,6 @@
         </geometry>
         <material name="wheel" />
       </visual>
-
       <collision>
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
@@ -33,8 +31,19 @@
           <mesh filename="package://pandora_robots_description/woody/meshes/wheel_link.stl" />
         </geometry>
       </collision>
-      
     </link>
+    
+    <joint name="${prefix_y}_${prefix_x}_wheel_joint"
+           type="continuous" >
+      <parent link="${prefix_y}_side_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_link" />
+      <origin xyz="${ reflect_x * ( 0.17339 ) } ${ reflect_y * ( 0.06886 ) } -0.052795"
+              rpy="${zero}" />
+      <axis xyz="0 1 0" />
+      <limit effort="100.0"
+             velocity="100.0" />
+    </joint>
+    
   </xacro:macro>
 
 </robot>
