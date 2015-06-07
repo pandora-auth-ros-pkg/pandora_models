@@ -51,53 +51,45 @@
   </xacro:macro>
 
   <xacro:macro name="solid_sphere_inertial"
-               params="mass
-                       radius
-                       *origin" >
+               params="mass radius *origin" >
     <inertial>
       <xacro:insert_block name="origin" />
       <mass value="${mass}" />
-      <inertia ixx="${ ( 2 / 5 ) * mass * ( radius * radius ) }"
+      <inertia ixx="${(2 / 5) * mass * (radius * radius)}"
                ixy="0.0"
                ixz="0.0"
-               iyy="${ ( 2 / 5 ) * mass * ( radius * radius ) }"
+               iyy="${(2 / 5) * mass * (radius * radius)}"
                iyz="0.0"
-               izz="${ ( 2 / 5 ) * mass * ( radius * radius ) }" />
+               izz="${(2 / 5) * mass * (radius * radius)}" />
     </inertial>
   </xacro:macro>
   
   <xacro:macro name="solid_cuboid_inertial"
-               params="mass
-                       x
-                       y
-                       z
+               params="mass x y z
                        *origin" >
     <inertial>
       <xacro:insert_block name="origin" />
       <mass value="${mass}" />
-      <inertia ixx="${ ( 1 / 12 ) * mass * ( ( y * y ) + ( z * z ) ) }"
+      <inertia ixx="${(1 / 12) * mass * ((y * y) + (z * z))}"
                ixy="0.0"
                ixz="0.0"
-               iyy="${ ( 1 / 12 ) * mass * ( ( x * x ) + ( z * z ) ) }"
+               iyy="${(1 / 12) * mass * ((x * x) + (z * z))}"
                iyz="0.0"
-               izz="${ ( 1 / 12 ) * mass * ( ( x * x ) + ( y * y ) ) }" />
+               izz="${(1 / 12) * mass * ((x * x) + (y * y))}" />
     </inertial>
   </xacro:macro>
   
   <xacro:macro name="solid_cylinder_inertial"
-               params="mass
-                       radius
-                       height
-                       *origin" >
+               params="mass radius height *origin" >
     <inertial>
       <xacro:insert_block name="origin" />
       <mass value="${mass}" />
-      <inertia ixx="${ ( 1 / 12 ) * mass * ( 3 * ( radius * radius ) + ( height * height ) ) }"
+      <inertia ixx="${(1 / 12) * mass * (3 * (radius * radius) + (height * height))}"
                ixy="0.0"
                ixz="0.0"
-               iyy="${ ( 1 / 12 ) * mass * ( 3 * ( radius * radius ) + ( height * height ) ) }"
+               iyy="${(1 / 12) * mass * (3 * (radius * radius) + (height * height))}"
                iyz="0.0"
-               izz="${ ( 1 / 2 ) * mass * ( radius * radius ) }" />
+               izz="${(1 / 2) * mass * (radius * radius)}" />
     </inertial>
   </xacro:macro>
 

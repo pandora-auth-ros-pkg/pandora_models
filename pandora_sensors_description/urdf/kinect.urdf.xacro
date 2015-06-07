@@ -2,8 +2,8 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/constants.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/properties/defaults.xacro" />
+  <xacro:include filename="$(find pandora_urdf_properties)/xacro/constants.xacro" />
+  <xacro:include filename="$(find pandora_urdf_properties)/xacro/defaults.xacro" />
 
   <xacro:macro name="kinect_caster"
                params="parent

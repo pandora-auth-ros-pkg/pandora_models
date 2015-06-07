@@ -3,11 +3,11 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <!-- Import Files ####################################################### -->
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/urdf_configurations.xacro" />
+  <xacro:include filename="$(find pandora_urdf_properties)/xacro/constants.xacro" />
+  <xacro:include filename="$(find pandora_urdf_properties)/xacro/defaults.xacro" />
+  <xacro:include filename="$(find pandora_urdf_properties)/xacro/materials.xacro" />
   
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/constants.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/defaults.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/properties/materials.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/urdf_configurations.xacro" />
   
   <xacro:include filename="$(find pandora_robots_description)/woody/urdf/links/base_link.urdf.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/woody/urdf/links/side_link.urdf.xacro" />

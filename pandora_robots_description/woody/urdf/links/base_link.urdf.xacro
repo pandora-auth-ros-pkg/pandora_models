@@ -18,7 +18,6 @@
       </inertial>
 
       <visual>
-        <xacro:default_origin />
         <geometry>
           <mesh filename="package://pandora_robots_description/woody/meshes/base_link.dae" />
         </geometry>
@@ -26,7 +25,6 @@
       </visual>
 
       <collision>
-        <xacro:default_origin />
         <geometry>
           <mesh filename="package://pandora_robots_description/woody/meshes/base_link.stl" />
         </geometry>
