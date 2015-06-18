@@ -24,6 +24,7 @@
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/thermal_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/co2_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/microphone_sensor.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/logitec_stick.urdf.xacro" />
   
 <xacro:macro name="woody_urdf"
              params="fixed" >
@@ -48,6 +49,8 @@
   
   <xacro:wheel_link prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
   <xacro:wheel_joint prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
+
+  <xacro:logitec_stick_camera />
 
   <!-- Load Sensors ####################################################### -->
   <xacro:if value="${enable_laser_sensor}" >
