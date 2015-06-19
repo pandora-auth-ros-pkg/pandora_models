@@ -24,7 +24,7 @@
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/thermal_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/co2_sensor.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/microphone_sensor.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/urdf/woody/sensors/logitec_stick.urdf.xacro" />
+  <xacro:include filename="$(find pandora_sensors_description)/urdf/logitec_stick.urdf.xacro" />
   
 <xacro:macro name="woody_urdf"
              params="fixed" >
