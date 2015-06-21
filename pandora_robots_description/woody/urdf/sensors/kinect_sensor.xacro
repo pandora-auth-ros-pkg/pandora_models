@@ -4,8 +4,7 @@
 
   <xacro:include filename="$(find pandora_sensors_description)/urdf/kinect.urdf.xacro" />
 
-  <xacro:macro name="kinect_sensor" >
-               
+  <xacro:macro name="kinect_sensor" >     
     <xacro:kinect_caster parent="base_link"
                          pitch_min_limit="${kinect_pitch_joint_min_limit}" 
                          pitch_max_limit="${kinect_pitch_joint_max_limit}" 
@@ -14,7 +13,6 @@
       <origin xyz="0.11999 0.031 0.25781"
               rpy="0.0 0.0 0.0" />
     </xacro:kinect_caster>
-    
   </xacro:macro>
 
 </robot>

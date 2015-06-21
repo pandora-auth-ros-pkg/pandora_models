@@ -5,7 +5,6 @@
   <xacro:include filename="$(find pandora_sensors_description)/urdf/laser.urdf.xacro" />
 
   <xacro:macro name="laser_sensor" >
-               
     <xacro:laser_caster parent="base_link"
                         roll_min_limit="${laser_roll_joint_min_limit}" 
                         roll_max_limit="${laser_roll_joint_max_limit}"
@@ -14,7 +13,6 @@
       <origin xyz="0.19015 -0.00248 0.12722"
               rpy="0.0 0.0 0.035" /> <!-- yaw offset -->
     </xacro:laser_caster>
-    
   </xacro:macro>
 
 </robot>
