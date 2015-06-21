@@ -23,18 +23,19 @@
   <xacro:wheel prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
   <!-- Load Sensors -->
-  <xacro:laser_sensor />
-  <xacro:kinect_sensor />
+  <xacro:laser_04 />
+  <!--<xacro:laser_20 />-->
+  <xacro:kinect />
   
-  <xacro:left_camera_sensor />
-  <xacro:right_camera_sensor />
+  <xacro:left_webcam />
+  <xacro:right_webcam />
   
-  <xacro:left_sonar_sensor />
-  <xacro:right_sonar_sensor />
+  <xacro:left_sonar />
+  <xacro:right_sonar />
   
-  <xacro:flir_sensor />
-  <xacro:co2_sensor />
-  <!--<xacro:thermal_sensor />-->
-  <!--<xacro:microphone_sensor />-->
+  <xacro:thermal />
+  <xacro:co2 />
+  <!--<xacro:temperature />-->
+  <!--<xacro:microphone />-->
 
 </robot>

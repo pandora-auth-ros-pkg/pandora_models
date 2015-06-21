@@ -26,20 +26,20 @@
   <xacro:linear_head />
 
   <!-- Load Sensors -->
-  <xacro:laser_sensor />
-  <xacro:kinect_sensor />
+  <xacro:laser_04 />
+  <xacro:kinect />
   
-  <xacro:left_camera_sensor />
-  <xacro:right_camera_sensor />
+  <xacro:left_webcam />
+  <xacro:right_webcam />
   
-  <xacro:linear_sonar_sensor />
-  <xacro:left_sonar_sensor />
-  <xacro:right_sonar_sensor />
+  <xacro:linear_sonar />
+  <xacro:left_sonar />
+  <xacro:right_sonar />
   
-  <xacro:co2_sensor />
-  <xacro:middle_thermal_sensor />
-  <xacro:left_thermal_sensor />
-  <xacro:right_thermal_sensor />
-  <xacro:microphone_sensor />
+  <xacro:co2 />
+  <xacro:middle_temperature />
+  <xacro:left_temperature />
+  <xacro:right_temperature />
+  <xacro:microphone />
 
 </robot>
