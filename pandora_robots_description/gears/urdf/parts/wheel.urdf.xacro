@@ -20,7 +20,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/woody/meshes/wheel_link.dae" />
+          <mesh filename="package://pandora_robots_description/gears/meshes/wheel_link.dae" />
         </geometry>
         <material name="wheel" />
       </visual>
@@ -28,7 +28,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/woody/meshes/wheel_link.stl" />
+          <mesh filename="package://pandora_robots_description/gears/meshes/wheel_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -37,9 +37,10 @@
            type="continuous" >
       <parent link="${prefix_y}_side_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_link" />
-      <origin xyz="${ reflect_x * ( 0.17339 ) } ${ reflect_y * ( 0.06886 ) } -0.052795"
+      <origin xyz="${ reflect_x * ( 0.198785 ) } ${ reflect_y * ( 0.06886 ) } -0.052795"
               rpy="${zero}" />
       <axis xyz="0 1 0" />
+      <dynamics damping="0.0" />
       <limit effort="100.0"
              velocity="100.0" />
     </joint>

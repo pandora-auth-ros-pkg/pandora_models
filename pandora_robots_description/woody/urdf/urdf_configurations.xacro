@@ -2,10 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <!-- Joints -->
-  <xacro:property name="side_joint_damping" value="0.0" />
-  <xacro:property name="wheel_joint_damping" value="0.0" />
-  
+  <!-- Joint limits -->
   <xacro:property name="side_joint_min_limit" value="-0.785" />
   <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="laser_roll_joint_min_limit" value="-0.523" />
@@ -17,7 +14,7 @@
   <xacro:property name="kinect_yaw_joint_min_limit" value="-1.308" />
   <xacro:property name="kinect_yaw_joint_max_limit" value="1.308" />
 
-  <!-- TODO: Coefficients -->
+  <!-- Coefficients -->
   <xacro:property name="max_robot_linear_velocity" value="2.0" />
   <xacro:property name="max_robot_angular_velocity" value="2.0" />
   <xacro:property name="max_kinect_angular_velocity" value="2.5" />

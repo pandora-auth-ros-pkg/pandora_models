@@ -20,7 +20,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/woody/meshes/side_link.dae" />
+          <mesh filename="package://pandora_robots_description/gears/meshes/side_link.dae" />
         </geometry>
         <material name="side" />
       </visual>
@@ -28,7 +28,7 @@
         <origin xyz="${zero}"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
         <geometry>
-          <mesh filename="package://pandora_robots_description/woody/meshes/side_link.stl" />
+          <mesh filename="package://pandora_robots_description/gears/meshes/side_link.stl" />
         </geometry>
       </collision>
     </link>
@@ -40,7 +40,7 @@
       <origin xyz="0.0 ${ reflect_y * ( 0.10314 ) } 0.0"
               rpy="${zero}" />
       <axis xyz="0 1 0" />
-      <dynamics damping="${side_joint_damping}" />
+      <dynamics damping="0.0" />
       <limit lower="${side_joint_min_limit}"
              upper="${side_joint_max_limit}"
              effort="150.0"

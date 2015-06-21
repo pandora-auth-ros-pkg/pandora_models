@@ -40,7 +40,7 @@
       <origin xyz="0.0 ${ reflect_y * ( 0.10314 ) } 0.0"
               rpy="${zero}" />
       <axis xyz="0 1 0" />
-      <dynamics damping="${side_joint_damping}" />
+      <dynamics damping="0.0" />
       <limit lower="${side_joint_min_limit}"
              upper="${side_joint_max_limit}"
              effort="150.0"

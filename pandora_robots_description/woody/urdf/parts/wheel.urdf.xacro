@@ -40,6 +40,7 @@
       <origin xyz="${ reflect_x * ( 0.17339 ) } ${ reflect_y * ( 0.06886 ) } -0.052795"
               rpy="${zero}" />
       <axis xyz="0 1 0" />
+      <dynamics damping="0.0" />
       <limit effort="100.0"
              velocity="100.0" />
     </joint>
