@@ -3,7 +3,7 @@
 <robot name="woody"
        xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <!-- Import Files ####################################################### -->
+  <!-- Import Files -->
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
   
   <xacro:include filename="$(find pandora_robots_description)/woody/urdf/urdf_configurations.xacro" />
@@ -11,7 +11,7 @@
   <xacro:include filename="$(find pandora_robots_description)/woody/urdf/parts/*.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/*.xacro" />
 
-  <!-- Load Links & Joints ################################################ -->
+  <!-- Load Links & Joints -->
   <xacro:base />
   
   <xacro:side prefix_y="left" reflect_y="1" />
@@ -22,7 +22,7 @@
   <xacro:wheel prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
   <xacro:wheel prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
-  <!-- Load Sensors ####################################################### -->
+  <!-- Load Sensors -->
   <xacro:laser_sensor />
   <xacro:kinect_sensor />
   
@@ -33,8 +33,8 @@
   <xacro:right_sonar_sensor />
   
   <xacro:flir_sensor />
-  <xacro:thermal_sensor />
   <xacro:co2_sensor />
+  <!--<xacro:thermal_sensor />-->
   <!--<xacro:microphone_sensor />-->
 
 </robot>
