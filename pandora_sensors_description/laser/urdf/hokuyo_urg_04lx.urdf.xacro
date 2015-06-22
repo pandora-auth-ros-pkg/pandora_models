@@ -2,8 +2,6 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
-
   <xacro:macro name="hokuyo_urg_04lx"
                params="parent *origin
                        roll_min_limit roll_max_limit

@@ -27,13 +27,14 @@
   <!--<xacro:laser_20 />-->
   <xacro:kinect />
   
+  <xacro:thermal />
+  
   <xacro:left_webcam />
   <xacro:right_webcam />
   
   <xacro:left_sonar />
   <xacro:right_sonar />
-  
-  <xacro:thermal />
+
   <xacro:co2 />
   <!--<xacro:temperature />-->
   <!--<xacro:microphone />-->

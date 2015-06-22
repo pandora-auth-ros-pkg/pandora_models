@@ -2,8 +2,6 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
-
   <xacro:macro name="logitech_c310hd"
                params="parent prefix_y *origin" >
 

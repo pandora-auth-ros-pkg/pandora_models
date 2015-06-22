@@ -2,8 +2,6 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
-
   <xacro:macro name="flir_lepton"
                params="parent *origin" >
 
