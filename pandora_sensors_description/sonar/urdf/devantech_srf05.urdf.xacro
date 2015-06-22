@@ -49,7 +49,7 @@
       <parent link="${name}_sonar_link" />
       <child link="${name}_sonar_frame" />
       <origin xyz="0.015 0.0 0.0" 
-              rpy="0.0 0.0 0.0" />
+              rpy="0.0 0.0 3.1415" />
     </joint>
 
   </xacro:macro>
