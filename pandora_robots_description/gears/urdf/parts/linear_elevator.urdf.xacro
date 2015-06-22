@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:macro name="linear_elevator_link" >
+  <xacro:macro name="linear_elevator" >
   
     <link name="linear_elevator_link" >
       <inertial>
