@@ -5,8 +5,8 @@
   <xacro:include filename="$(find pandora_sensors_description)/co2/urdf/*.urdf.xacro" />
 
   <xacro:macro name="co2" >
-    <xacro:dynament_gold parent="kinect_link" >
-      <origin xyz="0.0173 -0.0595 0.0"
+    <xacro:dynament_gold parent="kinect_platform_link" >
+      <origin xyz="0.04937 -0.07649 0.05345"
               rpy="${zero}" />
     </xacro:dynament_gold>
   </xacro:macro>

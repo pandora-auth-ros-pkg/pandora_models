@@ -5,8 +5,8 @@
   <xacro:include filename="$(find pandora_sensors_description)/microphone/urdf/*.urdf.xacro" />
 
   <xacro:macro name="microphone" >
-    <xacro:kinect_array parent="kinect_link" >
-      <origin xyz="-0.02175 -0.0374 0.09643"
+    <xacro:kinect_array parent="kinect_platform_link" >
+      <origin xyz="0.0015 0.0 0.07001"
               rpy="${zero}" />
     </xacro:kinect_array>
   </xacro:macro>

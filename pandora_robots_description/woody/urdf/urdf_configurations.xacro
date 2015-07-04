@@ -19,16 +19,16 @@
   <xacro:property name="max_robot_angular_velocity" value="2.0" />
   <xacro:property name="max_kinect_angular_velocity" value="2.5" />
   <xacro:property name="max_laser_angular_velocity" value="2.5" />
-  
+
   <xacro:property name="max_robot_linear_acceleration" value="1.0" />
   <xacro:property name="max_robot_angular_acceleration" value="0.2" />
   <xacro:property name="max_kinect_angular_acceleration" value="0.0" />
   <xacro:property name="max_laser_angular_acceleration" value="0.0" />
 
   <!-- Dimensions -->
-  <xacro:property name="wheel_length" value="0.07985" />
-  <xacro:property name="wheel_radius" value="0.09794" />
-  
+  <xacro:property name="wheel_length" value="0.0742" />
+  <xacro:property name="wheel_radius" value="0.0922" />
+
   <xacro:property name="track" value="0.344" />
   <xacro:property name="wheelbase" value="0.34678" />
 
