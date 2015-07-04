@@ -6,7 +6,7 @@
 
   <xacro:macro name="thermal" >
     <xacro:flir_lepton parent="kinect_platform_link" >
-      <origin xyz="0.0575 0.07522 0.05166"
+      <origin xyz="0.0575 0.07522 0.04716"
               rpy="0 0 0" />
     </xacro:flir_lepton>
   </xacro:macro>
