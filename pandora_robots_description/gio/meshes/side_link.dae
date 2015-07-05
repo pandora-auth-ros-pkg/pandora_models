@@ -17,7 +17,7 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0.04 0.04 0.04 1</color>
+              <color sid="emission">0.016 0.016 0.016 1</color>
             </emission>
             <ambient>
               <color sid="ambient">0 0 0 1</color>
@@ -26,7 +26,7 @@
               <color sid="diffuse">0.0072 0.0072 0.0072 1</color>
             </diffuse>
             <specular>
-              <color sid="specular">0.9 0.9 0.9 1</color>
+              <color sid="specular">0.1 0.1 0.1 1</color>
             </specular>
             <shininess>
               <float sid="shininess">75</float>
