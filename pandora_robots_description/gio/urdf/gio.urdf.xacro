@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 
-<robot name="woody"
+<robot name="gio"
        xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <!-- Import Files -->
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
 
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/urdf_configurations.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/gio/urdf/urdf_configurations.xacro" />
 
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/parts/*.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/woody/urdf/sensors/*.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/gio/urdf/parts/*.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/gio/urdf/sensors/*.xacro" />
 
   <!-- Load Links & Joints -->
   <xacro:base />

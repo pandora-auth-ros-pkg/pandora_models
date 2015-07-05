@@ -10,7 +10,7 @@
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
-          <mesh filename="package://pandora_robots_description/woody/meshes/base_link.dae" />
+          <mesh filename="package://pandora_robots_description/gio/meshes/base_link.dae" />
         </geometry>
         <material name="base" />
       </visual>
