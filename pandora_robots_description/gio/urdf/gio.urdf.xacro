@@ -14,6 +14,8 @@
   <!-- Load Links & Joints -->
   <xacro:base />
 
+  <xacro:differential />
+
   <xacro:side prefix_y="left" reflect_y="1" />
   <xacro:side prefix_y="right" reflect_y="-1" />
 
@@ -23,8 +25,7 @@
   <xacro:wheel prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
   <!-- Load Sensors -->
-  <xacro:laser_04 />
-  <!--<xacro:laser_20 />-->
+  <xacro:laser_04 /> <!--<xacro:laser_20 />-->
   <xacro:kinect />
 
   <xacro:thermal />

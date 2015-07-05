@@ -25,9 +25,8 @@
         <material name="side" />
       </visual>
       <collision>
-        <origin xyz="${zero}"
+        <origin xyz="0.0 0.0 -0.03018"
                 rpy="0.0 0.0 ${ ( 1 - reflect_y ) * PI_2 }" />
-        <origin xyz="0.0 0.0 -0.03018" />
         <geometry>
           <box size="0.405 0.081 0.096" />
         </geometry>

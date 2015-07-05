@@ -3,6 +3,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <!-- Joint limits -->
+  <xacro:property name="differential_pin_joint_min_limit" value="-0.785" />
+  <xacro:property name="differential_pin_joint_max_limit" value="0.785" />
   <xacro:property name="side_joint_min_limit" value="-0.785" />
   <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="laser_roll_joint_min_limit" value="-0.523" />
