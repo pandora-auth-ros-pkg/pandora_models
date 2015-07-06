@@ -8,10 +8,9 @@
                        pitch_min_limit pitch_max_limit" >
 
     <!-- Links -->
-    <!-- MASS = 0.076 -->
     <link name="camera_effector_pan_link" >
-      <xacro:solid_cuboid_inertial mass="0.01" x="0.01" y="0.01" z="0.01" >
-        <origin xyz="0.0 0.0 0.0" /> <!-- TODO -->
+      <xacro:solid_cuboid_inertial mass="0.020" x="0.012" y="0.032" z="0.029" >
+        <origin xyz="0.0 -0.00518 0.01887" />
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
@@ -19,15 +18,16 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 -0.00518 0.01887" />
         <geometry>
-          <box size="0.01 0.01 0.01" /> <!-- TODO -->
+          <box size="0.012 0.032 0.029" />
         </geometry>
       </collision>
     </link>
 
     <link name="camera_effector_base_link" >
-      <xacro:solid_cuboid_inertial mass="0.01" x="0.01" y="0.01" z="0.01" >
-        <origin xyz="0.0 0.0 0.0" /> <!-- TODO -->
+      <xacro:solid_cuboid_inertial mass="0.010" x="0.051" y="0.053" z="0.005" >
+        <origin xyz="-0.0045 -0.00011 0.00069" />
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
@@ -35,15 +35,16 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="-0.0045 -0.00011 0.00069" />
         <geometry>
-          <box size="0.01 0.01 0.01" /> <!-- TODO -->
+          <box size="0.051 0.053 0.005" />
         </geometry>
       </collision>
     </link>
 
     <link name="camera_effector_tilt_link" >
-      <xacro:solid_cuboid_inertial mass="0.01" x="0.01" y="0.01" z="0.01" >
-        <origin xyz="0.0 0.0 0.0" /> <!-- TODO -->
+      <xacro:solid_cuboid_inertial mass="0.020" x="0.012" y="0.029" z="0.032" >
+        <origin xyz="0.0 -0.01887 -0.00518" />
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
@@ -51,15 +52,16 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 -0.01887 -0.00518" />
         <geometry>
-          <box size="0.01 0.01 0.01" /> <!-- TODO -->
+          <box size="0.012 0.029 0.032" />
         </geometry>
       </collision>
     </link>
 
     <link name="pi_camera_platform_link" >
-      <xacro:solid_cuboid_inertial mass="0.01" x="0.01" y="0.01" z="0.01" >
-        <origin xyz="0.0 0.0 0.0" /> <!-- TODO -->
+      <xacro:solid_cuboid_inertial mass="0.005" x="0.011" y="0.050" z="0.030" >
+        <origin xyz="0.0 -0.01085 0.01074" />
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
@@ -67,15 +69,16 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 -0.01925 0.00324" />
         <geometry>
-          <box size="0.01 0.01 0.01" /> <!-- TODO -->
+          <box size="0.011 0.050 0.030" />
         </geometry>
       </collision>
     </link>
 
     <link name="pi_camera_link" >
-      <xacro:solid_cuboid_inertial mass="0.01" x="0.01" y="0.01" z="0.01" >
-        <origin xyz="0.0 0.0 0.0" /> <!-- TODO -->
+      <xacro:solid_cuboid_inertial mass="0.021" x="0.009" y="0.025" z="0.024" >
+        <origin xyz="-0.00058 0.0 0.00189" />
       </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
@@ -83,8 +86,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="-0.00058 0.0 0.00189" />
         <geometry>
-          <box size="0.01 0.01 0.01" /> <!-- TODO -->
+          <box size="0.009 0.025 0.024" />
         </geometry>
       </collision>
     </link>
@@ -121,7 +125,8 @@
            type="revolute" >
       <parent link="camera_effector_tilt_link" />
       <child link="pi_camera_platform_link" />
-      <origin xyz="0.0 0.0 0.0" />
+      <origin xyz="0.0 0.0 0.0"
+              rpy="0.0 0.3490658504 0.0" />
       <axis xyz="0 1 0" />
       <dynamics damping="0.0" />
       <limit lower="${camera_effector_tilt_joint_min_limit}"
@@ -134,7 +139,8 @@
            type="fixed" >
       <parent link="pi_camera_platform_link" />
       <child link="pi_camera_link" />
-      <origin xyz="0.00034 -0.01925 0.04306" />
+      <origin xyz="0.00034 -0.01925 0.04306"
+              rpy="0.0 -0.3490658504 0.0" />
     </joint>
 
     <!-- Frames -->
