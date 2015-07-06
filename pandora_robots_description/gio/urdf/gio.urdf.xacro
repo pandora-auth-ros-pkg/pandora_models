@@ -30,6 +30,7 @@
   <xacro:laser_04 /> <!--<xacro:laser_20 />-->
   <xacro:kinect />
 
+  <xacro:camera_effector />
   <xacro:thermal />
 
   <xacro:left_webcam />

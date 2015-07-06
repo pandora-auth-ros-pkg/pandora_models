@@ -4,5 +4,6 @@ source_list:
   - dynamixel/joint_states
   - motor/joint_states
   - linear/joint_states
+  - camera_effector/joint_states
   - dummy/joint_states
 rate: 50

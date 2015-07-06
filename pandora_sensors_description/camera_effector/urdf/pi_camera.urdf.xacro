@@ -91,7 +91,7 @@
 
     <!-- Joints -->
     <joint name="camera_effector_pan_joint"
-           type="fixed" >
+           type="revolute" >
       <parent link="${parent}" />
       <child link="camera_effector_pan_link" />
       <xacro:insert_block name="origin" />
@@ -118,7 +118,7 @@
     </joint>
 
     <joint name="camera_effector_tilt_joint"
-           type="fixed" >
+           type="revolute" >
       <parent link="camera_effector_tilt_link" />
       <child link="pi_camera_platform_link" />
       <origin xyz="0.0 0.0 0.0" />

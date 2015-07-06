@@ -9,6 +9,10 @@
   <xacro:property name="side_joint_max_limit" value="0.785" />
   <xacro:property name="linear_actuator_joint_min_limit" value="0.0" />
   <xacro:property name="linear_actuator_joint_max_limit" value="0.14" />
+  <xacro:property name="camera_effector_pan_joint_min_limit" value="-1.3962" />
+  <xacro:property name="camera_effector_pan_joint_max_limit" value="1.3962" />
+  <xacro:property name="camera_effector_tilt_joint_min_limit" value="-0.6" />
+  <xacro:property name="camera_effector_tilt_joint_max_limit" value="0.6" />
   <xacro:property name="laser_roll_joint_min_limit" value="-0.523" />
   <xacro:property name="laser_roll_joint_max_limit" value="0.523" />
   <xacro:property name="laser_pitch_joint_min_limit" value="-0.523" />
