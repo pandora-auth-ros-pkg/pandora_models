@@ -15,8 +15,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="-0.0015 0.0 0.10075" />
         <geometry>
-          <box size="0.02 0.018 0.207" />
+          <box size="0.020 0.018 0.213" />
         </geometry>
       </collision>
     </link>
@@ -31,8 +32,9 @@
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 0.0 0.0787" />
         <geometry>
-          <box size="0.009 0.009 0.100" />
+          <box size="0.009 0.009 0.157" />
         </geometry>
       </collision>
     </link>

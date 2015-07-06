@@ -18,7 +18,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 -0.00518 0.01887" />
+        <origin xyz="0.0 -0.00585 0.01588" />
         <geometry>
           <box size="0.012 0.032 0.029" />
         </geometry>
@@ -35,7 +35,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="-0.0045 -0.00011 0.00069" />
+        <origin xyz="0.00027 -0.00042 0.00104" />
         <geometry>
           <box size="0.051 0.053 0.005" />
         </geometry>
@@ -52,7 +52,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 -0.01887 -0.00518" />
+        <origin xyz="0.0 -0.01588 -0.00585" />
         <geometry>
           <box size="0.012 0.029 0.032" />
         </geometry>
@@ -86,7 +86,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="-0.00058 0.0 0.00189" />
+        <origin xyz="0.00045 0.0 0.0025" />
         <geometry>
           <box size="0.009 0.025 0.024" />
         </geometry>
