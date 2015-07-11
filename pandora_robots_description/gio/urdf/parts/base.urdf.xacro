@@ -21,15 +21,9 @@
     </link>
 
     <link name="miniitx" >
-      <inertial>
-        <mass value="0.589" />
-        <inertia ixx="0.0014381417"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.0019829667"
-                 iyz="0.0"
-                 izz="0.0033818417" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.589" x="0.17" y="0.17" z="0.04" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="miniitx_joint"
            type="fixed" >
@@ -39,15 +33,9 @@
     </joint>
 
     <link name="ssd" >
-      <inertial>
-        <mass value="0.078" />
-        <inertia ixx="0.0000325"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.00006565"
-                 iyz="0.0"
-                 izz="0.00009685" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.078" x="0.1" y="0.01" z="0.07" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="ssd_joint"
            type="fixed" >
@@ -84,15 +72,9 @@
     </joint>
 
     <link name="epos" >
-      <inertial>
-        <mass value="0.136" />
-        <inertia ixx="0.0002266667"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="6.8283E-005"
-                 iyz="0.0"
-                 izz="0.0002858833" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.136" x="0.075" y="0.14" z="0.04" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="epos_joint"
            type="fixed" >
@@ -102,15 +84,9 @@
     </joint>
 
     <link name="psu" >
-      <inertial>
-        <mass value="0.178" />
-        <inertia ixx="0.0002241168"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.0001828208"
-                 iyz="0.0"
-                 izz="0.0004002627" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.178" x="0.094" y="0.122" z="0.02" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="psu_joint"
            type="fixed" >
@@ -120,15 +96,9 @@
     </joint>
 
     <link name="motor_battery" >
-      <inertial>
-        <mass value="0.8" />
-        <inertia ixx="0.0003576"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.0016806"
-                 iyz="0.0"
-                 izz="0.0015582" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.8" x="0.154" y="0.049" z="0.052" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="motor_battery_joint"
            type="fixed" >
@@ -138,39 +108,15 @@
     </joint>
 
     <link name="pc_battery" >
-      <inertial>
-        <mass value="0.8" />
-        <inertia ixx="0.0003576"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.0016806"
-                 iyz="0.0"
-                 izz="0.0015582" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.8" x="0.154" y="0.049" z="0.052" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
     </link>
     <joint name="pc_battery_joint"
            type="fixed" >
       <parent link="base_link" />
       <child link="pc_battery" />
       <origin xyz="0.10395 -0.027 0.04822" />
-    </joint>
-
-    <link name="cables" >
-      <inertial>
-        <mass value="0.6" />
-        <inertia ixx="0.00001"
-                 ixy="0.0"
-                 ixz="0.0"
-                 iyy="0.00001"
-                 iyz="0.0"
-                 izz="0.00001" />
-      </inertial>
-    </link>
-    <joint name="cables_joint"
-           type="fixed" >
-      <parent link="base_link" />
-      <child link="cables" />
-      <origin xyz="0.0 0.0 0.1" />
     </joint>
 
     <link name="axis" >
