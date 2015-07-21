@@ -35,12 +35,12 @@
   <xacro:left_webcam />
   <xacro:right_webcam />
 
-  <xacro:thermal />
+  <!-- <xacro:thermal /> -->
 
   <xacro:left_sonar />
   <xacro:right_sonar />
 
-  <xacro:co2 />
-  <xacro:microphone />
+  <!-- <xacro:co2 /> -->
+  <!-- <xacro:microphone /> -->
 
 </robot>
