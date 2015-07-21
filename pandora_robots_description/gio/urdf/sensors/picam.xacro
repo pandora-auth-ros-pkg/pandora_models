@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:include filename="$(find pandora_sensors_description)/picam/urdf/*.urdf.xacro" />
+
+  <xacro:macro name="front_picam" >
+    <xacro:raspberry_pi_camera parent="camera_effector_platform_link"
+                               prefix="front" >
+       <origin xyz="0.00034 -0.01925 0.04306"
+               rpy="0.0 -0.3490658504 0.0" />
+    </xacro:raspberry_pi_camera>
+  </xacro:macro>
+
+  <xacro:macro name="rear_picam" >
+    <xacro:raspberry_pi_camera parent="base_link"
+                               prefix="rear" >
+      <origin xyz="-0.12797 0.0 0.2451"
+              rpy="0.0 0.0 ${PI}" />
+    </xacro:raspberry_pi_camera>
+  </xacro:macro>
+
+</robot>

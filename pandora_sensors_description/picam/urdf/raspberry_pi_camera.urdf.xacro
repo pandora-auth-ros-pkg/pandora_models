@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="raspberry_pi_camera"
+               params="parent prefix *origin" >
+
+    <link name="${prefix}_picam_link" >
+      <xacro:solid_cuboid_inertial mass="0.021" x="0.009" y="0.025" z="0.024" >
+        <origin xyz="-0.00058 0.0 0.00189" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://pandora_sensors_description/picam/meshes/raspberry_pi_camera.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.00045 0.0 0.0025" />
+        <geometry>
+          <box size="0.009 0.025 0.024" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joints -->
+    <joint name="${prefix}_picam_parent_joint"
+           type="fixed" >
+      <parent link="${parent}" />
+      <child link="${prefix}_picam_link" />
+      <xacro:insert_block name="origin" />
+    </joint>
+
+    <!-- Frames -->
+    <link name="${prefix}_picam_frame" >
+      <xacro:point_mass_inertial />
+    </link>
+    <link name="${prefix}_picam_optical_frame" >
+      <xacro:point_mass_inertial />
+    </link>
+
+    <joint name="${prefix}_picam_joint"
+           type="fixed" >
+      <parent link="${prefix}_picam_link" />
+      <child link="${prefix}_picam_frame" />
+      <origin xyz="0.0045 0.0 0.0" />
+    </joint>
+    <joint name="${prefix}_picam_optical_joint"
+           type="fixed" >
+      <parent link="${prefix}_picam_frame" />
+      <child link="${prefix}_picam_optical_frame" />
+      <origin xyz="0.0 0.0 0.0"
+              rpy="-1.5708 0.0 -1.5708" />
+    </joint>
+
+  </xacro:macro>
+
+</robot>

@@ -14,9 +14,9 @@
   <!-- Load Links & Joints -->
   <xacro:base />
 
-  <xacro:linear />
-
   <xacro:differential />
+  <xacro:linear />
+  <xacro:camera_effector />
 
   <xacro:side prefix_y="left" reflect_y="1" />
   <xacro:side prefix_y="right" reflect_y="-1" />
@@ -30,11 +30,12 @@
   <xacro:laser_20 /> <!--<xacro:laser_04 />-->
   <xacro:kinect />
 
-  <xacro:camera_effector />
-  <xacro:thermal />
-
+  <xacro:front_picam />
+  <xacro:rear_picam />
   <xacro:left_webcam />
   <xacro:right_webcam />
+
+  <xacro:thermal />
 
   <xacro:left_sonar />
   <xacro:right_sonar />
