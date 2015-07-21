@@ -3,10 +3,10 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
   <xacro:macro name="logitech_c310hd"
-               params="parent prefix_y *origin" >
+               params="parent prefix *origin" >
 
     <!-- Links -->
-    <link name="${prefix_y}_camera_link" >
+    <link name="${prefix}_webcam_link" >
       <xacro:solid_cuboid_inertial mass="0.099" x="0.049" y="0.095" z="0.073" >
         <origin xyz="0.00972 0.0 0.04428" />
       </xacro:solid_cuboid_inertial>
@@ -25,35 +25,35 @@
     </link>
 
     <!-- Joints -->
-    <joint name="${prefix_y}_camera_parent_joint"
+    <joint name="${prefix}_webcam_parent_joint"
            type="fixed" >
       <parent link="${parent}" />
-      <child link="${prefix_y}_camera_link" />
+      <child link="${prefix}_webcam_link" />
       <xacro:insert_block name="origin" />
     </joint>
 
     <!-- Frames -->
-    <link name="${prefix_y}_camera_frame" >
+    <link name="${prefix}_webcam_frame" >
       <xacro:point_mass_inertial />
     </link>
 
-    <link name="${prefix_y}_camera_optical_frame" >
+    <link name="${prefix}_webcam_optical_frame" >
       <xacro:point_mass_inertial />
     </link>
 
-    <joint name="${prefix_y}_camera_joint"
+    <joint name="${prefix}_webcam_joint"
            type="fixed" >
-      <parent link="${prefix_y}_camera_link" />
-      <child link="${prefix_y}_camera_frame" />
-      <origin xyz="0.02499 0.0 0.05704" 
+      <parent link="${prefix}_webcam_link" />
+      <child link="${prefix}_webcam_frame" />
+      <origin xyz="0.02499 0.0 0.05704"
               rpy="0.0 -0.2792 0.0" />
     </joint>
 
-    <joint name="${prefix_y}_camera_optical_joint"
+    <joint name="${prefix}_webcam_optical_joint"
            type="fixed" >
-      <parent link="${prefix_y}_camera_frame" />
-      <child link="${prefix_y}_camera_optical_frame" />
-      <origin xyz="0.0 0.0 0.0" 
+      <parent link="${prefix}_webcam_frame" />
+      <child link="${prefix}_webcam_optical_frame" />
+      <origin xyz="0.0 0.0 0.0"
               rpy="-1.5708 0.0 -1.5708" />
     </joint>
 
