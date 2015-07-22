@@ -20,4 +20,12 @@
     </xacro:logitech_c310hd>
   </xacro:macro>
 
+  <xacro:macro name="rear_webcam" >
+    <xacro:logitech_c310hd parent="base_link"
+                           prefix="rear" >
+      <origin xyz="-0.10937 0.0 0.26221"
+              rpy="0.0 0.0 ${- 2 * PI_2}" />
+    </xacro:logitech_c310hd>
+  </xacro:macro>
+
 </robot>

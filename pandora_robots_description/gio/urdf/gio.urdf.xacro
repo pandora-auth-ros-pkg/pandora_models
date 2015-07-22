@@ -31,7 +31,7 @@
   <xacro:kinect />
 
   <xacro:front_picam />
-  <xacro:rear_picam />
+  <xacro:rear_webcam />
   <xacro:left_webcam />
   <xacro:right_webcam />
 
