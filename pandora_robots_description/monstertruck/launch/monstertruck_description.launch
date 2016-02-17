@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- Load monstertruck robot description to param server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro.py '$(find pandora_robots_description)/monstertruck/urdf/monstertruck.urdf.xacro'" />
+
+  <!-- Launch joint_state_publisher -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <rosparam command="load" file="$(find pandora_robots_description)/monstertruck/config/joint_states.yaml" />
+  </node>
+
+  <!-- Launch robot_state_publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+</launch>

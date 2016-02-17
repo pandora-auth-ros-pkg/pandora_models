@@ -1,0 +1,3 @@
+source_list:
+  #TODO(gkouros): control, dynamixel, monstertruck(servos and motor) etc
+rate: 50
