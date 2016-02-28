@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="compass_os4000" >
+
+    <joint name="electronics_box_compass_joint" type="fixed">
+      <parent link="electronics_box_link" />
+      <child link="compass_os4000_link" />
+      <origin xyz="-0.037 -0.06 -0.0098" />
+    </joint>
+
+    <link name="compass_os4000_link" >
+      <xacro:solid_cuboid_inertial mass="0.03" x="0.05" y="0.04" z="0.04" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <box size="0.05 0.04 0.04" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.05 0.04 0.04" />
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

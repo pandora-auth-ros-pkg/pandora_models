@@ -2,8 +2,6 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <!-- PARAMETERS -->
-
   <!-- Dimensions -->
   <xacro:property name="wheel_width" value="0.08" />
   <xacro:property name="wheel_radius" value="0.07" />

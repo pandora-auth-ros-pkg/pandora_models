@@ -5,24 +5,47 @@
   <!-- Import Files -->
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/joint_limits.xacro" />
-  <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/urdf.xacro" />
+  <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/dimensions.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/parts/*.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/sensors/*.xacro" />
 
   <!-- Load Links & Joints -->
+
+  <!-- Load base and boxes -->
   <xacro:base />
+  <xacro:electronics_box />
+  <xacro:pc_box />
 
-  <xacro:side prefix_y="left" reflect_y="1" />
-  <xacro:side prefix_y="right" reflect_y="-1" />
+  <!-- Load suspensions -->
+  <xacro:suspensions prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />
+  <xacro:suspensions prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
+  <xacro:suspensions prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
+  <xacro:suspensions prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
-  <xacro:wheel prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />
-  <xacro:wheel prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
-  <xacro:wheel prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
-  <xacro:wheel prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
+  <!-- Load front and rear axles -->
+  <xacro:axle prefix_x="front" reflect_x="1" />
+  <xacro:axle prefix_x="rear" reflect_x="-1" />
+
+  <!-- Load wheels -->
+  <xacro:offroad_wheel prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />
+  <xacro:offroad_wheel prefix_y="left" prefix_x="rear" reflect_y="1" reflect_x="-1" />
+  <xacro:offroad_wheel prefix_y="right" prefix_x="front" reflect_y="-1" reflect_x="1" />
+  <xacro:offroad_wheel prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
   <!-- Load Sensors -->
   <xacro:laser_04 />
-  <xacro:camera>
-  <xacro:compass>
+  <xacro:picam />
+  <xacro:compass_os4000 />
+
+  <!-- Load miscellaneous parts -->
+  <xacro:battery />
+  <xacro:pc_fan_40mm />
+  <xacro:pc_fan_60mm />
+  <xacro:m4_atx_psu />
+  <xacro:dc_dc_converter />
+  <xacro:electronics_power_distribution_board />
+  <xacro:motors_power_distribution_board />
+  <xacro:battery_power_distribution_board />
+  <xacro:epos_24_1 />
 
 </robot>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="pc_box" >
+
+    <!-- pc box -->
+    <joint name="electronics_box_pc_box_joint" type="fixed" >
+      <parent link="electronics_box_link" />
+      <child link="pc_box_link" />
+      <origin xyz="0.0105 0.0 0.08" />
+    </joint>
+
+    <!-- TODO measure mass -->
+    <link name="pc_box_link" >
+      <xacro:solid_cuboid_inertial mass="0.3" x="0.21" y="0.24" z="0.084" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_box.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_box.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

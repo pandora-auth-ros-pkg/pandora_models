@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="m4_atx_psu" >
+
+    <joint name="electronics_box_m4_atx_psu_joint" type="fixed" >
+      <parent link="electronics_box_link" />
+      <child link="m4_atx_psu_link" />
+      <origin xyz="0.088 0.0216 -0.0214" />
+    </joint>
+
+    <link name="m4_atx_psu_link" >
+      <xacro:solid_cuboid_inertial mass="0.178" x="0.122" y="0.094" z="0.02" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <box size="0.122 0.119 0.02" />
+        </geometry>
+        <material name="green" />
+      </visual>
+    </link>
+
+  </xacro:macro>
+
+</robot>

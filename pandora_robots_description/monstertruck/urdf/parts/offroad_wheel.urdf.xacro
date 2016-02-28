@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="offroad_wheel" params="prefix_y prefix_x reflect_y reflect_x" >
+
+    <joint name="${prefix_y}_${prefix_x}_axle_to_wheel_steer_joint" type="fixed" >
+      <parent link="${prefix_x}_axle_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_steer_link" />
+      <origin xyz="0.0 ${reflect_y*0.112} 0.0" />
+    </joint>
+
+    <!-- wheel steer link -->
+    <link name="${prefix_y}_${prefix_x}_wheel_steer_link" >
+      <xacro:solid_sphere_inertial mass="0.05" radius="0.01" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_sphere_inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <sphere radius="0.01" />
+        </geometry>
+        <material name="dark_grey" />
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <sphere radius="0.01" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- wheel steer link to drive link joint -->
+    <joint name="${prefix_y}_${prefix_x}_wheel_steer_joint"
+           type="revolute" >
+      <parent link="${prefix_y}_${prefix_x}_wheel_steer_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_drive_link" />
+      <axis xyz="0 0 1" />
+      <dynamics damping="0.0" />
+      <limit lower="${-PI/8}" upper="${PI/8}" effort="100" velocity="100"/>
+    </joint>
+
+    <!-- wheel drive link -->
+    <link name="${prefix_y}_${prefix_x}_wheel_drive_link" >
+      <xacro:solid_cylinder_inertial mass="0.01" radius="0.005" y="0.04">
+        <xacro:default_origin />
+      </xacro:solid_cylinder_inertial>
+      <visual>
+        <origin xyz="0.0 ${reflect_y*0.02} 0.0" rpy="${-PI/2} 0.0 0.0" />
+        <geometry>
+          <cylinder radius="0.005" length="0.04" />
+        </geometry>
+        <material name="dark_grey" />
+      </visual>
+      <collision>
+        <origin xyz="0.0 ${reflect_y*0.005} 0.0" rpy="${-PI/2} 0.0 0.0" />
+        <geometry>
+          <cylinder radius="0.05" length="0.045" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- drive link to wheel joint -->
+    <joint name="${prefix_y}_${prefix_x}_wheel_drive_joint"
+           type="continuous" >
+      <parent link="${prefix_y}_${prefix_x}_wheel_drive_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_link" />
+      <origin xyz="0.0 ${reflect_y*0.004} 0.0" />
+      <axis xyz="0 1 0" />
+      <dynamics damping="0.0" />
+      <limit
+        effort="${drive_joint_effort_limit}"
+        velocity="${drive_joint_velocity_limit}" />
+    </joint>
+
+    <!-- wheel_link -->
+    <link name="${prefix_y}_${prefix_x}_wheel_link" >
+      <!-- <inertial> -->
+        <!-- <mass value="0.281"/> -->
+        <!-- <inertia ixx="0.000002" ixy="0.0" iyy="0.000003" iyz="0.0" izz="0.000002" ixz="0.0" /> -->
+        <!-- <origin xyz="-0.00001 ${reflect_y*0.0004} 0.000053" /> -->
+      <!-- </inertial> -->
+      <xacro:solid_cylinder_inertial mass="0.970" radius="0.075" y="0.08" >
+        <origin xyz="-0.00001 ${reflect_y*0.00004} 0.000053" />
+      </xacro:solid_cylinder_inertial>
+      <visual>
+        <origin xyz="0.0 ${reflect_y*0.019} 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/${prefix_y}_offroad_wheel.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 ${reflect_y*0.019} 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/${prefix_y}_offroad_wheel.stl" />
+        </geometry>
+      </collision>
+      <collision_checking>
+        <origin xyz="0.0 ${reflect_y*0.019} 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <cylinder length="0.084" radius="0.075"/>
+        </geometry>
+      </collision_checking>
+    </link>
+
+  </xacro:macro>
+
+</robot>

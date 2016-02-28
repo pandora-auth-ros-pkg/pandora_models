@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="pc_fan_60mm" >
+
+    <!-- chassis floor board -->
+    <joint name="base_pc_fan_60mm_joint" type="fixed" >
+      <parent link="pc_box_link" />
+      <child link="pc_fan_60mm_link" />
+      <origin xyz="-0.0303 0.1278 -0.0018" />
+    </joint>
+
+    <link name="pc_fan_60mm_link" >
+      <xacro:solid_cuboid_inertial mass="0.02" x="0.06" y="0.015" z="0.06" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_fan_60mm.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_fan_60mm.dae" />
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

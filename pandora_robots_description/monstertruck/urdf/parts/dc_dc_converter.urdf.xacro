@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="dc_dc_power_distribution_board" >
+
+    <joint name="electronics_box_dc_dc_power_distribution_board_joint" type="fixed" >
+      <parent link="electronics_box_link" />
+      <child link="dc_dc_power_distribution_board_link" />
+      <origin xyz="0.0538 -0.0664 -0.007" />
+    </joint>
+
+    <link name="dc_dc_power_distribution_board_link" >
+      <xacro:solid_cuboid_inertial mass="0.04" x="0.05" y="0.03" z="0.05" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <box size="0.05 0.03 0.05" />
+        </geometry>
+        <material name="green" />
+      </visual>
+    </link>
+
+  </xacro:macro>
+
+</robot>
