@@ -1,8 +1,10 @@
 <launch>
 
+  <arg name="suspension_approximation" default="false" />
+
   <!-- Load monstertruck robot description to param server -->
   <param name="robot_description"
-    command="$(find xacro)/xacro.py '$(find pandora_robots_description)/monstertruck/urdf/monstertruck.urdf.xacro'" />
+    command="$(find xacro)/xacro.py '$(find pandora_robots_description)/monstertruck/urdf/monstertruck.urdf.xacro' suspension_approximation:=$(arg suspension_approximation)" />
 
   <!-- Launch joint_state_publisher -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
