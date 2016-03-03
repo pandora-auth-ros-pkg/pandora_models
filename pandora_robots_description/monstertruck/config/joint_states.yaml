@@ -1,3 +1,5 @@
 source_list:
-  #TODO(gkouros): control, dynamixel, monstertruck(servos and motor) etc
-rate: 50
+  - /control/joint_states
+  - /dynamixel/joints_states
+  - /monstertruck/joint_states
+ate: 50
