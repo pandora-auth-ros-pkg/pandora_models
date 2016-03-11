@@ -15,9 +15,14 @@
   <xacro:property name="max_laser_angular_acceleration" value="0.0" />
 
 
-  <!-- robot steer and drive joint limits -->
-  <xacro:property name="steer_joint_min_limit" value="-PI/8" />
-  <xacro:property name="steer_joint_max_limit" value="PI/8" />
+  <!-- wheel steer joint limits -->
+  <xacro:property name="steer_joint_min_limit" value="${-PI/8}" />
+  <xacro:property name="steer_joint_max_limit" value="${PI/8}" />
+  <xacro:property name="steer_joint_velocity_limit" value="5.0" />
+  <xacro:property name="steer_joint_effort_limit" value="10.0" />
+
+
+  <!-- wheel drive joint limits -->
   <xacro:property name="drive_joint_velocity_limit" value="1.0" />
   <xacro:property name="drive_joint_effort_limit" value="10.0" />
 
