@@ -12,7 +12,7 @@
     </joint>
 
     <link name="electronics_box_link" >
-      <xacro:solid_cuboid_inertial mass="0.3" x="0.31" y="0.17" z="0.07454" >
+      <xacro:solid_cuboid_inertial mass="1.0" x="0.31" y="0.17" z="0.07454" >
         <origin xyz="0.0 0.0 0.0" />
       </xacro:solid_cuboid_inertial>
       <visual>

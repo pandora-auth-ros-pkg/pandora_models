@@ -20,6 +20,11 @@
         </geometry>
         <material name="dark_grey" />
       </visual>
+      <collision>
+        <geometry>
+          <box size="0.035 0.02 0.06" />
+        </geometry>
+      </collision>
     </link>
 
   </xacro:macro>

@@ -5,18 +5,9 @@
   <xacro:macro name="base" >
 
     <link name="base_link" >
-      <inertial>
-        <!-- TODO find actual mass -->
-        <mass value="1.2" />
-        <!-- TODO recalculate inertia -->
-        <inertia ixx="0.000001"
-          ixy="0.0"
-          ixz="0.0"
-          iyy="0.000001"
-          iyz="0.0"
-          izz="0.000001" />
-        <origin xyz="-0.030427 0.001012 0.005388" />
-      </inertial>
+      <xacro:solid_cuboid_inertial mass="0.8" x="0.385" y="0.09" z="0.14">
+        <origin xyz="0.0 0.0 0.04" />
+      </xacro:solid_cuboid_inertial>
       <visual>
         <geometry>
           <mesh filename="package://pandora_robots_description/monstertruck/meshes/chassis.dae" />
@@ -40,7 +31,7 @@
 
     <link name="motor_and_transmission_link" >
       <inertial>
-        <mass value="1.0" />
+        <mass value="0.7" />
         <inertia ixx= "0.00000016498" ixy="0.00000000129" ixz="-0.00000014688"
           iyy="0.00000043294" iyz="0.00000000125" izz="0.00000031516" />
         <origin xyz="-0.019589 0.000166 0.008915" />
@@ -65,7 +56,7 @@
     </joint>
 
     <link name="floor_board_link" >
-      <xacro:solid_cuboid_inertial mass="0.1" x="0.34" y="0.17" z="0.004" >
+      <xacro:solid_cuboid_inertial mass="0.3" x="0.34" y="0.17" z="0.004" >
         <origin xyz="0.0 0.0 0.0" />
       </xacro:solid_cuboid_inertial>
       <visual>

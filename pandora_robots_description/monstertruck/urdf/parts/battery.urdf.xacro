@@ -19,11 +19,11 @@
           <mesh filename="package://pandora_robots_description/monstertruck/meshes/battery.dae" />
         </geometry>
       </visual>
-      <!-- <collision> -->
-        <!-- <geometry> -->
-          <!-- <mesh filename="package://pandora_robots_description/monstertruck/meshes/battery.stl"/> -->
-        <!-- </geometry> -->
-      <!-- </collision> -->
+      <collision>
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/battery.stl"/>
+        </geometry>
+      </collision>
     </link>
 
   </xacro:macro>

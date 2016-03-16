@@ -22,7 +22,8 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_fan_60mm.dae" />
+          <!-- <mesh filename="package://pandora_robots_description/monstertruck/meshes/pc_fan_60mm.dae" /> -->
+          <box size="0.06 0.015 0.06" />
         </geometry>
       </collision>
     </link>

@@ -107,9 +107,10 @@
         <origin xyz="0.0 0.0 0.0" />
       </xacro:solid_cylinder_inertial>
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <origin xyz="0.0 0.0 0.0" rpy="${PI/2*0} 0.0 0.0" />
         <geometry>
           <mesh filename="package://pandora_robots_description/monstertruck/meshes/${prefix_y}_offroad_wheel.dae" />
+          <!-- <cylinder radius="${wheel_link_radius}" length="${wheel_link_width}" /> -->
         </geometry>
       </visual>
       <collision>
