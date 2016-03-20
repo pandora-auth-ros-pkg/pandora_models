@@ -16,9 +16,9 @@
 <!-- =============== Experimental Suspension Approximation ================= -->
     <xacro:if value="${suspension_approximation}">
 
-      <joint name="${prefix_x}_base_axle_sim_suspension_joint" type="prismatic" >
+      <joint name="${prefix_x}_virtual_suspension_joint" type="prismatic" >
         <parent link="base_link" />
-        <child link="${prefix_x}_axle_sim_suspension_link" />
+        <child link="${prefix_x}_virtual_suspension_link" />
         <limit
           effort="${axle_z_joint_effort_limit}"
           velocity="${axle_z_joint_velocity_limit}"
@@ -28,7 +28,7 @@
         <axis xyz="0 0 1" />
       </joint>
 
-      <link name="${prefix_x}_axle_sim_suspension_link" >
+      <link name="${prefix_x}_virtual_suspension_link" >
         <xacro:solid_cylinder_intertial mass="0.00001" radius="0.001" y="0.1212" >
           <origin xyz="0.0 0.0 0.0"/>
         </xacro:solid_cylinder_intertial>
@@ -47,7 +47,7 @@
       </link>
 
       <joint name="${prefix_x}_axle_joint" type="revolute" >
-        <parent link="${prefix_x}_axle_sim_suspension_link" />
+        <parent link="${prefix_x}_virtual_suspension_link" />
         <child link="${prefix_x}_axle_link" />
         <limit
           effort="${axle_effort_limit}"
