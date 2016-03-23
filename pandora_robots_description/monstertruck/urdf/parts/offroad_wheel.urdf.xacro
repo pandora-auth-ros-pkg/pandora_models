@@ -11,7 +11,7 @@
 
   <xacro:property name="drive_link_length" value="0.03" />
   <xacro:property name="drive_link_radius" value="0.0025" />
-  <xacro:property name="drive_link_mass" value="0.001" />
+  <xacro:property name="drive_link_mass" value="0.005" />
 
   <xacro:property name="wheel_link_radius" value="0.075" />
   <xacro:property name="wheel_link_width" value="0.081" />
@@ -28,19 +28,22 @@
       <axis xyz="0 0 1" />
       <dynamics damping="0.0" />
       <limit
-        lower="${steer_joint_min_limit}"
-        upper="${steer_joint_max_limit}"
+        lower="${steer_joint_lower_limit}"
+        upper="${steer_joint_upper_limit}"
         effort="${steer_joint_effort_limit}"
         velocity="${steer_joint_velocity_limit}"/>
     </joint>
 
     <!-- wheel steer link -->
     <link name="${prefix_y}_${prefix_x}_wheel_steer_link" >
-      <xacro:solid_sphere_inertial
-        mass="${steer_link_mass}"
-        radius="${steer_link_radius}" >
-        <origin xyz="0.0 0.0 0.0" />
-      </xacro:solid_sphere_inertial>
+      <!-- Using real inertia causes unexpected bahaviour -->
+      <!-- Works fine, only with null inertial -->
+      <!-- <xacro:solid_sphere_inertial -->
+        <!-- mass="${steer_link_mass}" -->
+        <!-- radius="${steer_link_radius}" > -->
+        <!-- <origin xyz="0.0 0.0 0.0" /> -->
+      <!-- </xacro:solid_sphere_inertial> -->
+      <xacro:null_inertial />
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
@@ -57,20 +60,26 @@
     </link>
 
     <!-- wheel steer link to drive link joint -->
-    <joint name="${prefix_y}_${prefix_x}_wheel_steer_link_to_drive_link_joint" type="fixed" >
+    <joint name="${prefix_y}_${prefix_x}_wheel_drive_joint" type="continuous" >
       <parent link="${prefix_y}_${prefix_x}_wheel_steer_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_drive_link" />
       <origin xyz="0.0 ${reflect_y*(steer_link_radius/2+drive_link_length/2)} 0.0" />
+      <axis xyz="0 1 0" />
+      <dynamics damping="0.0" />
+      <limit
+        effort="${drive_joint_effort_limit}"
+        velocity="${drive_joint_velocity_limit}" />
     </joint>
 
     <!-- wheel drive link -->
     <link name="${prefix_y}_${prefix_x}_wheel_drive_link" >
-      <!-- Using real inertia causes unexpected bahaviour -->
-      <!-- Works fine, only with null inertial -->
-      <xacro:null_inertial />
-      <!-- <xacro:solid_cylinder_inertial mass="0.01" radius="0.0025" y="0.03" > -->
-        <!-- <origin xyz="0.0 0.0 0.0" /> -->
-      <!-- </xacro:solid_cylinder_inertial> -->
+      <!-- <xacro:null_inertial /> -->
+      <xacro:solid_cylinder_inertial
+        mass="${drive_link_mass}"
+        radius="${drive_link_radius}"
+        y="${drive_link_length}" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cylinder_inertial>
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="${PI/2} 0.0 0.0" />
         <geometry>
@@ -87,15 +96,10 @@
     </link>
 
     <!-- drive link to wheel joint -->
-    <joint name="${prefix_y}_${prefix_x}_wheel_drive_joint" type="continuous" >
+    <joint name="${prefix_y}_${prefix_x}_wheel_joint" type="fixed" >
       <parent link="${prefix_y}_${prefix_x}_wheel_drive_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_link" />
       <origin xyz="0.0 ${reflect_y*wheel_link_offset} 0.0" />
-      <axis xyz="0 1 0" />
-      <dynamics damping="0.0" />
-      <limit
-        effort="${drive_joint_effort_limit}"
-        velocity="${drive_joint_velocity_limit}" />
     </joint>
 
     <!-- wheel_link -->

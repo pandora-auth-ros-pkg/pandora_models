@@ -2,8 +2,6 @@
 
 <robot name="monstertruck" xmlns:xacro="http://ros.org/wiki/xacro" >
 
-  <xacro:arg name="suspension_approximation" default="false" />
-
   <!-- Import Files -->
   <xacro:include filename="$(find pandora_urdf_properties)/xacro/*.xacro" />
   <xacro:include filename="$(find pandora_robots_description)/monstertruck/urdf/joint_limits.xacro" />
@@ -25,8 +23,8 @@
   <xacro:suspensions prefix_y="right" prefix_x="rear" reflect_y="-1" reflect_x="-1" />
 
   <!-- Load front and rear axles -->
-  <xacro:axle prefix_x="front" reflect_x="1" suspension_approximation="$(arg suspension_approximation)"/>
-  <xacro:axle prefix_x="rear" reflect_x="-1" suspension_approximation="$(arg suspension_approximation)"/>
+  <xacro:axle prefix_x="front" reflect_x="1" />
+  <xacro:axle prefix_x="rear" reflect_x="-1" />
 
   <!-- Load wheels -->
   <xacro:offroad_wheel prefix_y="left" prefix_x="front" reflect_y="1" reflect_x="1" />

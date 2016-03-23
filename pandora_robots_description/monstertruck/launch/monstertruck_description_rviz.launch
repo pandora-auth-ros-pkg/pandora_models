@@ -3,12 +3,11 @@
   <!-- arguments -->
   <arg name="gui" default="true" />
   <arg name="rvizconfig" default="$(find pandora_robots_description)/monstertruck/config/urdf.rviz" />
-  <arg name="suspension_approximation" default="false" />
 
   <!-- parameters -->
   <param name="use_gui" value="$(arg gui)" />
   <param name="robot_description"
-    command="$(find xacro)/xacro.py '$(find pandora_robots_description)/monstertruck/urdf/monstertruck.urdf.xacro' suspension_approximation:=$(arg suspension_approximation)" />
+    command="$(find xacro)/xacro.py '$(find pandora_robots_description)/monstertruck/urdf/monstertruck.urdf.xacro'" />
 
   <!-- nodes -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
