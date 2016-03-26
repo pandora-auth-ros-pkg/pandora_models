@@ -25,13 +25,13 @@
 
   <!-- axle suspension approximation joint limits -->
   <xacro:property name="virtual_suspension_joint_lower_limit" value="0.0" />
-  <xacro:property name="virtual_suspension_joint_upper_limit" value="0.027" />
-  <xacro:property name="virtual_suspension_joint_velocity_limit" value="10.0" />
-  <xacro:property name="virtual_suspension_joint_effort_limit" value="1.0" />
+  <xacro:property name="virtual_suspension_joint_upper_limit" value="0.03" />
+  <xacro:property name="virtual_suspension_joint_velocity_limit" value="100.0" />
+  <xacro:property name="virtual_suspension_joint_effort_limit" value="50.0" />
 
   <xacro:property name="axle_roll_joint_lower_limit" value="${-PI*10/180}" />
   <xacro:property name="axle_roll_joint_upper_limit" value="${PI*10/180}" />
   <xacro:property name="axle_velocity_limit" value="10.0" />
-  <xacro:property name="axle_effort_limit" value="10.0" />
+  <xacro:property name="axle_effort_limit" value="1.0" />
 
 </robot>
