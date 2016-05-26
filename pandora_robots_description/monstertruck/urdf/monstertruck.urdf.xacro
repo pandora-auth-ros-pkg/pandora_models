@@ -34,7 +34,6 @@
 
   <!-- Load Sensors -->
   <xacro:laser_04 />
-  <xacro:picam />
   <xacro:compass_os4000 />
 
   <!-- Load miscellaneous parts -->
