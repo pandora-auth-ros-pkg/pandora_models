@@ -31,7 +31,7 @@
 
     <link name="motor_and_transmission_link" >
       <inertial>
-        <mass value="0.7" />
+        <mass value="2.0" />
         <inertia ixx= "0.00000016498" ixy="0.00000000129" ixz="-0.00000014688"
           iyy="0.00000043294" iyz="0.00000000125" izz="0.00000031516" />
         <origin xyz="-0.019589 0.000166 0.008915" />

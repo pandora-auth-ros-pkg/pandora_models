@@ -5,7 +5,9 @@
   <xacro:property name="wheelbase" value="0.32" />
   <xacro:property name="track" value="0.26" />
 
-  <xacro:property name="steer_link_offset" value="0.115" />
+  <xacro:property name="steer_link_x_offset" value="0.028" />
+  <xacro:property name="steer_link_y_offset" value="0.0525" />
+  <xacro:property name="steer_link_z_offset" value="-0.051" />
   <xacro:property name="steer_link_radius" value="0.008" />
   <xacro:property name="steer_link_mass" value="0.001" />
 
@@ -21,10 +23,27 @@
   <xacro:macro name="offroad_wheel"
     params="prefix_y prefix_x reflect_y reflect_x" >
 
+    <joint name="${prefix_y}_${prefix_x}_wheel_suspension_joint" type="prismatic" >
+      <parent link="base_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
+      <limit
+        effort="${wheel_suspension_joint_effort_limit}"
+        velocity="${wheel_suspension_joint_velocity_limit}"
+        lower="${wheel_suspension_joint_lower_limit}"
+        upper="${wheel_suspension_joint_upper_limit}" />
+      <dynamics damping="20.0" />
+      <origin xyz="${reflect_x*0.158+0.031} ${reflect_y*0.115} -0.077"  rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="${prefix_y}_${prefix_x}_wheel_suspension_link">
+      <xacro:null_inertial />
+    </link>
+
     <joint name="${prefix_y}_${prefix_x}_wheel_steer_joint" type="revolute" >
-      <parent link="${prefix_x}_axle_link" />
+      <parent link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_steer_link" />
-      <origin xyz="0.0 ${reflect_y*steer_link_offset} 0.0" />
+      <origin xyz="0.0 0.0 0.0" />
       <axis xyz="0 0 1" />
       <dynamics damping="0.0" />
       <limit
@@ -36,7 +55,7 @@
 
     <!-- wheel steer link -->
     <link name="${prefix_y}_${prefix_x}_wheel_steer_link" >
-      <!-- Using real inertia causes unexpected bahaviour -->
+      <!-- Using real inertia causes unstable bahaviour -->
       <!-- Works fine, only with null inertial -->
       <!-- <xacro:solid_sphere_inertial -->
         <!-- mass="${steer_link_mass}" -->
@@ -73,7 +92,6 @@
 
     <!-- wheel drive link -->
     <link name="${prefix_y}_${prefix_x}_wheel_drive_link" >
-      <!-- <xacro:null_inertial /> -->
       <xacro:solid_cylinder_inertial
         mass="${drive_link_mass}"
         radius="${drive_link_radius}"
