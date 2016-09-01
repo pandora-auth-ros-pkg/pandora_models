@@ -23,23 +23,6 @@
   <xacro:macro name="offroad_wheel"
     params="prefix_y prefix_x reflect_y reflect_x" >
 
-    <joint name="${prefix_y}_${prefix_x}_wheel_suspension_joint" type="prismatic" >
-      <parent link="base_link" />
-      <child link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
-      <limit
-        effort="${wheel_suspension_joint_effort_limit}"
-        velocity="${wheel_suspension_joint_velocity_limit}"
-        lower="${wheel_suspension_joint_lower_limit}"
-        upper="${wheel_suspension_joint_upper_limit}" />
-      <dynamics damping="20.0" />
-      <origin xyz="${reflect_x*0.158+0.031} ${reflect_y*0.115} -0.077"  rpy="0.0 0.0 0.0" />
-      <axis xyz="0 0 1" />
-    </joint>
-
-    <link name="${prefix_y}_${prefix_x}_wheel_suspension_link">
-      <xacro:null_inertial />
-    </link>
-
     <joint name="${prefix_y}_${prefix_x}_wheel_steer_joint" type="revolute" >
       <parent link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_steer_link" />
