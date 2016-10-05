@@ -2,4 +2,5 @@ source_list:
   - /control/joint_states
   - /dynamixel/joints_states
   - /monstertruck/joint_states
-ate: 50
+  - /joint_states
+rate: 50
