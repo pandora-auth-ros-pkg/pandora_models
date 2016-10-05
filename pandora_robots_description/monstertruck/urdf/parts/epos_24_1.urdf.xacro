@@ -6,7 +6,7 @@
 
     <!-- chassis floor board -->
     <joint name="base_epos_24_1_joint" type="fixed" >
-      <parent link="base_link" />
+      <parent link="chassis_link" />
       <child link="epos_24_1_link" />
       <origin xyz="0.05 0.0 0.043" />
     </joint>

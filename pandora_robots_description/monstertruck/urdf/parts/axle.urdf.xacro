@@ -5,7 +5,7 @@
   <xacro:macro name="axle" params="prefix_x reflect_x" >
 
     <joint name="${prefix_x}_axle_suspension_joint" type="prismatic" >
-      <parent link="base_link" />
+      <parent link="chassis_link" />
       <child link="${prefix_x}_axle_suspension_link" />
       <limit
         effort="${axle_suspension_joint_effort_limit}"

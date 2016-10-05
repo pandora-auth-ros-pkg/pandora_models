@@ -5,7 +5,7 @@
   <xacro:macro name="suspensions" params="prefix_y prefix_x reflect_y reflect_x" >
 
     <joint name="${prefix_y}_${prefix_x}_base_suspension_joint" type="fixed" >
-      <parent link="base_link" />
+      <parent link="chassis_link" />
       <child link="${prefix_y}_${prefix_x}_suspension_link" />
       <origin xyz="${reflect_x*0.13+0.0311} ${reflect_y*0.06} -0.0265" />
     </joint>
@@ -29,7 +29,7 @@
     </link>
 
     <joint name="${prefix_y}_${prefix_x}_wheel_suspension_joint" type="prismatic" >
-      <parent link="base_link" />
+      <parent link="chassis_link" />
       <child link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
       <limit
         effort="${wheel_suspension_joint_effort_limit}"
