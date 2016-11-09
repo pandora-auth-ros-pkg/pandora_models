@@ -7,8 +7,10 @@
   <!-- laser joint limits -->
   <xacro:property name="laser_roll_joint_min_limit" value="-0.523" />
   <xacro:property name="laser_roll_joint_max_limit" value="0.523" />
+  <xacro:property name="laser_roll_joint_offset" value="0.0" />
   <xacro:property name="laser_pitch_joint_min_limit" value="-0.523" />
   <xacro:property name="laser_pitch_joint_max_limit" value="0.523" />
+  <xacro:property name="laser_pitch_joint_offset" value="0.0" />
 
   <!-- wheel steer joint limits -->
   <xacro:property name="steer_joint_lower_limit" value="${-25*PI/180}" />

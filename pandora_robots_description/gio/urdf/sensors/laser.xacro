@@ -8,8 +8,10 @@
     <xacro:hokuyo_urg_04lx parent="base_link"
                            roll_min_limit="${laser_roll_joint_min_limit}"
                            roll_max_limit="${laser_roll_joint_max_limit}"
+                           roll_offset="${laser_roll_joint_offset}"
                            pitch_min_limit="${laser_pitch_joint_min_limit}"
-                           pitch_max_limit="${laser_pitch_joint_max_limit}" >
+                           pitch_max_limit="${laser_pitch_joint_max_limit}"
+                           pitch_offset="${laser_pitch_joint_offset}" >
       <origin xyz="0.19015 -0.01352 0.11822" />
     </xacro:hokuyo_urg_04lx>
   </xacro:macro>
@@ -18,8 +20,10 @@
     <xacro:hokuyo_ust_20lx parent="base_link"
                            roll_min_limit="${laser_roll_joint_min_limit}"
                            roll_max_limit="${laser_roll_joint_max_limit}"
+                           roll_offset="${laser_roll_joint_offset}"
                            pitch_min_limit="${laser_pitch_joint_min_limit}"
-                           pitch_max_limit="${laser_pitch_joint_max_limit}" >
+                           pitch_max_limit="${laser_pitch_joint_max_limit}"
+                           pitch_offset="${laser_pitch_joint_offset}" >
       <origin xyz="0.19015 -0.01352 0.11822" />
     </xacro:hokuyo_ust_20lx>
   </xacro:macro>

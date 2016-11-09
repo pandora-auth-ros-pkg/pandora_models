@@ -4,8 +4,8 @@
 
   <xacro:macro name="hokuyo_urg_04lx"
                params="parent *origin
-                       roll_min_limit roll_max_limit
-                       pitch_min_limit pitch_max_limit" >
+                       roll_min_limit roll_max_limit roll_offset
+                       pitch_min_limit pitch_max_limit pitch_offset">
 
     <!-- Links -->
     <link name="laser_roll_servo_link" >
@@ -75,7 +75,7 @@
       <parent link="laser_roll_servo_link" />
       <child link="laser_pitch_servo_link" />
       <origin xyz="0.03999 0.0 0.0"
-              rpy="-0.03 0 0" />
+              rpy="${roll_offset} 0 0" />
       <axis xyz="1 0 0" />
       <limit lower="${roll_min_limit}"
              upper="${roll_max_limit}"
@@ -88,7 +88,7 @@
       <parent link="laser_pitch_servo_link" />
       <child link="laser_main_link" />
       <origin xyz="0.0 0.0 0.02276"
-              rpy="0 0.03 0" />
+              rpy="0 ${pitch_offset} 0" />
       <axis xyz="0 1 0" />
       <limit lower="${pitch_min_limit}"
              upper="${pitch_max_limit}"

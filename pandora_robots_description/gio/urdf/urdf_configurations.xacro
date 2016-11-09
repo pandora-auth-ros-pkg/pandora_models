@@ -15,8 +15,10 @@
   <xacro:property name="camera_effector_tilt_joint_max_limit" value="0.6" />
   <xacro:property name="laser_roll_joint_min_limit" value="-0.523" />
   <xacro:property name="laser_roll_joint_max_limit" value="0.523" />
+  <xacro:property name="laser_roll_joint_offset" value="-0.03" />
   <xacro:property name="laser_pitch_joint_min_limit" value="-0.523" />
   <xacro:property name="laser_pitch_joint_max_limit" value="0.523" />
+  <xacro:property name="laser_pitch_joint_offset" value="0.03" />
   <xacro:property name="kinect_pitch_joint_min_limit" value="-0.785" />
   <xacro:property name="kinect_pitch_joint_max_limit" value="0.785" />
   <xacro:property name="kinect_yaw_joint_min_limit" value="-1.308" />
