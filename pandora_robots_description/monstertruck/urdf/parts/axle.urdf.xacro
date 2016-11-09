@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="axle" params="prefix_x reflect_x" >
+
+    <joint name="${prefix_x}_axle_suspension_joint" type="prismatic" >
+      <parent link="chassis_link" />
+      <child link="${prefix_x}_axle_suspension_link" />
+      <limit
+        effort="${axle_suspension_joint_effort_limit}"
+        velocity="${axle_suspension_joint_velocity_limit}"
+        lower="${axle_suspension_joint_lower_limit}"
+        upper="${axle_suspension_joint_upper_limit}" />
+      <dynamics damping="100.0" />
+      <origin xyz="${reflect_x*0.158+0.031} 0.0 0.035"  rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="${prefix_x}_axle_suspension_link" >
+      <xacro:null_inertial />
+    </link>
+
+    <joint name="${prefix_x}_axle_joint" type="revolute" >
+      <parent link="${prefix_x}_axle_suspension_link" />
+      <child link="${prefix_x}_axle_link" />
+      <origin xyz="0.0 0.0 -0.112"  rpy="0.0 0.0 0.0" />
+      <axis xyz="1 0 0" />
+      <dynamics damping="10.0" />
+      <limit
+        effort="${axle_effort_limit}"
+        velocity="${axle_velocity_limit}"
+        lower="${axle_roll_joint_lower_limit}"
+        upper="${axle_roll_joint_upper_limit}" />
+    </joint>
+
+    <link name="${prefix_x}_axle_link" >
+      <xacro:solid_cylinder_inertial mass="0.4" radius="0.03" y="0.12" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cylinder_inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${(1-reflect_x)*PI/2}" />
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/axle.dae" />
+        </geometry>
+      </visual>
+      <!-- <collision> -->
+        <!-- <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${(1-reflect_x)*PI/2}" /> -->
+        <!-- <geometry> -->
+          <!-- <mesh filename="package://pandora_robots_description/monstertruck/meshes/axle.stl" /> -->
+        <!-- </geometry> -->
+      <!-- </collision> -->
+    </link>
+
+  </xacro:macro>
+
+</robot>

@@ -8,6 +8,9 @@
   <material name="black" >
     <color rgba="${0/255} ${0/255} ${0/255} 1.0" />
   </material>
+  <material name="dark_grey" >
+    <color rgba="${10/255} ${10/255} ${10/255} 1.0" />
+  </material>
   <material name="red" >
     <color rgba="${204/255} ${0/255} ${0/255} 1.0" />
   </material>
@@ -17,7 +20,9 @@
   <material name="blue" >
     <color rgba="${0/255} ${0/255} ${204/255} 1.0" />
   </material>
-
+  <material name="yellow" >
+    <color rgba="${255/255} ${255/255} ${0/255} 1.0" />
+  </material>
   <material name="solidworks_default" >
     <color rgba="${192/255} ${192/255} ${192/255} 1.0" />
   </material>

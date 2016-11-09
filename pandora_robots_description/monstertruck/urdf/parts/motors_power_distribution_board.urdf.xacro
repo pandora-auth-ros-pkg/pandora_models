@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="motors_power_distribution_board" >
+
+    <joint name="electronics_box_motors_power_distribution_board_joint" type="fixed" >
+      <parent link="electronics_box_link" />
+      <child link="motors_power_distribution_board_link" />
+      <origin xyz="0.1316 -0.0717 -0.00602" />
+    </joint>
+
+    <link name="motors_power_distribution_board_link" >
+      <xacro:solid_cuboid_inertial mass="0.03" x="0.04" y="0.02" z="0.05" >
+        <origin xyz="0.0 0.0 0.0" />
+      </xacro:solid_cuboid_inertial>
+      <visual>
+        <geometry>
+          <box size="0.04 0.02 0.05" />
+        </geometry>
+        <material name="dark_grey" />
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.04 0.02 0.05" />
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

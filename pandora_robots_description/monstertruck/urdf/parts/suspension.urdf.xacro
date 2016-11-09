@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" >
+
+  <xacro:macro name="suspensions" params="prefix_y prefix_x reflect_y reflect_x" >
+
+    <joint name="${prefix_y}_${prefix_x}_base_suspension_joint" type="fixed" >
+      <parent link="chassis_link" />
+      <child link="${prefix_y}_${prefix_x}_suspension_link" />
+      <origin xyz="${reflect_x*0.13+0.0311} ${reflect_y*0.06} -0.0265" />
+    </joint>
+
+    <link name="${prefix_y}_${prefix_x}_suspension_link" >
+      <xacro:solid_cylinder_inertial mass="0.050" radius="0.02" y="0.1255" >
+        <origin xyz="0.0 0.0 0.0" rpy="${-PI/2} ${-reflect_x*PI/12} 0.0" />
+      </xacro:solid_cylinder_inertial>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="${-PI/2} ${-reflect_x*PI/12} 0.0" />
+        <geometry>
+          <mesh filename="package://pandora_robots_description/monstertruck/meshes/suspension.dae" />
+        </geometry>
+      </visual>
+      <!-- <collision> -->
+        <!-- <origin xyz="0.0 0.0 0.0" rpy="${-PI/2} ${-reflect_x*PI/12} 0.0" /> -->
+        <!-- <geometry> -->
+          <!-- <mesh filename="package://pandora_robots_description/monstertruck/meshes/suspension.stl" /> -->
+        <!-- </geometry> -->
+      <!-- </collision> -->
+    </link>
+
+    <joint name="${prefix_y}_${prefix_x}_wheel_suspension_joint" type="prismatic" >
+      <parent link="chassis_link" />
+      <child link="${prefix_y}_${prefix_x}_wheel_suspension_link" />
+      <limit
+        effort="${wheel_suspension_joint_effort_limit}"
+        velocity="${wheel_suspension_joint_velocity_limit}"
+        lower="${wheel_suspension_joint_lower_limit}"
+        upper="${wheel_suspension_joint_upper_limit}" />
+      <dynamics damping="1.0" friction="100.0"/>
+      <origin xyz="${reflect_x*0.158+0.031} ${reflect_y*0.115} -0.077"  rpy="0.0 0.0 0.0" />
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="${prefix_y}_${prefix_x}_wheel_suspension_link">
+      <xacro:null_inertial />
+    </link>
+
+  </xacro:macro>
+
+</robot>
